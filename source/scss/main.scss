@@ -1,0 +1,49 @@
+@import "./../../bower_components/normalize-scss/_normalize.scss";
+@import "./../../bower_components/news-vj-css-defaults/css/main";
+@import "./../../bower_components/sharetools/bin/templates/dropdown/share.scss"; // Developer: choose your sharetools of choice ('dropdown', 'buttons'). This should match the ShareToolsTemplate value in config.json
+
+// YOUR APPLICATION CSS GOES BELOW
+
+.bbc-news-vj-wrapper {
+
+    // Developer:
+    //  SASS placeholder selectors (i.e. `%button--standard`) mean that the corresponding CSS
+    //  is only pulled into our CSS file if we use `@extend`.
+    //  The CSS for the buttons, radio inputs and checkboxes amount to around 10KB, so only
+    //  include these if you need them.
+
+    input[type="submit"],
+    input[type="button"],
+    button {
+        @extend %button--standard;
+
+        &:disabled {
+            @extend %button--inactive;
+        }
+
+        &.button--prev {
+            @extend %button--cta-reverse;
+        }
+
+        &.button--next {
+            @extend %button--cta;
+        }
+
+        &.button--reset {
+            @extend %button--reset;
+        }
+    }
+
+    select {
+        @extend %form--select;
+    }
+
+    input[type="checkbox"] {
+        @extend %form--checkbox;
+    }
+
+    input[type="radio"] {
+        @extend %form--radio;
+    }
+
+}

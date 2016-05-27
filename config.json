@@ -1,0 +1,16 @@
+{
+  "wrapper": "full-width",
+  "debug": "false",
+  "project_number": "13790",
+  "year": "2016",
+  "services": {
+    "default": "english",
+    "others": "*"
+  },
+  "amdModulePaths": {
+    "jquery": "../../bower_components/jquery/dist/jquery.min",
+    "template_engine": "../../bower_components/template_engine/template_engine",
+    "ShareTools": "../../bower_components/sharetools/bin/sharetools.min",
+    "ShareToolsTemplate": "../../bower_components/sharetools/bin/templates/dropdown/template"
+  }
+}

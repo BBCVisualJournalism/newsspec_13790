@@ -1,0 +1,19 @@
+{
+    "made_up_key": "This example shows how you can pass values from your vocabs to the template. You should get rid of this one, but keep all of the meta properties (i.e. you'll need to reproduce the meta property rows in your spreadsheet).",
+    "meta:url": "",
+    "meta:title": "",
+    "meta:description": "",
+    "meta:type": "article",
+    "meta:site_name": "BBC News",
+    "meta:locale": "en_GB",
+    "meta:publisher": "https://www.facebook.com/bbcnews/",
+    "meta:section": "",
+    "meta:image": "",
+    "meta:twitter:card": "summary_large_image",
+    "meta:twitter:site": "@BBCNews",
+    "meta:twitter:creator": "@BBCNews",
+    "meta:twitter:title": "",
+    "meta:twitter:description": "",
+    "meta:twitter:image": "",
+    "legacy_ie_message": "This site is optimised for modern web browsers, and does not fully support your version of Internet Explorer"
+}
