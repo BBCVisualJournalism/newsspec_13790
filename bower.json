@@ -1,10 +1,10 @@
 {
   "name": "Shared dependencies",
   "dependencies": {
-    "sharetools":           "https://github.com/bbc/news-vj-sharetools.git",
-    "news-vj-ws-config":    "git@github.com:bbc/news-vj-ws-config.git",
+    "sharetools": "https://github.com/bbc/news-vj-sharetools.git",
+    "news-vj-ws-config": "git@github.com:bbc/news-vj-ws-config.git",
     "news-vj-css-defaults": "git@github.com:bbc/news-vj-css-defaults.git",
-    "jquery":               "^2.2.0",
-    "normalize-scss":       "^3.0.3"
+    "jquery": "~2.2.4",
+    "normalize-scss": "^3.0.3"
   }
 }

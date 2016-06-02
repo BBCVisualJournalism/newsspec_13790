@@ -19,6 +19,7 @@
 
         &:disabled {
             @extend %button--inactive;
+            width: 100%;
         }
 
         &.button--prev {
@@ -32,6 +33,14 @@
         &.button--reset {
             @extend %button--reset;
         }
+
+        &.button--see-results {
+            font-size: 2em;
+            line-height: 2em;
+            height: auto;
+            margin:20px;
+            width: 360px;
+        }
     }
 
     select {
@@ -44,6 +53,43 @@
 
     input[type="radio"] {
         @extend %form--radio;
+    }
+
+    .hidden {
+        display: none;
+        visibility: hidden;
+    }
+
+    .question {
+        background-color: #efefef;
+        padding: 18px;
+    }
+
+    .question__text {
+        font-weight: 800;
+    }
+
+    .answers {
+    }
+
+    // higher specifity to override default bbc stylings on disabled buttons
+    .questions .answers .answer--chosen {
+        background-color: #990000;
+        border: 2px solid #990000;
+        color: white;
+    }
+
+    .answer {
+        background-color: #bbb;
+        width:100%;
+    }
+
+    .section--results {
+        text-align:center;
+    }
+
+    .results {
+        margin-top:24px;
     }
 
 }
