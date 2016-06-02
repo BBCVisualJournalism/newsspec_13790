@@ -187,9 +187,14 @@ define(['jquery'], function ($){
             var weaknesses = this.convertObjectToArray(quizData);
             weaknesses.splice(-2, 2); // remove last 2 questions, they score differently
 
+            //remove the 3 strengths
+            weaknesses.sort(function(a, b) {
+                return parseInt(b.score, 10) - parseInt(a.score, 10);
+            }).splice(0, 3);
+
             weaknesses.sort(function(a, b) {
                 return parseInt(a.score, 10) - parseInt(b.score, 10);
-            }).splice(3,14);
+            }).splice(3, 14);
 
             return [
                 weaknesses[0].result_noun,
