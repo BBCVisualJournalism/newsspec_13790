@@ -76,7 +76,7 @@ define(['jquery', 'view'], function ($, View){
 
     var vocab = {
         'results_category_1': 'Olympian',
-        'results_category_2': 'Althlete',
+        'results_category_2': 'Athlete',
         'results_category_3': 'Sporty',
         'results_category_4': 'Lacks focus',
         'results_category_5': 'On standby',
