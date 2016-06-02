@@ -93,9 +93,14 @@ define(['jquery', 'model'], function ($, Model){
             $('#strength_2').text(this.quizResults['strengths'][1]);
             $('#strength_3').text(this.quizResults['strengths'][2]);
 
-            $('#weakness_1').text(this.quizResults['weaknesses'][0]);
-            $('#weakness_2').text(this.quizResults['weaknesses'][1]);
-            $('#weakness_3').text(this.quizResults['weaknesses'][2]);
+            if (model.getAge() === '1'){
+                $('.weaknesses').addClass('hidden');
+            } else {
+                $('#weakness_1').text(this.quizResults['weaknesses'][0]);
+                $('#weakness_2').text(this.quizResults['weaknesses'][1]);
+                $('#weakness_3').text(this.quizResults['weaknesses'][2]);
+                $('.weaknesses').removeClass('hidden');
+            }
 
             $('.button--see-results').addClass('hidden');
             $('.results').removeClass('hidden');

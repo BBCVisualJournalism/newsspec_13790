@@ -117,6 +117,9 @@ define(['jquery'], function ($){
         updateScore: function (questionNumber, scoreValue){
             quizData[questionNumber].score = scoreValue;
         },
+        getAge: function() {
+            return this.age;
+        },
         setAge: function(age) {
             this.age = age;
         },
