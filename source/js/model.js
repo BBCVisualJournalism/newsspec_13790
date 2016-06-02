@@ -5,17 +5,17 @@ define(['jquery'], function ($){
         'question1' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'conscientiousness'
+            'result_noun'       : 'conscientiousness'   // vocab.question_1_result_noun
         },
         'question2' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'perfectionism'
+            'result_noun'       : 'perfectionism'       // vocab.question_2_result_noun
         },
         'question3' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'mental toughness'
+            'result_noun'       : 'mental toughness'    // etc
         },
         'question4' : {
             'score'             : '',
