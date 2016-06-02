@@ -1,4 +1,4 @@
-define(['jquery', 'view'], function ($, View){
+define(['jquery'], function ($){
 
     var quizData =
         {
