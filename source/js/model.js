@@ -5,72 +5,86 @@ define(['jquery'], function ($){
         'question1' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'conscientiousness'   // vocab.question_1_result_noun
+            'result_noun'       : 'conscientiousness',   // vocab.question_1_result_noun
+            'result_priority'   : '1'
         },
         'question2' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'perfectionism'       // vocab.question_2_result_noun
+            'result_noun'       : 'perfectionism',       // vocab.question_2_result_noun
+            'result_priority'   : '1'
         },
         'question3' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'mental toughness'    // etc
+            'result_noun'       : 'mental toughness',    // etc
+            'result_priority'   : '1'
         },
         'question4' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'ego'
+            'result_noun'       : 'ego',
+            'result_priority'   : '0'
         },
         'question5' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'competitiveness'
+            'result_noun'       : 'competitiveness',
+            'result_priority'   : '0'
         },
         'question6' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'proactive approach'
+            'result_noun'       : 'proactive approach',
+            'result_priority'   : '0'
         },
         'question7' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'motivation'
+            'result_noun'       : 'motivation',
+            'result_priority'   : '0'
         },
         'question8' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'task orientation'
+            'result_noun'       : 'task orientation',
+            'result_priority'   : '0'
         },
         'question9' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'self confidence'
+            'result_noun'       : 'self confidence',
+            'result_priority'   : '0'
         },
         'question10' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'focus'
+            'result_noun'       : 'focus',
+            'result_priority'   : '0'
         },
         'question11' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'social support'
+            'result_noun'       : 'social support',
+            'result_priority'   : '0'
         },
         'question12' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'goal-setting'
+            'result_noun'       : 'goal-setting',
+            'result_priority'   : '0'
         },
         'question13' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'age'
+            'result_noun'       : 'age',
+            'result_priority'   : '0'
         },
         'question14' : {
             'score'             : '',
             'answer_text'       : '',
-            'result_noun'       : 'fitness'
+            'result_noun'       : 'fitness',
+            'result_priority'   : '0'
         }
     };
 
@@ -176,9 +190,20 @@ define(['jquery'], function ($){
             var strengths = this.convertObjectToArray(quizData);
             strengths.splice(-2, 2); // remove last 2 questions, they score differently
 
+            // strengths.sort(function(a, b) {
+            //     return parseInt(b.score, 10) - parseInt(a.score, 10);
+            // }).splice(3,14);
+
             strengths.sort(function(a, b) {
-                return parseInt(b.score, 10) - parseInt(a.score, 10);
-            }).splice(3,14);
+                // Sort by count
+                var currentItem = parseInt(b.score, 10) - parseInt(a.score, 10);
+                if(currentItem) return currentItem;
+                // If there is a tie, sort by year
+                var priority = parseInt(b.result_priority, 10) - parseInt(a.result_priority, 10);
+                return priority;
+            }).splice(3, 14);
+
+            console.log(strengths);
 
             return [
                 strengths[0].result_noun,
