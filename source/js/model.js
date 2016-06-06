@@ -190,10 +190,6 @@ define(['jquery'], function ($){
             var strengths = this.convertObjectToArray(quizData);
             strengths.splice(-2, 2); // remove last 2 questions, they score differently
 
-            // strengths.sort(function(a, b) {
-            //     return parseInt(b.score, 10) - parseInt(a.score, 10);
-            // }).splice(3,14);
-
             strengths.sort(function(a, b) {
                 // Sort by count
                 var currentItem = parseInt(b.score, 10) - parseInt(a.score, 10);
