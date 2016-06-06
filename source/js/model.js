@@ -203,8 +203,6 @@ define(['jquery'], function ($){
                 return priority;
             }).splice(3, 14);
 
-            console.log(strengths);
-
             return [
                 strengths[0].result_noun,
                 strengths[1].result_noun,
