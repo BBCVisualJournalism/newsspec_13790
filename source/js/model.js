@@ -193,7 +193,7 @@ define(['jquery'], function ($){
             strengths.sort(function(a, b) {
                 // Sort by count
                 var currentItem = parseInt(b.score, 10) - parseInt(a.score, 10);
-                if(currentItem) return currentItem;
+                if(currentItem) { return currentItem; }
                 // If there is a tie, sort by year
                 var priority = parseInt(b.result_priority, 10) - parseInt(a.result_priority, 10);
                 return priority;
