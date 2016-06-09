@@ -4,85 +4,71 @@ define(['jquery'], function ($){
         {
         'question1' : {
             'score'             : '',
-            'feedback'          : 'Conscientiousness is super important because reasons.', // vocab.question_1_feedback
             'result_noun'       : 'conscientiousness',   // vocab.question_1_result_noun
             'result_priority'   : '1'
         },
         'question2' : {
             'score'             : '',
-            'feedback'          : 'Perfectionism makes you better. You should be perfect.', // vocab.question_2_feedback
             'result_noun'       : 'perfectionism',       // vocab.question_2_result_noun
             'result_priority'   : '1'
         },
         'question3' : {
             'score'             : '',
-            'feedback'          : 'Mental toughness will make you win more. Etc.',
             'result_noun'       : 'mental toughness',    // etc
             'result_priority'   : '1'
         },
         'question4' : {
             'score'             : '',
-            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'ego',
             'result_priority'   : '0'
         },
         'question5' : {
             'score'             : '',
-            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'competitiveness',
             'result_priority'   : '0'
         },
         'question6' : {
             'score'             : '',
-            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'proactive approach',
             'result_priority'   : '0'
         },
         'question7' : {
             'score'             : '',
-            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'motivation',
             'result_priority'   : '0'
         },
         'question8' : {
             'score'             : '',
-            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'task orientation',
             'result_priority'   : '0'
         },
         'question9' : {
             'score'             : '',
-            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'self confidence',
             'result_priority'   : '0'
         },
         'question10' : {
             'score'             : '',
-            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'focus',
             'result_priority'   : '0'
         },
         'question11' : {
             'score'             : '',
-            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'social support',
             'result_priority'   : '0'
         },
         'question12' : {
             'score'             : '',
-            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'goal-setting',
             'result_priority'   : '0'
         },
         'question13' : {
             'score'             : '',
-            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'age',
             'result_priority'   : '0'
         },
         'question14' : {
             'score'             : '',
-            'answer_text'       : 'example feedback for this one as well',
             'result_noun'       : 'fitness',
             'result_priority'   : '0'
         }
@@ -130,10 +116,6 @@ define(['jquery'], function ($){
         },
         updateScore: function (questionNumber, scoreValue){
             quizData[questionNumber].score = scoreValue;
-        },
-        getAnswerFeedback: function(questionNumber){
-            var answerFeedback = quizData[questionNumber].feedback;
-            return answerFeedback;
         },
         getAge: function() {
             return this.age;

@@ -41,11 +41,17 @@ define(['jquery', 'model'], function ($, Model){
         },
         resetQuiz: function() {
             this.questionsAnswered = 0;
-            var $answerButtons = $('div.question').find('button');
+            var $answerButtons = $('div.question').find('button'),
+                $feedbackContainers = $('.question__feedback');
+
             $answerButtons.each(function(){
                 $(this).prop('disabled', false)
                 .removeClass('answer--chosen');
             });
+            $feedbackContainers.each(function(){
+                $(this).addClass('hidden');
+            });
+
         },
         setChosenAnswer: function (chosenButton){
             var currentQuestion = 'question' + $(chosenButton).parent().parent().attr('data-question'),
@@ -62,8 +68,7 @@ define(['jquery', 'model'], function ($, Model){
             }
         },
         showAnswerFeedback: function(questionNumber){
-            var answerFeedback = model.getAnswerFeedback(questionNumber);
-            $('.' + questionNumber + '__feedback').removeClass('hidden').text(answerFeedback);
+            $('.' + questionNumber + '__feedback').removeClass('hidden');
         },
         updateScore: function (questionNumber, score){
             model.updateScore(questionNumber, score);
