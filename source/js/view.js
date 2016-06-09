@@ -51,14 +51,19 @@ define(['jquery', 'model'], function ($, Model){
             var currentQuestion = 'question' + $(chosenButton).parent().parent().attr('data-question'),
                 questionScore   = $(chosenButton).attr('data-score');
 
+            $(chosenButton).addClass('answer--chosen');
             this.updateScore(currentQuestion, questionScore);
             this.disableAnswers(currentQuestion);
-            $(chosenButton).addClass('answer--chosen');
+            this.showAnswerFeedback(currentQuestion);
 
             this.questionsAnswered++;
             if (this.quizIsComplete()){
                 this.enableShowResultButton();
             }
+        },
+        showAnswerFeedback: function(questionNumber){
+            var answerFeedback = model.getAnswerFeedback(questionNumber);
+            $('.' + questionNumber + '__feedback').removeClass('hidden').text(answerFeedback);
         },
         updateScore: function (questionNumber, score){
             model.updateScore(questionNumber, score);

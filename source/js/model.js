@@ -4,85 +4,85 @@ define(['jquery'], function ($){
         {
         'question1' : {
             'score'             : '',
-            'answer_text'       : '',
+            'feedback'          : 'Conscientiousness is super important because reasons.', // vocab.question_1_feedback
             'result_noun'       : 'conscientiousness',   // vocab.question_1_result_noun
             'result_priority'   : '1'
         },
         'question2' : {
             'score'             : '',
-            'answer_text'       : '',
+            'feedback'          : 'Perfectionism makes you better. You should be perfect.', // vocab.question_2_feedback
             'result_noun'       : 'perfectionism',       // vocab.question_2_result_noun
             'result_priority'   : '1'
         },
         'question3' : {
             'score'             : '',
-            'answer_text'       : '',
+            'feedback'          : 'Mental toughness will make you win more. Etc.',
             'result_noun'       : 'mental toughness',    // etc
             'result_priority'   : '1'
         },
         'question4' : {
             'score'             : '',
-            'answer_text'       : '',
+            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'ego',
             'result_priority'   : '0'
         },
         'question5' : {
             'score'             : '',
-            'answer_text'       : '',
+            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'competitiveness',
             'result_priority'   : '0'
         },
         'question6' : {
             'score'             : '',
-            'answer_text'       : '',
+            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'proactive approach',
             'result_priority'   : '0'
         },
         'question7' : {
             'score'             : '',
-            'answer_text'       : '',
+            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'motivation',
             'result_priority'   : '0'
         },
         'question8' : {
             'score'             : '',
-            'answer_text'       : '',
+            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'task orientation',
             'result_priority'   : '0'
         },
         'question9' : {
             'score'             : '',
-            'answer_text'       : '',
+            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'self confidence',
             'result_priority'   : '0'
         },
         'question10' : {
             'score'             : '',
-            'answer_text'       : '',
+            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'focus',
             'result_priority'   : '0'
         },
         'question11' : {
             'score'             : '',
-            'answer_text'       : '',
+            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'social support',
             'result_priority'   : '0'
         },
         'question12' : {
             'score'             : '',
-            'answer_text'       : '',
+            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'goal-setting',
             'result_priority'   : '0'
         },
         'question13' : {
             'score'             : '',
-            'answer_text'       : '',
+            'feedback'          : 'example feedback for this one as well',
             'result_noun'       : 'age',
             'result_priority'   : '0'
         },
         'question14' : {
             'score'             : '',
-            'answer_text'       : '',
+            'answer_text'       : 'example feedback for this one as well',
             'result_noun'       : 'fitness',
             'result_priority'   : '0'
         }
@@ -131,6 +131,10 @@ define(['jquery'], function ($){
         updateScore: function (questionNumber, scoreValue){
             quizData[questionNumber].score = scoreValue;
         },
+        getAnswerFeedback: function(questionNumber){
+            var answerFeedback = quizData[questionNumber].feedback;
+            return answerFeedback;
+        },
         getAge: function() {
             return this.age;
         },
@@ -139,6 +143,18 @@ define(['jquery'], function ($){
         },
         setActivityLevel: function(activityLevel) {
             this.activityLevel = activityLevel;
+        },
+        userIsNotVeryActive: function () {
+            if (this.activityLevel === '3'){
+                return true;
+            }
+            return false;
+        },
+        userIsUnder18: function () {
+            if (this.age === '1'){
+                return true;
+            }
+            return false;
         },
         calculateTotal: function(){
             var total = 0;
@@ -178,23 +194,28 @@ define(['jquery'], function ($){
                 category.text  = vocab.results_category_1_text;
             }
 
-            // dont give under 18s the worst results
-            if (this.age === '1' && category.title === vocab.results_category_5 ){ // 1 is the youngest group, 5 is lowest total
+            if (this.amendUnder18Result(category, vocab) === true){
                 category.title = vocab.results_category_4;
                 category.text  = vocab.results_category_4_text;
             }
 
             return category;
         },
+        amendUnder18Result: function (category, vocab){
+            if ( this.age === '1' && category.title === vocab.results_category_5 ) {
+                return true;
+            }
+            return false;
+        },
         calculateStrengths: function (){
             var strengths = this.convertObjectToArray(quizData);
-            strengths.splice(-2, 2); // remove last 2 questions, they score differently
+            strengths.splice(-2, 2); // last 2 questions score differently, so we remove them
 
             strengths.sort(function(a, b) {
-                // Sort by count
+                // Sort by score (highest scores first)
                 var currentItem = parseInt(b.score, 10) - parseInt(a.score, 10);
                 if(currentItem) { return currentItem; }
-                // If there is a tie, sort by year
+                // If there is a tie, sort by result_priority (highest numbr is highest priority)
                 var priority = parseInt(b.result_priority, 10) - parseInt(a.result_priority, 10);
                 return priority;
             }).splice(3, 14);
@@ -207,15 +228,23 @@ define(['jquery'], function ($){
         },
         calculateWeaknesses: function (){
             var weaknesses = this.convertObjectToArray(quizData);
-            weaknesses.splice(-2, 2); // remove last 2 questions, they score differently
+            weaknesses.splice(-2, 2);
 
-            //remove the 3 strengths
+            //remove the strengths, they can't also be weaknesses
             weaknesses.sort(function(a, b) {
-                return parseInt(b.score, 10) - parseInt(a.score, 10);
+                var currentItem = parseInt(b.score, 10) - parseInt(a.score, 10);
+                if(currentItem) { return currentItem; }
+                var priority = parseInt(b.result_priority, 10) - parseInt(a.result_priority, 10);
+                return priority;
             }).splice(0, 3);
 
             weaknesses.sort(function(a, b) {
-                return parseInt(a.score, 10) - parseInt(b.score, 10);
+                // Sort by score (lowest scores first)
+                var currentItem = parseInt(a.score, 10) - parseInt(b.score, 10);
+                if(currentItem) { return currentItem; }
+                // If there is a tie, sort by result priority (highest numbr is highest priority)
+                var priority = parseInt(b.result_priority, 10) - parseInt(a.result_priority, 10);
+                return priority;
             }).splice(3, 14);
 
             return [
@@ -225,7 +254,6 @@ define(['jquery'], function ($){
             ];
         },
         calculateResult: function(){
-            // get total score
             var total        = this.calculateTotal(),
                 category     = this.calculateCategory(total),
                 strengths    = this.calculateStrengths(),
@@ -237,12 +265,12 @@ define(['jquery'], function ($){
             var categoryTitle = category.title;
             var categoryText = category.text;
 
-            if (this.activityLevel === '3'){ // if not very active
+            if (this.userIsNotVeryActive()){
                 activityText = vocab.activity_2_text;
                 activityUrl  = vocab.activity_2_url;
             }
 
-            if (this.age === '1' && this.activityLevel === '3'){ //if user is under 18, and scores low, make the resuls a little nicer
+            if (this.userIsUnder18() && this.userIsNotVeryActive()){
                 activityText = vocab.activity_1_text;
                 activityUrl  = vocab.activity_1_url;
             }
@@ -258,7 +286,7 @@ define(['jquery'], function ($){
                 'strengths'     : strengths,
                 'weaknesses'    : weaknesses
             };
-            // console.log(quizResults, quizData);
+            console.log('quizData: ', quizData, 'quizResults', quizResults);
             return quizResults;
         }
     };
