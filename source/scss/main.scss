@@ -55,6 +55,10 @@
         @extend %form--radio;
     }
 
+    .section--hero {
+        margin-bottom:28px;
+    }
+
     .hidden {
         display: none;
         visibility: hidden;
