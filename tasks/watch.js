@@ -31,6 +31,13 @@ module.exports = function (grunt) {
                 spawn: false,
                 livereload: true
             }
+        },
+        vocab: {
+            files: ['Gruntfile.js', './source/vocabs/*.json'],
+            tasks: ['create_vocab_module:default'],
+            options: {
+                spawn: false
+            }
         }
     });
 };

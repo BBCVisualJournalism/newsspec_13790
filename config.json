@@ -11,6 +11,7 @@
     "jquery": "../../bower_components/jquery/dist/jquery.min",
     "template_engine": "../../bower_components/template_engine/template_engine",
     "ShareTools": "../../bower_components/sharetools/bin/sharetools.min",
-    "ShareToolsTemplate": "../../bower_components/sharetools/bin/templates/dropdown/template"
+    "ShareToolsTemplate": "../../bower_components/sharetools/bin/templates/dropdown/template",
+    "vocab": "empty:"
   }
 }

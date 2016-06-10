@@ -6,5 +6,5 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('default', ['beforeGrunt', 'css', 'js', 'jsonlint', 'multi_lang_site_generator--default', 'vj_copy', 'clean', 'afterGrunt']);
+    grunt.registerTask('default', ['beforeGrunt', 'css', 'js', 'jsonlint', 'multi_lang_site_generator--default', 'create_vocab_module:default', 'vj_copy', 'clean', 'afterGrunt']);
 };

@@ -1,14 +1,12 @@
-define(['wrapper', 'ShareTools', 'ShareToolsTemplate', 'buttons', 'jquery', 'view'],
-    function (wrapper, ShareTools, ShareTemplate, exampleButtons, $, View) {
+define(['wrapper', 'ShareTools', 'ShareToolsTemplate', 'buttons', 'jquery', 'view', 'vocab'],
+    function (wrapper, ShareTools, ShareTemplate, exampleButtons, $, View, vocab) {
 
     // create the view - to handle inputs, UI changes, etc
     var view = new View();
 
     wrapper.markPageAsLoaded();
 
-    // console.log(wrapper.url().hostUrl, wrapper.url().onbbcdomain, wrapper.url().parameters);
-
-    // exampleButtons.init();
+    // console.log(wrapper.url().hostUrl, wrapper.url().onbbcdomain, wrapper.url().parameters, vocab);
 
     var shareTitle   = 'Share this content',
         shareMessage = 'This is my share message',

@@ -1,7 +1,6 @@
 define(['jquery', 'model'], function ($, Model){
 
     var model = new Model();
-    model.init();
 
     var View = function () {
         this.init();

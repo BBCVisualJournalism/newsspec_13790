@@ -1,6 +1,7 @@
 {
     "hero_title": "Do you have the mentality of an Olympian?",
     "hero_subtitle": "Take our 60 second quiz and see if you have what's needed to win gold, regardless of your sporting ability.",
+    "": "",
     "question_1_result_noun": "conscientiousness",
     "question_1_result_noun_strength": "",
     "question_1_result_noun_weakness": "",
@@ -16,7 +17,6 @@
     "answer_1_property_3": "3",
     "answer_1_property_4": "2",
     "answer_1_property_5": "1",
-    "": "",
     "question_2_result_noun": "perfectionism",
     "question_2_result_noun_strength": "",
     "question_2_result_noun_weakness": "",
@@ -212,8 +212,8 @@
     "results_category_5_text": "It may come as no surprise that you don't seem to have the mental habits of an Olympian but you can still enjoy sport and exercise as a way of keeping active.",
     "strengths_text": "Your main strengths are",
     "weakness_text": "But you could improve your",
-    "activity_1_text": "Find more information on getting involved in sport at BBC Get Inspired (If physically active)",
-    "activity_2_text": "Find more information on getting started with sport and exercise at BBC Make your Move (If not physically active:",
+    "activity_1_text": "Find more information on getting involved in sport at BBC Get Inspired",
+    "activity_2_text": "Find more information on getting started with sport and exercise at BBC Make your Move",
     "activity_1_url": "http://www.bbc.co.uk/sport/get-inspired",
     "activity_2_url": "http://www.bbc.co.uk/programmes/p03m53p1",
     "legacy_ie_message": "You should upgrade to a modern browser."

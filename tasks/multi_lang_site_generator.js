@@ -10,9 +10,14 @@ module.exports = function (grunt) {
         amdModulePaths = {};
 
     for (var key in config.amdModulePaths) {
-        if (config.amdModulePaths[key] !== 'empty:') {
+        if (config.amdModulePaths[key] !== 'empty:' && debug === true) {
             amdModulePaths[key] = config.amdModulePaths[key];
         }
+    }
+
+    amdModulePaths['vocab'] = '../../' + config.services['default'] + '/vocab';
+    if (debug === true){
+        amdModulePaths['vocab'] = '../../' + amdModulePaths['vocab'];
     }
 
     var templateData = _.merge({
@@ -74,6 +79,10 @@ module.exports = function (grunt) {
             customData.mainAppName = templateName;
             customData.inlineCssFilepath = getInlineCssFilepath(service);
 
+            customData.amdModulePaths = JSON.parse(customData.amdModulePaths);
+            customData.amdModulePaths['vocab'] = customData.amdModulePaths['vocab'].replace(config.services['default'], service);
+            customData.amdModulePaths = JSON.stringify(customData.amdModulePaths);
+
             var mergeConfig = {multi_lang_site_generator: {}};
 
             mergeConfig.multi_lang_site_generator[taskName] = {
@@ -103,28 +112,7 @@ module.exports = function (grunt) {
         return templates;
     }
 
-    function getServices() {
-        var fs       = require('fs'),
-            config   = grunt.config.get('config'),
-            services = config.services.others;
-
-        if (services === 'false') {
-            services = [];
-        }
-        else if (services === '*' || services[0] === '*') {
-            var jsonFiles = fs.readdirSync('source/vocabs');
-
-            services = [];
-            jsonFiles.forEach(function (languageName) {
-                // source/vocabs/english.json -> english.json
-                languageName = languageName.replace(/^.*[\\\/]/, '');
-                // english.json -> english
-                languageName = languageName.replace(/\.[^/.]+$/, '');
-                services.push(languageName);
-            });
-        }
-        return services;
-    }
+    var getServices = require('./get_services.js')(grunt);
 
     function defineMultiLangTaskForMultipleIncFilesTranslated() {
         var templates = ['multi_lang_site_generator:build_all_other_sites'];
@@ -137,7 +125,6 @@ module.exports = function (grunt) {
         }
 
         templates = flatten(templates);
-
         return templates;
     }
 

@@ -1,97 +1,77 @@
-define(['jquery'], function ($){
+define(['jquery', 'vocab'], function ($, vocab){
 
     var quizData =
         {
         'question1' : {
             'score'             : '',
-            'result_noun'       : 'conscientiousness',   // vocab.question_1_result_noun
+            'result_noun'       : vocab.question_1_result_noun,
             'result_priority'   : '1'
         },
         'question2' : {
             'score'             : '',
-            'result_noun'       : 'perfectionism',       // vocab.question_2_result_noun
+            'result_noun'       : vocab.question_2_result_noun,
             'result_priority'   : '1'
         },
         'question3' : {
             'score'             : '',
-            'result_noun'       : 'mental toughness',    // etc
+            'result_noun'       : vocab.question_3_result_noun,
             'result_priority'   : '1'
         },
         'question4' : {
             'score'             : '',
-            'result_noun'       : 'ego',
+            'result_noun'       : vocab.question_4_result_noun,
             'result_priority'   : '0'
         },
         'question5' : {
             'score'             : '',
-            'result_noun'       : 'competitiveness',
+            'result_noun'       : vocab.question_5_result_noun,
             'result_priority'   : '0'
         },
         'question6' : {
             'score'             : '',
-            'result_noun'       : 'proactive approach',
+            'result_noun'       : vocab.question_6_result_noun,
             'result_priority'   : '0'
         },
         'question7' : {
             'score'             : '',
-            'result_noun'       : 'motivation',
+            'result_noun'       : vocab.question_7_result_noun,
             'result_priority'   : '0'
         },
         'question8' : {
             'score'             : '',
-            'result_noun'       : 'task orientation',
+            'result_noun'       : vocab.question_8_result_noun,
             'result_priority'   : '0'
         },
         'question9' : {
             'score'             : '',
-            'result_noun'       : 'self confidence',
+            'result_noun'       : vocab.question_9_result_noun,
             'result_priority'   : '0'
         },
         'question10' : {
             'score'             : '',
-            'result_noun'       : 'focus',
+            'result_noun'       : vocab.question_10_result_noun,
             'result_priority'   : '0'
         },
         'question11' : {
             'score'             : '',
-            'result_noun'       : 'social support',
+            'result_noun'       : vocab.question_11_result_noun,
             'result_priority'   : '0'
         },
         'question12' : {
             'score'             : '',
-            'result_noun'       : 'goal-setting',
+            'result_noun'       : vocab.question_12_result_noun,
             'result_priority'   : '0'
         },
         'question13' : {
             'score'             : '',
-            'result_noun'       : 'age',
+            'result_noun'       : 'age', //not visible to user
             'result_priority'   : '0'
         },
         'question14' : {
             'score'             : '',
-            'result_noun'       : 'fitness',
+            'result_noun'       : 'fitness', // not visible to user
             'result_priority'   : '0'
         }
-    };
-
-    var vocab = {
-        'results_category_1': 'Olympian',
-        'results_category_2': 'Athlete',
-        'results_category_3': 'Sporty',
-        'results_category_4': 'Lacks focus',
-        'results_category_5': 'On standby',
-
-        'results_category_1_text': 'Congratulations! You have the mindset needed to compete right at the top level of competitive sport.',
-        'results_category_2_text': 'You have most of the strengths needed to be a good athlete, but you may struggle to make it on to the medals podium.',
-        'results_category_3_text': 'You don\'t have the mentality to compete in Olympic sport, but you would be a great asset to any local sports team.',
-        'results_category_4_text': 'It seems that you\'re don\'t have the mentality of an Olympian, but you could still enjoy sport at a recreational level.',
-        'results_category_5_text': 'It may come as no surprise that you don\'t seem to have the mental habits of an Olympian but you can still enjoy sport and exercise as a way of keeping active.',
-
-        'activity_1_text': 'Find more information on getting involved in sport at BBC Get Inspired',                  // if active
-        'activity_1_url':  'http://www.bbc.co.uk/sport/get-inspired',
-        'activity_2_text': 'Find more information on getting started with sport and exercise at BBC Make your Move',  // if not active
-        'activity_2_url':  'http://www.bbc.co.uk/programmes/p03m53p1'
-
     };
 
     var Model = function (){
@@ -102,7 +82,6 @@ define(['jquery'], function ($){
         init: function(){
             this.age = 0;
             this.activityLevel = 0;
-            return quizData;
         },
         getQuizDataLength: function(){
             var length = Object.keys(quizData).length;

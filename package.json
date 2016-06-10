@@ -5,8 +5,8 @@
   },
   "devDependencies": {
     "bower": "~1.5.3",
-    "developer-scaffold-full-width-wrapper": "bbc/news-vj-developer-scaffold-full-width-wrapper#v2.0.3",
-    "developer-scaffold-iframe-wrapper": "bbc/news-vj-developer-scaffold-iframe-wrapper#2.0.4",
+    "developer-scaffold-full-width-wrapper": "bbc/news-vj-developer-scaffold-full-width-wrapper#v2.0.5",
+    "developer-scaffold-iframe-wrapper": "bbc/news-vj-developer-scaffold-iframe-wrapper#v2.0.5",
     "grunt": "~0.4.0",
     "grunt-cli": "~0.1.11",
     "grunt-cloudfile-to-vocab": "~1.0.1",
