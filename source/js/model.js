@@ -97,10 +97,10 @@ define(['jquery', 'vocab'], function ($, vocab){
             quizData[questionNumber].score = scoreValue;
         },
         getAge: function() {
-            return this.age;
+            return parseInt(this.age, 10);
         },
         setAge: function(age) {
-            this.age = age;
+            this.age = parseInt(age, 10);
         },
         setActivityLevel: function(activityLevel) {
             this.activityLevel = activityLevel;
@@ -155,15 +155,15 @@ define(['jquery', 'vocab'], function ($, vocab){
                 category.text  = vocab.results_category_1_text;
             }
 
-            if (this.amendUnder18Result(category, vocab) === true){
+            if (this.amendKidsResult(category, vocab) === true){
                 category.title = vocab.results_category_4;
                 category.text  = vocab.results_category_4_text;
             }
 
             return category;
         },
-        amendUnder18Result: function (category, vocab){
-            if ( this.age === '1' && category.title === vocab.results_category_5 ) {
+        amendKidsResult: function (category, vocab){
+            if ( this.age < 17 && category.title === vocab.results_category_5 ) {
                 return true;
             }
             return false;
