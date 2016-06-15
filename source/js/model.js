@@ -82,6 +82,7 @@ define(['jquery', 'vocab'], function ($, vocab){
         init: function(){
             this.age = 0;
             this.activityLevel = 0;
+            this.scoresArray = [];
         },
         getQuizDataLength: function(){
             var length = Object.keys(quizData).length;
@@ -93,8 +94,11 @@ define(['jquery', 'vocab'], function ($, vocab){
             });
             return arr;
         },
-        updateScore: function (questionNumber, scoreValue){
+        setScore: function (questionNumber, scoreValue){
             quizData[questionNumber].score = scoreValue;
+        },
+        getScoresArray: function() {
+            return this.scoresArray;
         },
         getAge: function() {
             return parseInt(this.age, 10);
@@ -117,19 +121,29 @@ define(['jquery', 'vocab'], function ($, vocab){
             }
             return false;
         },
+        allScoresAreTheSame: function(){
+            this.scoresArray.splice(-2, 2); // last 2 questions always score zero, so remove them from list
+            var first = this.scoresArray[0];
+            return this.scoresArray.every(function(element) {
+                return element === first;
+            });
+        },
         calculateTotal: function(){
             var total = 0;
+            this.scoresArray = [];
             for (var key in quizData) {
                 if (quizData.hasOwnProperty(key)) {
                     for (var val in quizData[key]) {
                         if (quizData[key].hasOwnProperty(val)) {
                             if (val === 'score'){
                                 total += parseInt(quizData[key][val], 10);
+                                this.scoresArray.push( parseInt(quizData[key][val], 10));
                             }
                         }
                     }
                 }
             }
+
             return total;
         },
         calculateCategory: function (total){
@@ -234,6 +248,11 @@ define(['jquery', 'vocab'], function ($, vocab){
             if (this.userIsUnder18() && this.userIsNotVeryActive()){
                 activityText = vocab.activity_1_text;
                 activityUrl  = vocab.activity_1_url;
+            }
+
+            if (this.allScoresAreTheSame(this.scoresArray)){
+                strengths  = '';
+                weaknesses = '';
             }
 
             quizResults = {
