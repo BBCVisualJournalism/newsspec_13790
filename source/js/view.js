@@ -52,7 +52,7 @@ define(['jquery', 'model'], function ($, Model){
                 $(this).addClass('hidden');
             });
             $('.questions').addClass('hidden');
-            $('input.age--answer').val('');
+            $('input.age--answer').val('35');
         },
         setChosenAnswer: function (chosenButton){
             var currentQuestion = 'question' + $(chosenButton).parent().parent().attr('data-question'),
