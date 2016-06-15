@@ -15,6 +15,11 @@ define(['jquery', 'model'], function ($, Model){
         },
         setEvents: function () {
             var self = this;
+            $('button.age--button').click(function () {
+                var age = parseInt($('input.age--answer').val(), 10);
+                model.setAge(age);
+                $('.questions').removeClass('hidden');
+            });
             $('button.answer').click(function () {
                 self.setChosenAnswer(this);
             });
@@ -25,10 +30,6 @@ define(['jquery', 'model'], function ($, Model){
             $('.button--reset-quiz').click(function () {
                 self.hideResults();
                 self.resetQuiz();
-            });
-            $('button.age--answer').click(function () {
-                var age = $(this).attr('data-age-group');
-                model.setAge(age);
             });
             $('button.activity-level--answer').click(function () {
                 var activityLevel = $(this).attr('data-activity-level');
@@ -50,7 +51,8 @@ define(['jquery', 'model'], function ($, Model){
             $feedbackContainers.each(function(){
                 $(this).addClass('hidden');
             });
-
+            $('.questions').addClass('hidden');
+            $('input.age--answer').val('');
         },
         setChosenAnswer: function (chosenButton){
             var currentQuestion = 'question' + $(chosenButton).parent().parent().attr('data-question'),
@@ -102,7 +104,7 @@ define(['jquery', 'model'], function ($, Model){
             $('#strength_2').text(this.quizResults['strengths'][1]);
             $('#strength_3').text(this.quizResults['strengths'][2]);
 
-            if (model.getAge() === '1'){
+            if (model.getAge() < 17){
                 $('.weaknesses').addClass('hidden');
             } else {
                 $('#weakness_1').text(this.quizResults['weaknesses'][0]);
