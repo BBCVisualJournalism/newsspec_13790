@@ -110,14 +110,15 @@ define(['jquery', 'model'], function ($, Model){
             }
         },
         showResult: function(){
-            var resultTitle        = this.quizResults.categoryTitle,
-                resultText         = this.quizResults.categoryText,
-                resultActivityText = this.quizResults.activityText,
-                resultActivityUrl  = this.quizResults.activityUrl;
+            var resultTitle             = this.quizResults.categoryTitle,
+                resultText              = this.quizResults.categoryText,
+                resultActivityText      = this.quizResults.activityText,
+                resultActivityUrl       = this.quizResults.activityUrl,
+                resultActivityUrlTitle  = this.quizResults.activityUrlTitle;
 
             $('.result--title').text(resultTitle);
             $('.result--text' ).text(resultText);
-            $('.result--activity-text').html('<a href="' + resultActivityUrl + '" target="_top">' + resultActivityText + '</a>');
+            $('.result--activity-text').html(resultActivityText + ' <a href="' + resultActivityUrl + '" target="_top">' + resultActivityUrlTitle + '</a>');
             this.showStrengthsAndWeaknesses();
             $('.button--see-results').addClass('hidden');
             $('.results').removeClass('hidden');

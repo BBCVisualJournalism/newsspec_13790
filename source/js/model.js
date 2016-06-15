@@ -229,25 +229,21 @@ define(['jquery', 'vocab'], function ($, vocab){
             ];
         },
         calculateResult: function(){
-            var total        = this.calculateTotal(),
-                category     = this.calculateCategory(total),
-                strengths    = this.calculateStrengths(),
-                weaknesses   = this.calculateWeaknesses(),
-                activityText = vocab.activity_1_text,
-                activityUrl  = vocab.activity_1_url,
-                quizResults  = {};
+            var total            = this.calculateTotal(),
+                category         = this.calculateCategory(total),
+                strengths        = this.calculateStrengths(),
+                weaknesses       = this.calculateWeaknesses(),
+                activityText     = vocab.activity_1_text,
+                activityUrl      = vocab.activity_1_url,
+                activityUrlTitle = vocab.activity_1_url_title,
+                categoryTitle    = category.title,
+                categoryText     = category.text,
+                quizResults      = {};
 
-            var categoryTitle = category.title;
-            var categoryText = category.text;
-
-            if (this.userIsNotVeryActive()){
-                activityText = vocab.activity_2_text;
-                activityUrl  = vocab.activity_2_url;
-            }
-
-            if (this.userIsUnder18() && this.userIsNotVeryActive()){
-                activityText = vocab.activity_1_text;
-                activityUrl  = vocab.activity_1_url;
+            if (this.userIsNotVeryActive() && this.userIsUnder18() === false){
+                activityText     = vocab.activity_2_text;
+                activityUrl      = vocab.activity_2_url;
+                activityUrlTitle = vocab.activity_2_url_title;
             }
 
             if (this.allScoresAreTheSame(this.scoresArray)){
@@ -256,15 +252,16 @@ define(['jquery', 'vocab'], function ($, vocab){
             }
 
             quizResults = {
-                'categoryTitle' : categoryTitle,
-                'categoryText'  : categoryText,
-                'total'         : total,
-                'age'           : this.age,
-                'activityLevel' : this.activityLevel,
-                'activityText'  : activityText,
-                'activityUrl'   : activityUrl,
-                'strengths'     : strengths,
-                'weaknesses'    : weaknesses
+                'categoryTitle'   : categoryTitle,
+                'categoryText'    : categoryText,
+                'total'           : total,
+                'age'             : this.age,
+                'activityLevel'   : this.activityLevel,
+                'activityText'    : activityText,
+                'activityUrl'     : activityUrl,
+                'activityUrlTitle': activityUrlTitle,
+                'strengths'       : strengths,
+                'weaknesses'      : weaknesses
             };
             console.log('quizData: ', quizData, 'quizResults', quizResults);
             return quizResults;
