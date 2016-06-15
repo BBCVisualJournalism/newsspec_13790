@@ -17,8 +17,20 @@
     button {
         @extend %button--standard;
 
+        color: #444;
+        border: 0;
+
+        &:active, &:pressed {
+            border: 0;
+        }
+
+        &:hover {
+            background-color: #999;
+        }
+
         &:disabled {
             @extend %button--inactive;
+            border: 0;
             width: 100%;
         }
 
@@ -35,11 +47,15 @@
         }
 
         &.button--see-results {
+            color: white;
             font-size: 2em;
             line-height: 2em;
             height: auto;
             margin:20px;
             width: 360px;
+        }
+        &.button--reset-quiz {
+            color: white;
         }
     }
 
@@ -56,7 +72,29 @@
     }
 
     .section--hero {
-        margin-bottom:28px;
+        background-color:#333;
+        padding:40px;
+        margin:0;
+        margin-bottom:40px;
+    }
+
+    .section--hero h1, .section--hero div, .section--hero p, {
+        color: #fff;
+    }
+
+    .section--hero .age--button {
+        background-color: #fff;
+        border: 0;
+        color: #000;
+        display: block;
+        text-align: center;
+        width: 200px;
+    }
+
+    .section--hero .age--input {
+        color: black;
+        width: 75px;
+        text-align: center;
     }
 
     .hidden {
@@ -64,45 +102,45 @@
         visibility: hidden;
     }
 
+    .quiz--body {
+        text-align: center;
+    }
+
     .question {
         background-color: #efefef;
         padding: 18px;
     }
 
+    .question__icon {
+        text-align: center;
+        margin: 0 auto;
+        padding-bottom: 12px;
+    }
+
+    .question__number {}
+
     .question__text {
+        font-size:1.75em;
         font-weight: 800;
+        margin-top:0;
     }
 
     .question__feedback {
-        background-color: #222;
+        background-color: #333;
         color: white;
         padding: 24px;
         text-align: center;
     }
 
-    .age--answer {
-        width: 75px;
-        text-align: center;
-    }
-
-    .answers {
-    }
-
     // higher specifity to override default bbc stylings on disabled buttons
     .questions .answers .answer--chosen {
         background-color: #990000;
-        border: 2px solid #990000;
+        border: 0;
         color: white;
     }
 
-    .answer {
+    .button--answer {
         background-color: #bbb;
-        width:100%;
-    }
-
-    input.answer {
-        background-color: #fff;
-        color: #000;
         width:100%;
     }
 

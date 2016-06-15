@@ -16,11 +16,11 @@ define(['jquery', 'model'], function ($, Model){
         setEvents: function () {
             var self = this;
             $('button.age--button').click(function () {
-                var age = parseInt($('input.age--answer').val(), 10);
+                var age = parseInt($('input.age--input').val(), 10);
                 model.setAge(age);
                 $('.questions').removeClass('hidden');
             });
-            $('button.answer').click(function () {
+            $('.button--answer').click(function () {
                 self.setChosenAnswer(this);
             });
             $('.button--see-results').click(function(){
@@ -48,11 +48,12 @@ define(['jquery', 'model'], function ($, Model){
                 $(this).prop('disabled', false)
                 .removeClass('answer--chosen');
             });
+            $('.age--button').prop('disabled', false);
             $feedbackContainers.each(function(){
                 $(this).addClass('hidden');
             });
             $('.questions').addClass('hidden');
-            $('input.age--answer').val('35');
+            $('input.age--input').val('35');
         },
         setChosenAnswer: function (chosenButton){
             var currentQuestion = 'question' + $(chosenButton).parent().parent().attr('data-question'),
