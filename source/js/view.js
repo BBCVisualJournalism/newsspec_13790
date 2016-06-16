@@ -56,7 +56,7 @@ define(['jquery', 'model'], function ($, Model){
             $('input.age--input').val('35');
         },
         setChosenAnswer: function (chosenButton){
-            var currentQuestion = 'question' + $(chosenButton).parent().parent().attr('data-question'),
+            var currentQuestion = 'question' + $(chosenButton).parents('.question').attr('data-question'),
                 questionScore   = $(chosenButton).attr('data-score');
 
             $(chosenButton).addClass('answer--chosen');

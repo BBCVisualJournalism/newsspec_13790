@@ -2,15 +2,7 @@
 @import "./../../bower_components/news-vj-css-defaults/css/main";
 @import "./../../bower_components/sharetools/bin/templates/dropdown/share.scss"; // Developer: choose your sharetools of choice ('dropdown', 'buttons'). This should match the ShareToolsTemplate value in config.json
 
-// YOUR APPLICATION CSS GOES BELOW
-
 .bbc-news-vj-wrapper {
-
-    // Developer:
-    //  SASS placeholder selectors (i.e. `%button--standard`) mean that the corresponding CSS
-    //  is only pulled into our CSS file if we use `@extend`.
-    //  The CSS for the buttons, radio inputs and checkboxes amount to around 10KB, so only
-    //  include these if you need them.
 
     input[type="submit"],
     input[type="button"],
@@ -22,6 +14,10 @@
 
         &:active, &:pressed {
             border: 0;
+        }
+
+        &:focus {
+            background-color: #999;
         }
 
         &:hover {
@@ -47,14 +43,14 @@
         }
 
         &.button--see-results {
+            background-color: #2E8840;
             color: white;
-            font-size: 2em;
-            line-height: 2em;
-            height: auto;
-            margin:20px;
-            width: 360px;
+            margin: 0 auto;
+            max-width: 300px;
+            width: 100%;
         }
         &.button--reset-quiz {
+            background-color: #2E8840;
             color: white;
         }
     }
@@ -83,18 +79,23 @@
     }
 
     .section--hero .age--button {
-        background-color: #fff;
+        background-color: #2E8840;
         border: 0;
-        color: #000;
+        color: #fff;
         display: block;
         text-align: center;
         width: 200px;
     }
 
     .section--hero .age--input {
-        color: black;
-        width: 75px;
+        color: #000;
+        height: 35px;
         text-align: center;
+        width: 50px;
+    }
+
+    .section--hero .question13 {
+        font-weight:800;
     }
 
     .hidden {
@@ -107,8 +108,8 @@
     }
 
     .question {
-        background-color: #efefef;
-        padding: 18px;
+        margin-bottom: 40px;
+        margin-top: 40px;
     }
 
     .question__icon {
@@ -120,28 +121,75 @@
     .question__number {}
 
     .question__text {
-        font-size:1.75em;
+        font-size:1.4em;
         font-weight: 800;
         margin-top:0;
     }
 
-    .question__feedback {
-        background-color: #333;
-        color: white;
-        padding: 24px;
-        text-align: center;
-    }
-
-    // higher specifity to override default bbc stylings on disabled buttons
     .questions .answers .answer--chosen {
-        background-color: #990000;
+        background-color: #2E8840;
         border: 0;
         color: white;
     }
 
+    .answers {
+        margin: 0 auto;
+        max-width: 300px;
+    }
+
     .button--answer {
         background-color: #bbb;
+        color: #000;
         width:100%;
+    }
+
+    .question__feedback {
+        color: white;
+        margin-top: 30px;
+        margin-bottom: 94px;
+        position: relative;
+    }
+
+    .chevron {
+        position: relative;
+        text-align: center;
+        padding: 6%;
+        padding-top: 9%;
+        top:30px;
+        z-index:0;
+    }
+
+    .chevron:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 50%;
+        background-color: #266AB1;
+        transform: skew(0deg, 6deg);
+        z-index:-10;
+    }
+
+    .chevron:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50%;
+        background-color: #266AB1;
+        transform: skew(0deg, -6deg);
+        z-index:-10;
+    }​
+
+    {} //fixes linter
+
+    .chevron__text {
+        font-size: 1.25em;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
     }
 
     .section--results {
@@ -151,5 +199,4 @@
     .results {
         margin-top:24px;
     }
-
-}
+ }
