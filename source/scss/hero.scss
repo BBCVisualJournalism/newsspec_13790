@@ -2,7 +2,7 @@
 
     section.section--hero {
         background: url('../img/hero_image_dark.jpg?v=#{$version}');
-        background-position: 0 0;
+        background-position: -150px 0;
         background-size: cover;
         background-repeat: no-repeat;
         margin: 0;
@@ -11,6 +11,12 @@
         padding: 0;
         padding-top: 18px;
         top: -50px;
+        @media (min-width: 600px){
+            background-position: -65px 0;
+        }
+        @media (min-width: 720px){
+            background-position: 0 0;
+        }
         @media (min-width: 800px){
             min-height: 600px;
         }

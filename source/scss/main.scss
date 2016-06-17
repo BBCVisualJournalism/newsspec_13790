@@ -134,6 +134,12 @@ html body div.full-frame-scaffold-news-banner {
         color: white;
         margin-bottom: 70px;
         position: relative;
+        @media(min-width: 600px){
+            margin-bottom:96px;
+        }
+        @media(min-width: 1008px){
+            margin-bottom:110px;
+        }
     }
 
     .chevron {
@@ -171,9 +177,9 @@ html body div.full-frame-scaffold-news-banner {
 
     {} //fixes linter
 
-    .chevron__text {
+    .feedback__text {
         font-size: 1.25em;
-        line-height: 1.25em;
+        line-height: 1.4em;
         max-width: 600px;
         margin: 0 auto;
         text-align: center;
