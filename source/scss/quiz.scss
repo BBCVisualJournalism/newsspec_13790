@@ -37,7 +37,16 @@
 
     .answers {
         margin: 0 auto;
-        max-width: 300px;
+        max-width: 280px;
+        @media(min-width: 600px){
+            max-width: 320px;
+        }
+        @media(min-width: 800px){
+            max-width: 380px;
+        }
+        @media(min-width: 1008px){
+            max-width: 400px;
+        }
     }
 
     .button--answer {
