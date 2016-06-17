@@ -2,6 +2,9 @@
 @import "./../../bower_components/news-vj-css-defaults/css/main";
 @import "./../../bower_components/sharetools/bin/templates/dropdown/share.scss"; // Developer: choose your sharetools of choice ('dropdown', 'buttons'). This should match the ShareToolsTemplate value in config.json
 
+
+$version: "0.1.0";
+
 html body div.full-frame-scaffold-news-banner {
     z-index:999;
 }
@@ -72,11 +75,20 @@ html body div.full-frame-scaffold-news-banner {
     }
 
     section.section--hero {
+        background: url('../img/hero_image.jpg?v=#{$version}');
+        background-position: 0 -95px;
+        background-size: cover;
+        background-repeat: no-repeat;
         margin: 0;
         margin-bottom: 40px;
+        min-height: 600px;
         padding: 0;
-        padding-top: 80px;
+        padding-top: 18px;
         top: -50px;
+    }
+
+    .section--hero .hero__titles {
+        max-width: 735px;
     }
 
     .section--hero h1, .section--hero div, .section--hero p, {
@@ -85,8 +97,12 @@ html body div.full-frame-scaffold-news-banner {
     }
 
     .section--hero .hero__heading {
-        font-size: 2em;
+        font-size: 3em;
         line-height: 1.1em;
+    }
+
+    .section--hero .hero__subheading {
+        font-size: 1.25em;
     }
 
     .section--hero .age--button {
@@ -116,6 +132,7 @@ html body div.full-frame-scaffold-news-banner {
         text-align: center;
         height: 70px;
         z-index: 0;
+        top: -140px;
     }
 
     .hero__chevron:before {
@@ -140,9 +157,46 @@ html body div.full-frame-scaffold-news-banner {
         transform: skew(0deg, -6deg);
     }
 
+    .hero__chevron__bottom {
+        height: 90px;
+        margin-bottom: -200px;
+        position: relative;
+        top: -140px;
+        z-index: 0;
+    }
+
+    .hero__chevron__bottom:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 50%;
+        background-color: white;
+        transform: skew(0deg, 6deg);
+        z-index:999;
+    }
+
+    .hero__chevron__bottom:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50%;
+        background-color: white;
+        transform: skew(0deg, -6deg);
+        z-index:999;
+    }
+
     .hidden {
         display: none;
         visibility: hidden;
+    }
+
+    .section--questions {
+        position:relative;
+        z-index:20;
     }
 
     .quiz--body {
