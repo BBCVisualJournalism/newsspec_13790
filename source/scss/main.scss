@@ -2,6 +2,10 @@
 @import "./../../bower_components/news-vj-css-defaults/css/main";
 @import "./../../bower_components/sharetools/bin/templates/dropdown/share.scss"; // Developer: choose your sharetools of choice ('dropdown', 'buttons'). This should match the ShareToolsTemplate value in config.json
 
+html body div.full-frame-scaffold-news-banner {
+    z-index:999;
+}
+
 .bbc-news-vj-wrapper {
 
     input[type="submit"],
@@ -67,20 +71,24 @@
         @extend %form--radio;
     }
 
-    .section--hero {
-        background-color:#333;
-        padding:40px;
-        margin:0;
-        margin-bottom:40px;
+    section.section--hero {
+        margin: 0;
+        margin-bottom: 40px;
+        padding: 0;
+        padding-top: 80px;
+        top: -50px;
     }
 
     .section--hero h1, .section--hero div, .section--hero p, {
         color: #fff;
+        padding: 0 12px 0 12px;
     }
 
     .section--hero .hero__heading {
         font-size: 2em;
+        line-height: 1.1em;
     }
+
     .section--hero .age--button {
         background-color: #2E8840;
         border: 0;
@@ -88,6 +96,7 @@
         display: block;
         text-align: center;
         width: 200px;
+        z-index:999;
     }
 
     .section--hero .age--input {
@@ -95,10 +104,40 @@
         height: 35px;
         text-align: center;
         width: 50px;
+        z-index:999;
     }
 
     .section--hero .question13 {
         font-weight:800;
+    }
+
+    .hero__chevron {
+        position: relative;
+        text-align: center;
+        height: 70px;
+        z-index: 0;
+    }
+
+    .hero__chevron:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 50%;
+        background-color: #2E8840;
+        transform: skew(0deg, 6deg);
+    }
+
+    .hero__chevron:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50%;
+        background-color: #2E8840;
+        transform: skew(0deg, -6deg);
     }
 
     .hidden {
@@ -125,6 +164,7 @@
 
     .question__text {
         font-size:1.4em;
+        line-height: 1.4em;
         font-weight: 800;
         margin-top:0;
     }
@@ -190,6 +230,7 @@
 
     .chevron__text {
         font-size: 1.25em;
+        line-height: 1.25em;
         max-width: 600px;
         margin: 0 auto;
         text-align: center;
