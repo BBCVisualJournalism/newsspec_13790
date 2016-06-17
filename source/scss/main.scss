@@ -6,6 +6,8 @@
 $version: "0.1.0";
 
 @import "hero";
+@import "quiz";
+@import "results";
 
 html body div.full-frame-scaffold-news-banner {
     z-index:999;
@@ -76,120 +78,9 @@ html body div.full-frame-scaffold-news-banner {
         @extend %form--radio;
     }
 
-
-
-
     .hidden {
         display: none;
         visibility: hidden;
     }
 
-    .section--questions {
-        position:relative;
-        z-index:20;
-    }
-
-    .quiz--body {
-        text-align: center;
-    }
-
-    .question {
-        margin-bottom: 40px;
-        margin-top: 40px;
-    }
-
-    .question__icon {
-        text-align: center;
-        margin: 0 auto;
-        padding-bottom: 12px;
-    }
-
-    .question__number {}
-
-    .question__text {
-        font-size:1.4em;
-        line-height: 1.4em;
-        font-weight: 800;
-        margin-top:0;
-    }
-
-    .questions .answers .answer--chosen {
-        background-color: #2E8840;
-        border: 0;
-        color: white;
-    }
-
-    .answers {
-        margin: 0 auto;
-        max-width: 300px;
-    }
-
-    .button--answer {
-        background-color: #bbb;
-        color: #000;
-        width:100%;
-    }
-
-    .question__feedback {
-        color: white;
-        margin-bottom: 70px;
-        position: relative;
-        @media(min-width: 600px){
-            margin-bottom:96px;
-        }
-        @media(min-width: 1008px){
-            margin-bottom:110px;
-        }
-    }
-
-    .chevron {
-        position: relative;
-        text-align: center;
-        padding: 6%;
-        padding-top: 9%;
-        top:30px;
-        z-index:0;
-    }
-
-    .chevron:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 50%;
-        background-color: #266AB1;
-        transform: skew(0deg, 6deg);
-        z-index:-10;
-    }
-
-    .chevron:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 50%;
-        background-color: #266AB1;
-        transform: skew(0deg, -6deg);
-        z-index:-10;
-    }​
-
-    {} //fixes linter
-
-    .feedback__text {
-        font-size: 1.25em;
-        line-height: 1.4em;
-        max-width: 600px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .section--results {
-        text-align:center;
-    }
-
-    .results {
-        margin-top:24px;
-    }
  }
