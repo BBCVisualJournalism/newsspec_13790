@@ -1,4 +1,4 @@
-define(['jquery', 'model'], function ($, Model){
+define(['jquery', 'model', 'wrapper'], function ($, Model, wrapper){
 
     var model = new Model();
 
@@ -22,6 +22,7 @@ define(['jquery', 'model'], function ($, Model){
             });
             $('.button--answer').click(function () {
                 self.setChosenAnswer(this);
+                self.scrollToNext(this);
             });
             $('.button--see-results').click(function(){
                 self.calculateResult();
@@ -68,6 +69,10 @@ define(['jquery', 'model'], function ($, Model){
             if (this.quizIsComplete()){
                 this.enableShowResultButton();
             }
+        },
+        scrollToNext: function (chosenButton){
+            var scrollToPosition = $(chosenButton).parents('.question').find('.question__feedback').offset().top;
+                wrapper.scrollTo({ position: scrollToPosition, duration: 500 });
         },
         showAnswerFeedback: function(questionNumber){
             $('.' + questionNumber + '__feedback').removeClass('hidden');
