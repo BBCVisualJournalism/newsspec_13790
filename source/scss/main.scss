@@ -5,6 +5,8 @@
 
 $version: "0.1.0";
 
+@import "hero";
+
 html body div.full-frame-scaffold-news-banner {
     z-index:999;
 }
@@ -74,120 +76,8 @@ html body div.full-frame-scaffold-news-banner {
         @extend %form--radio;
     }
 
-    section.section--hero {
-        background: url('../img/hero_image.jpg?v=#{$version}');
-        background-position: 0 -95px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin: 0;
-        margin-bottom: 40px;
-        min-height: 600px;
-        padding: 0;
-        padding-top: 18px;
-        top: -50px;
-    }
 
-    .section--hero .hero__titles {
-        max-width: 735px;
-    }
 
-    .section--hero h1, .section--hero div, .section--hero p, {
-        color: #fff;
-        padding: 0 12px 0 12px;
-    }
-
-    .section--hero .hero__heading {
-        font-size: 3em;
-        line-height: 1.1em;
-    }
-
-    .section--hero .hero__subheading {
-        font-size: 1.25em;
-    }
-
-    .section--hero .age--button {
-        background-color: #2E8840;
-        border: 0;
-        color: #fff;
-        display: block;
-        text-align: center;
-        width: 200px;
-        z-index:999;
-    }
-
-    .section--hero .age--input {
-        color: #000;
-        height: 35px;
-        text-align: center;
-        width: 50px;
-        z-index:999;
-    }
-
-    .section--hero .question13 {
-        font-weight:800;
-    }
-
-    .hero__chevron {
-        position: relative;
-        text-align: center;
-        height: 70px;
-        z-index: 0;
-        top: -140px;
-    }
-
-    .hero__chevron:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 50%;
-        background-color: #2E8840;
-        transform: skew(0deg, 6deg);
-    }
-
-    .hero__chevron:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 50%;
-        background-color: #2E8840;
-        transform: skew(0deg, -6deg);
-    }
-
-    .hero__chevron__bottom {
-        height: 90px;
-        margin-bottom: -200px;
-        position: relative;
-        top: -140px;
-        z-index: 0;
-    }
-
-    .hero__chevron__bottom:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 50%;
-        background-color: white;
-        transform: skew(0deg, 6deg);
-        z-index:999;
-    }
-
-    .hero__chevron__bottom:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 50%;
-        background-color: white;
-        transform: skew(0deg, -6deg);
-        z-index:999;
-    }
 
     .hidden {
         display: none;
