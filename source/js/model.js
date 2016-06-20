@@ -110,7 +110,7 @@ define(['jquery', 'vocab'], function ($, vocab){
             this.activityLevel = activityLevel;
         },
         userIsNotVeryActive: function () {
-            if (this.activityLevel === '3'){
+            if (this.activityLevel === '1'){
                 return true;
             }
             return false;
@@ -121,12 +121,30 @@ define(['jquery', 'vocab'], function ($, vocab){
             }
             return false;
         },
-        allScoresAreTheSame: function(){
-            this.scoresArray.splice(-2, 2); // last 2 questions always score zero, so remove them from list
-            var first = this.scoresArray[0];
-            return this.scoresArray.every(function(element) {
-                return element === first;
+        userHasTopResult: function (){
+            var total = this.calculateTotal();
+            return ( total >= vocab.results_category_1_total );
+        },
+        userHasBottomResult: function (){
+            var total = this.calculateTotal();
+            return ( total <= vocab.results_category_5_total );
+        },
+        fiveOrMoreScoresAreTheSame: function(){
+            if (this.scoresArray.length === 14){
+                this.scoresArray.splice(-2, 2); // last 2 questions always score zero, so remove them from list
+            }
+            var counts = {};
+            this.scoresArray.forEach(function(x) {
+                counts[x] = (counts[x] || 0)+1;
             });
+            for (var key in counts) {
+              if (counts.hasOwnProperty(key)) {
+                if (counts[key] > 4){
+                    return true;
+                }
+              }
+            }
+            return false;
         },
         calculateTotal: function(){
             var total = 0;
@@ -144,7 +162,7 @@ define(['jquery', 'vocab'], function ($, vocab){
                 }
             }
 
-            return total;
+            return parseInt(total, 10);
         },
         calculateCategory: function (total){
             var category = { 'title': '', 'text' : ''};
@@ -188,8 +206,8 @@ define(['jquery', 'vocab'], function ($, vocab){
 
 
             if (this.amendKidsResult(category, vocab) === true){
-                category.title = vocab.results_category_4;
-                category.text  = vocab.results_category_4_text;
+                category.title = vocab.results_category_3;
+                category.text  = vocab.results_category_3_text;
             }
 
             return category;
@@ -258,13 +276,13 @@ define(['jquery', 'vocab'], function ($, vocab){
                 categoryText     = category.text,
                 quizResults      = {};
 
-            if (this.userIsNotVeryActive() && this.userIsUnder18() === false){
+            if (this.userIsNotVeryActive() === true && this.userIsUnder18() === false){
                 activityText     = vocab.activity_2_text;
                 activityUrl      = vocab.activity_2_url;
                 activityUrlTitle = vocab.activity_2_url_title;
             }
 
-            if (this.allScoresAreTheSame(this.scoresArray)){
+            if (this.fiveOrMoreScoresAreTheSame(this.scoresArray)){
                 strengths  = '';
                 weaknesses = '';
             }
@@ -281,7 +299,7 @@ define(['jquery', 'vocab'], function ($, vocab){
                 'strengths'       : strengths,
                 'weaknesses'      : weaknesses
             };
-            console.log('quizData: ', quizData, 'quizResults', quizResults);
+            console.log('quizData:', quizData, 'quizResults:', quizResults);
             return quizResults;
         }
     };

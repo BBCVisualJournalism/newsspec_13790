@@ -71,8 +71,12 @@ define(['jquery', 'model', 'wrapper'], function ($, Model, wrapper){
             }
         },
         scrollToNext: function (chosenButton){
-            var scrollToPosition = $(chosenButton).parents('.question').find('.question__feedback').offset().top;
+            var $scrollElem = $(chosenButton).parents('.question').find('.question__feedback');
+
+            if ($scrollElem.length){
+                var scrollToPosition = $scrollElem.offset().top;
                 wrapper.scrollTo({ position: scrollToPosition, duration: 500 });
+            }
         },
         showAnswerFeedback: function(questionNumber){
             $('.' + questionNumber + '__feedback').removeClass('hidden');
@@ -96,22 +100,26 @@ define(['jquery', 'model', 'wrapper'], function ($, Model, wrapper){
             this.quizResults = model.calculateResult();
         },
         showStrengthsAndWeaknesses: function() {
-            if (model.allScoresAreTheSame()){
+            if (model.fiveOrMoreScoresAreTheSame()){
                 $('.weaknesses').addClass('hidden');
                 $('.strengths' ).addClass('hidden');
             } else {
-                $('#strength_1').text(this.quizResults['strengths'][0]);
-                $('#strength_2').text(this.quizResults['strengths'][1]);
-                $('#strength_3').text(this.quizResults['strengths'][2]);
-                $('.strengths' ).removeClass('hidden');
+                if ( model.userHasBottomResult() === false){
+                    $('#strength_1').text(this.quizResults['strengths'][0]);
+                    $('#strength_2').text(this.quizResults['strengths'][1]);
+                    $('#strength_3').text(this.quizResults['strengths'][2]);
+                    $('.strengths' ).removeClass('hidden');
+                }
 
                 if (model.getAge() < 17){
                     $('.weaknesses').addClass('hidden');
                 } else {
-                    $('#weakness_1').text(this.quizResults['weaknesses'][0]);
-                    $('#weakness_2').text(this.quizResults['weaknesses'][1]);
-                    $('#weakness_3').text(this.quizResults['weaknesses'][2]);
-                    $('.weaknesses').removeClass('hidden');
+                    if ( model.userHasTopResult() === false){
+                        $('#weakness_1').text(this.quizResults['weaknesses'][0]);
+                        $('#weakness_2').text(this.quizResults['weaknesses'][1]);
+                        $('#weakness_3').text(this.quizResults['weaknesses'][2]);
+                        $('.weaknesses').removeClass('hidden');
+                    }
                 }
             }
         },
