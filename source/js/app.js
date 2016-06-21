@@ -8,11 +8,12 @@ define(['wrapper', 'ShareTools', 'ShareToolsTemplate', 'buttons', 'jquery', 'vie
 
     // console.log(wrapper.url().hostUrl, wrapper.url().onbbcdomain, wrapper.url().parameters, vocab);
 
-    var shareTitle   = 'Share this content',
-        shareMessage = 'This is my share message',
+    var shareTitle   = vocab.share_title,
+        shareMessage = vocab.share_message,
+
         config = {
             holderEl: '.tmpShareToolsHolder',
-            label: 'Share this page',
+            label: vocab.share_title,
             shareUrl: wrapper.url().hostUrl,
             messages: {
                 twitter: shareMessage,
