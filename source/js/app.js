@@ -1,8 +1,10 @@
-define(['wrapper', 'ShareTools', 'ShareToolsTemplate', 'buttons', 'jquery', 'view', 'vocab'],
-    function (wrapper, ShareTools, ShareTemplate, exampleButtons, $, View, vocab) {
+define(['wrapper', 'ShareTools', 'ShareToolsTemplate', 'istatsLogger', 'jquery', 'view', 'vocab'],
+    function (wrapper, ShareTools, ShareTemplate, istatsLogger, $, View, vocab) {
 
     // create the view - to handle inputs, UI changes, etc
     var view = new View();
+
+    istatsLogger.init();
 
     wrapper.markPageAsLoaded();
 

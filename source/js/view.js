@@ -1,4 +1,4 @@
-define(['jquery', 'model', 'wrapper'], function ($, Model, wrapper){
+define(['jquery', 'model', 'wrapper', 'istatsLogger'], function ($, Model, wrapper, istatsLogger){
 
     var model = new Model();
 
@@ -55,6 +55,8 @@ define(['jquery', 'model', 'wrapper'], function ($, Model, wrapper){
             });
             $('.questions').addClass('hidden');
             $('input.age--input').val('35');
+
+            istatsLogger.reset();
         },
         setChosenAnswer: function (chosenButton){
             var currentQuestion = 'question' + $(chosenButton).parents('.question').attr('data-question'),
