@@ -5,56 +5,61 @@ define(['wrapper', 'jquery', 'utils'], function (wrapper, $, utils) {
             element: $('#section--hero'),
             reached: false
         },
-        'question1': {
+        'quiz_start': {
             element: $('.question1__icon'),
             reached: false
         },
-        'question2': {
+        'question1': {
             element: $('.question2__icon'),
             reached: false
         },
-        'question3': {
+        'question2': {
             element: $('.question3__icon'),
             reached: false
         },
-        'question4': {
+        'question3': {
             element: $('.question4__icon'),
             reached: false
         },
-        'question5': {
+        'question4': {
             element: $('.question5__icon'),
             reached: false
         },
-        'question6': {
+        'question5': {
             element: $('.question6__icon'),
             reached: false
         },
-        'question7': {
+        'question6': {
             element: $('.question7__icon'),
             reached: false
         },
-        'question8': {
+        'question7': {
             element: $('.question8__icon'),
             reached: false
         },
-        'question9': {
+        'question8': {
             element: $('.question9__icon'),
             reached: false
         },
-        'question10': {
+        'question9': {
             element: $('.question10__icon'),
             reached: false
         },
-        'question11': {
+        'question10': {
             element: $('.question11__icon'),
             reached: false
         },
-        'question12': {
+        'question11': {
             element: $('.question12__icon'),
             reached: false
         },
-        'question13': {
-            element: $('.question13__icon'),
+        'question12': {
+            element: $('.question14__icon'),
+            reached: false
+        },
+        // final question listed as 14, cos question 13 moved to hero setion at top of page
+        'final_question': {
+            element: $('.question14 .answers'),
             reached: false
         }
     };
