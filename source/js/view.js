@@ -1,4 +1,4 @@
-define(['jquery', 'model', 'wrapper', 'istatsLogger'], function ($, Model, wrapper, istatsLogger){
+define(['jquery', 'model', 'wrapper', 'istats'], function ($, Model, wrapper, istats){
 
     var model = new Model();
 
@@ -15,8 +15,8 @@ define(['jquery', 'model', 'wrapper', 'istatsLogger'], function ($, Model, wrapp
         },
         setEvents: function () {
             var self = this;
-            $('button.age--button').click(function () {
-                var age = parseInt($('input.age--input').val(), 10);
+            $('button.age-button').click(function () {
+                var age = parseInt($('input.age-input').val(), 10);
                 model.setAge(age);
                 $('.questions').removeClass('hidden');
             });
@@ -49,14 +49,14 @@ define(['jquery', 'model', 'wrapper', 'istatsLogger'], function ($, Model, wrapp
                 $(this).prop('disabled', false)
                 .removeClass('answer--chosen');
             });
-            $('.age--button').prop('disabled', false);
+            $('.age-button').prop('disabled', false);
             $feedbackContainers.each(function(){
                 $(this).addClass('hidden');
             });
             $('.questions').addClass('hidden');
-            $('input.age--input').val('35');
+            $('input.age-input').val('35');
 
-            istatsLogger.reset();
+            istats.reset();
         },
         setChosenAnswer: function (chosenButton){
             var currentQuestion = 'question' + $(chosenButton).parents('.question').attr('data-question'),

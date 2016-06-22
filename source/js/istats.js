@@ -109,7 +109,7 @@ define(['wrapper', 'jquery', 'utils'], function (wrapper, $, utils) {
     };
 
     var init = function () {
-        wrapper.onRawScroll(handleScroll);
+        wrapper.onOptimizedScroll(handleScroll);
         setShareToolsLogging();
     };
 

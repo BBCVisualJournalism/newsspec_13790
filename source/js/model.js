@@ -1,4 +1,4 @@
-define(['jquery', 'vocab'], function ($, vocab){
+define(['vocab'], function (vocab){
 
     var quizData =
         {
@@ -116,7 +116,7 @@ define(['jquery', 'vocab'], function ($, vocab){
             return false;
         },
         userIsUnder18: function () {
-            if (this.age === '1'){
+            if (this.age < 18){
                 return true;
             }
             return false;
@@ -174,32 +174,26 @@ define(['jquery', 'vocab'], function ($, vocab){
                 cat5_total = parseInt(vocab.results_category_5_total, 10);
 
             if (total <= cat5_total) {
-
                 category.title = vocab.results_category_5;
                 category.text  = vocab.results_category_5_text;
 
             } else if (total > cat5_total && total <= cat4_total) {
-
                 category.title = vocab.results_category_4;
                 category.text  = vocab.results_category_4_text;
 
             } else if (total > cat4_total && total <= cat3_total) {
-
                 category.title = vocab.results_category_3;
                 category.text  = vocab.results_category_3_text;
 
             } else if (total > cat3_total && total <= cat2_total) {
-
                 category.title = vocab.results_category_2;
                 category.text  = vocab.results_category_2_text;
 
             } else if (total >= cat1_total) {
-
                 category.title = vocab.results_category_1;
                 category.text  = vocab.results_category_1_text;
 
             } else {
-
                 category.title = vocab.results_category_1;
                 category.text  = vocab.results_category_1_text;
             }

@@ -1,12 +1,12 @@
-define(['wrapper', 'ShareTools', 'ShareToolsTemplate', 'istatsLogger', 'jquery', 'view', 'vocab'],
-    function (wrapper, ShareTools, ShareTemplate, istatsLogger, $, View, vocab) {
+define(['wrapper', 'ShareTools', 'ShareToolsTemplate', 'istats', 'jquery', 'view', 'vocab'],
+    function (wrapper, ShareTools, ShareTemplate, istats, $, View, vocab) {
+
+    $('.bbc-news-vj-wrapper').addClass('bbc-news-vj-wrapper-js-enabled');
 
     // create the view - to handle inputs, UI changes, etc
     var view = new View();
 
-    istatsLogger.init();
-
-    wrapper.markPageAsLoaded();
+    istats.init();
 
     // console.log(wrapper.url().hostUrl, wrapper.url().onbbcdomain, wrapper.url().parameters, vocab);
 
@@ -72,5 +72,7 @@ define(['wrapper', 'ShareTools', 'ShareToolsTemplate', 'istatsLogger', 'jquery',
     //         viewLabel:  true
     //     });
     // }, 2000);
+
+    wrapper.markPageAsLoaded();
 
 });

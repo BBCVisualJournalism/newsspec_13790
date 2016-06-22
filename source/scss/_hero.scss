@@ -1,6 +1,6 @@
-.bbc-news-vj-wrapper {
+ .bbc-news-vj-wrapper {
 
-    section.section--hero {
+    div.section--hero {
         background: url('../img/hero_image_dark.jpg?v=#{$version}');
         background-position: -150px 0;
         background-size: cover;
@@ -10,6 +10,7 @@
         min-height: 530px;
         padding: 0;
         padding-top: 18px;
+        text-align: center;
         top: -50px;
         @media (min-width: 600px){
             background-position: -65px 0;
@@ -22,6 +23,7 @@
         }
 
         .hero__titles {
+            margin: 0 auto;
             max-width: 500px;
             @media (min-width: 800px){
                 max-width: 620px;
@@ -54,26 +56,14 @@
              }
         }
 
-        .age--button {
-            background-color: #2E8840;
-            border: 0;
-            color: #fff;
-            display: block;
-            text-align: center;
-            z-index:999;
+        .question--age {
+            display:none;
         }
 
-        .age--input {
-            color: #000;
-            height: 35px;
-            text-align: center;
-            width: 50px;
-            z-index:999;
-        }
-
-        .question13 {
-            font-weight:800;
-            margin:0;
+        .no-js-message {
+            display: inherit;
+            font-size: 2.5em;
+            font-weight: 800;
         }
 
     }
@@ -150,5 +140,35 @@
         @media (min-width: 1008px){
             height:90px;
         }
+    }
+}
+
+    body div.bbc-news-vj-wrapper-js-enabled .section {
+
+    .no-js-message {
+        display: none;
+    }
+
+    .age-button {
+        background-color: #2E8840;
+        border: 0;
+        color: #fff;
+        display: block;
+        text-align: center;
+        z-index:999;
+    }
+
+    .age-input {
+        color: #000;
+        height: 35px;
+        text-align: center;
+        width: 65px;
+        z-index:999;
+    }
+
+    .question--age {
+        display: inherit;
+        font-weight:800;
+        margin:0;
     }
 }

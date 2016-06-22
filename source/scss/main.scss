@@ -5,9 +5,9 @@
 
 $version: "0.1.1";
 
-@import "hero";
-@import "quiz";
-@import "results";
+@import "_hero";
+@import "_quiz";
+@import "_results";
 
 html body div.full-frame-scaffold-news-banner {
     z-index:999;
@@ -64,18 +64,6 @@ html body div.full-frame-scaffold-news-banner {
             background-color: #2E8840;
             color: white;
         }
-    }
-
-    select {
-        @extend %form--select;
-    }
-
-    input[type="checkbox"] {
-        @extend %form--checkbox;
-    }
-
-    input[type="radio"] {
-        @extend %form--radio;
     }
 
     .hidden {

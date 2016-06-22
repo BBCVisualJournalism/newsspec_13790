@@ -1,6 +1,49 @@
-<section class="section section--questions" id="section--questions">
-    <div id="quiz--body" class="quiz--body">
+<div class="section section--questions" id="section--questions">
+    <div id="quiz-body" class="quiz-body">
         <div class="questions hidden">
+
+        <% for (var i = 1; i < 13; i++) {
+
+            var question_number           = eval('question_' + i + '_number');
+            var question_text             = eval('question_' + i + '_question');
+            var question_highest          = eval('question_' + i + '_highest');
+            var question_high             = eval('question_' + i + '_high');
+            var question_med              = eval('question_' + i + '_med');
+            var question_low              = eval('question_' + i + '_low');
+            var question_lowest           = eval('question_' + i + '_lowest');
+            var question_score_highest    = eval('question_' + i + '_score_highest');
+            var question_score_high       = eval('question_' + i + '_score_high');
+            var question_score_med        = eval('question_' + i + '_score_med');
+            var question_score_low        = eval('question_' + i + '_score_low');
+            var question_score_lowest     = eval('question_' + i + '_score_lowest');
+            var question_feedback         = eval('question_' + i + '_feedback');
+        %>
+
+             <div class="question question<%= i %>" data-question="<%= i %>">
+               <div class="bbc-news-vj-grid-wrapper">
+                    <div class="bbc-news-vj-grid-wrapper__fluid-inner">
+                        <img class="question__icon question<%= i %>__icon" src="<%= pathStatic %>/common/img/medal_<%= i-1 %>_desktop.png" alt="<%= olympic_medal_icon_alt_text %> <%= question_number %>" />
+                        <div class="question__number"><%= question_number %></div>
+                        <p class="question__text"><%= question_text %></p>
+                        <div class="answers">
+                            <button class="button--answer" type="button" data-score="<%= question_score_highest %>"><%= question_highest %></button>
+                            <button class="button--answer" type="button" data-score="<%= question_score_high %>"><%= question_high %></button>
+                            <button class="button--answer" type="button" data-score="<%= question_score_med %>"><%= question_med %></button>
+                            <button class="button--answer" type="button" data-score="<%= question_score_low %>"><%= question_low %></button>
+                            <button class="button--answer" type="button" data-score="<%= question_score_lowest %>"><%= question_lowest %></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="question__feedback question<%= i %>__feedback hidden">
+                    <div class="chevron">
+                        <p class="feedback__text"><%= question_feedback %></p>
+                    </div>
+                </div>
+            </div>
+
+        <% } %>
+
+<!--
             <div class="question question1" data-question="1">
                <div class="bbc-news-vj-grid-wrapper">
                     <div class="bbc-news-vj-grid-wrapper__fluid-inner">
@@ -10,7 +53,7 @@
                         <div class="answers">
                             <button class="button--answer" type="button" data-score="<%= question_1_score_highest %>"> <%= question_1_highest %> </button>
                             <button class="button--answer" type="button" data-score="<%= question_1_score_high %>">    <%= question_1_high %>    </button>
-                            <button class="button--answer" type="button" data-score="<%= question_1_score_med %>">     <%= question_1_mid %>     </button>
+                            <button class="button--answer" type="button" data-score="<%= question_1_score_med %>">     <%= question_1_med %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_1_score_low %>">     <%= question_1_low %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_1_score_lowest %>">  <%= question_1_lowest %>  </button>
                         </div>
@@ -32,7 +75,7 @@
                         <div class="answers">
                             <button class="button--answer" type="button" data-score="<%= question_2_score_highest %>"> <%= question_2_highest %> </button>
                             <button class="button--answer" type="button" data-score="<%= question_2_score_high %>">    <%= question_2_high %>    </button>
-                            <button class="button--answer" type="button" data-score="<%= question_2_score_med %>">     <%= question_2_mid %>     </button>
+                            <button class="button--answer" type="button" data-score="<%= question_2_score_med %>">     <%= question_2_med %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_2_score_low %>">     <%= question_2_low %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_2_score_lowest %>">  <%= question_2_lowest %>  </button>
                         </div>
@@ -54,7 +97,7 @@
                         <div class="answers">
                             <button class="button--answer" type="button" data-score="<%= question_3_score_highest %>"> <%= question_3_highest %> </button>
                             <button class="button--answer" type="button" data-score="<%= question_3_score_high %>">    <%= question_3_high %>    </button>
-                            <button class="button--answer" type="button" data-score="<%= question_3_score_med %>">     <%= question_3_mid %>     </button>
+                            <button class="button--answer" type="button" data-score="<%= question_3_score_med %>">     <%= question_3_med %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_3_score_low %>">     <%= question_3_low %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_3_score_lowest %>">  <%= question_3_lowest %>  </button>
                         </div>
@@ -76,7 +119,7 @@
                         <div class="answers">
                             <button class="button--answer" type="button" data-score="<%= question_4_score_highest %>"> <%= question_4_highest %> </button>
                             <button class="button--answer" type="button" data-score="<%= question_4_score_high %>">    <%= question_4_high %>    </button>
-                            <button class="button--answer" type="button" data-score="<%= question_4_score_med %>">     <%= question_4_mid %>     </button>
+                            <button class="button--answer" type="button" data-score="<%= question_4_score_med %>">     <%= question_4_med %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_4_score_low %>">     <%= question_4_low %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_4_score_lowest %>">  <%= question_4_lowest %>  </button>
                         </div>
@@ -98,7 +141,7 @@
                         <div class="answers">
                             <button class="button--answer" type="button" data-score="<%= question_5_score_highest %>"> <%= question_5_highest %> </button>
                             <button class="button--answer" type="button" data-score="<%= question_5_score_high %>">    <%= question_5_high %>    </button>
-                            <button class="button--answer" type="button" data-score="<%= question_5_score_med %>">     <%= question_5_mid %>     </button>
+                            <button class="button--answer" type="button" data-score="<%= question_5_score_med %>">     <%= question_5_med %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_5_score_low %>">     <%= question_5_low %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_5_score_lowest %>">  <%= question_5_lowest %>  </button>
                         </div>
@@ -120,7 +163,7 @@
                         <div class="answers">
                             <button class="button--answer" type="button" data-score="<%= question_6_score_highest %>"> <%= question_6_highest %> </button>
                             <button class="button--answer" type="button" data-score="<%= question_6_score_high %>">    <%= question_6_high %>    </button>
-                            <button class="button--answer" type="button" data-score="<%= question_6_score_med %>">     <%= question_6_mid %>     </button>
+                            <button class="button--answer" type="button" data-score="<%= question_6_score_med %>">     <%= question_6_med %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_6_score_low %>">     <%= question_6_low %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_6_score_lowest %>">  <%= question_6_lowest %>  </button>
                         </div>
@@ -142,7 +185,7 @@
                         <div class="answers">
                             <button class="button--answer" type="button" data-score="<%= question_7_score_highest %>"> <%= question_7_highest %> </button>
                             <button class="button--answer" type="button" data-score="<%= question_7_score_high %>">    <%= question_7_high %>    </button>
-                            <button class="button--answer" type="button" data-score="<%= question_7_score_med %>">     <%= question_7_mid %>     </button>
+                            <button class="button--answer" type="button" data-score="<%= question_7_score_med %>">     <%= question_7_med %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_7_score_low %>">     <%= question_7_low %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_7_score_lowest %>">  <%= question_7_lowest %>  </button>
                         </div>
@@ -164,7 +207,7 @@
                         <div class="answers">
                             <button class="button--answer" type="button" data-score="<%= question_8_score_highest %>"> <%= question_8_highest %> </button>
                             <button class="button--answer" type="button" data-score="<%= question_8_score_high %>">    <%= question_8_high %>    </button>
-                            <button class="button--answer" type="button" data-score="<%= question_8_score_med %>">     <%= question_8_mid %>     </button>
+                            <button class="button--answer" type="button" data-score="<%= question_8_score_med %>">     <%= question_8_med %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_8_score_low %>">     <%= question_8_low %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_8_score_lowest %>">  <%= question_8_lowest %>  </button>
                         </div>
@@ -186,7 +229,7 @@
                         <div class="answers">
                             <button class="button--answer" type="button" data-score="<%= question_9_score_highest %>"> <%= question_9_highest %> </button>
                             <button class="button--answer" type="button" data-score="<%= question_9_score_high %>">    <%= question_9_high %>    </button>
-                            <button class="button--answer" type="button" data-score="<%= question_9_score_med %>">     <%= question_9_mid %>     </button>
+                            <button class="button--answer" type="button" data-score="<%= question_9_score_med %>">     <%= question_9_med %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_9_score_low %>">     <%= question_9_low %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_9_score_lowest %>">  <%= question_9_lowest %>  </button>
                         </div>
@@ -208,7 +251,7 @@
                         <div class="answers">
                             <button class="button--answer" type="button" data-score="<%= question_10_score_highest %>"> <%= question_10_highest %> </button>
                             <button class="button--answer" type="button" data-score="<%= question_10_score_high %>">    <%= question_10_high %>    </button>
-                            <button class="button--answer" type="button" data-score="<%= question_10_score_med %>">     <%= question_10_mid %>     </button>
+                            <button class="button--answer" type="button" data-score="<%= question_10_score_med %>">     <%= question_10_med %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_10_score_low %>">     <%= question_10_low %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_10_score_lowest %>">  <%= question_10_lowest %>  </button>
                         </div>
@@ -230,7 +273,7 @@
                         <div class="answers">
                             <button class="button--answer" type="button" data-score="<%= question_11_score_highest %>"> <%= question_11_highest %> </button>
                             <button class="button--answer" type="button" data-score="<%= question_11_score_high %>">    <%= question_11_high %>    </button>
-                            <button class="button--answer" type="button" data-score="<%= question_11_score_med %>">     <%= question_11_mid %>     </button>
+                            <button class="button--answer" type="button" data-score="<%= question_11_score_med %>">     <%= question_11_med %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_11_score_low %>">     <%= question_11_low %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_11_score_lowest %>">  <%= question_11_lowest %>  </button>
                         </div>
@@ -252,7 +295,7 @@
                         <div class="answers">
                             <button class="button--answer" type="button" data-score="<%= question_12_score_highest %>"> <%= question_12_highest %> </button>
                             <button class="button--answer" type="button" data-score="<%= question_12_score_high %>">    <%= question_12_high %>    </button>
-                            <button class="button--answer" type="button" data-score="<%= question_12_score_med %>">     <%= question_12_mid %>     </button>
+                            <button class="button--answer" type="button" data-score="<%= question_12_score_med %>">     <%= question_12_med %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_12_score_low %>">     <%= question_12_low %>     </button>
                             <button class="button--answer" type="button" data-score="<%= question_12_score_lowest %>">  <%= question_12_lowest %>  </button>
                         </div>
@@ -263,24 +306,25 @@
                         <p class="feedback__text"><%= question_12_feedback %></p>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- question 13 moved to hero section -->
 
             <div class="question question14" data-question="14">
                <div class="bbc-news-vj-grid-wrapper">
                     <div class="bbc-news-vj-grid-wrapper__fluid-inner">
-                        <img class="question__icon question14__icon" src="<%= pathStatic %>/common/img/medal_12_desktop.png" alt="<%= olympic_medal_icon_alt_text %> <%= question_13_number %>" />
+                        <img class="question__icon question14__icon" src="<%= pathStatic %>/common/img/medal_12_desktop.png" alt="<%= olympic_medal_icon_alt_text %> <%= question_14_number %>" />
                         <div class="question__number"><%= question_14_number %></div>
                         <p class="question__text"><%= question_14_question %></p>
                         <div class="answers">
                             <button class="button--answer activity-level--answer" type="button" data-score="0" data-activity-level="3"> <%= question_14_high %> </button>
-                            <button class="button--answer activity-level--answer" type="button" data-score="0" data-activity-level="2"> <%= question_14_mid %>  </button>
+                            <button class="button--answer activity-level--answer" type="button" data-score="0" data-activity-level="2"> <%= question_14_med %>  </button>
                             <button class="button--answer activity-level--answer" type="button" data-score="0" data-activity-level="1"> <%= question_14_low %>  </button>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-</section>
+</div>
