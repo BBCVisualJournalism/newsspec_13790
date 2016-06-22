@@ -47,6 +47,10 @@ define(['jquery', 'model', 'wrapper', 'istats'], function ($, Model, wrapper, is
                 $('.question1 .button--answer')[0].focus();
             }
         },
+        scrollToTop: function(){
+            var scrollToPosition = $('.section--hero').offset().top;
+            wrapper.scrollTo({ position: scrollToPosition, duration: 500 });
+        },
         hideResults: function() {
             $('.results').addClass('hidden');
         },
@@ -55,6 +59,7 @@ define(['jquery', 'model', 'wrapper', 'istats'], function ($, Model, wrapper, is
             var $answerButtons = $('div.question').find('button'),
                 $feedbackContainers = $('.question__feedback');
 
+            this.scrollToTop();
             $answerButtons.each(function(){
                 $(this).prop('disabled', false)
                 .removeClass('answer--chosen');

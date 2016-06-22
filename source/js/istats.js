@@ -76,7 +76,7 @@ define(['wrapper', 'jquery', 'utils'], function (wrapper, $, utils) {
                             actionType: '' + key + '-reached',
                             viewLabel: true
                         };
-                        console.log(istatsInfo);
+                        // console.log(istatsInfo);
                         wrapper.callIstats(istatsInfo);
                     }
                 }
@@ -102,7 +102,7 @@ define(['wrapper', 'jquery', 'utils'], function (wrapper, $, utils) {
                 actionType: 'user-shared',
                 viewLabel: shareToolsIndex
             };
-            console.log(istatsInfo);
+            // console.log(istatsInfo);
             wrapper.callIstats(istatsInfo);
         });
     };
