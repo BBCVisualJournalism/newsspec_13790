@@ -18,11 +18,11 @@ define(['jquery', 'model', 'wrapper', 'istats'], function ($, Model, wrapper, is
             $('button.age-button').click(function () {
                 var age = parseInt($('input.age-input').val(), 10);
                 model.setAge(age);
-                $('.questions').removeClass('hidden');
+                self.scrollToQuiz();
             });
             $('.button--answer').click(function () {
                 self.setChosenAnswer(this);
-                self.scrollToNext(this);
+                self.scrollToNextQuestion(this);
             });
             $('.button--see-results').click(function(){
                 self.calculateResult();
@@ -36,6 +36,16 @@ define(['jquery', 'model', 'wrapper', 'istats'], function ($, Model, wrapper, is
                 var activityLevel = $(this).attr('data-activity-level');
                 model.setActivityLevel(activityLevel);
             });
+        },
+        scrollToQuiz: function(){
+            $('.questions').removeClass('hidden');
+            var $scrollElem = $('.questions');
+
+            if ($scrollElem.length){
+                var scrollToPosition = $scrollElem.offset().top;
+                wrapper.scrollTo({ position: scrollToPosition, duration: 500 });
+                $('.question1 .button--answer')[0].focus();
+            }
         },
         hideResults: function() {
             $('.results').addClass('hidden');
@@ -72,7 +82,7 @@ define(['jquery', 'model', 'wrapper', 'istats'], function ($, Model, wrapper, is
                 this.enableShowResultButton();
             }
         },
-        scrollToNext: function (chosenButton){
+        scrollToNextQuestion: function (chosenButton){
             var $scrollElem = $(chosenButton).parents('.question').find('.question__feedback');
 
             if ($scrollElem.length){

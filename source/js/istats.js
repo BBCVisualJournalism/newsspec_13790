@@ -91,7 +91,6 @@ define(['wrapper', 'jquery', 'utils'], function (wrapper, $, utils) {
                 sectionElements[key].reached = false;
             }
         }
-        console.log(sectionElements);
     };
 
     var setShareToolsLogging = function () {
