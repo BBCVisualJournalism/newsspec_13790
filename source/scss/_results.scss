@@ -53,6 +53,9 @@
         display: block;
         font-weight: 800;
         margin: 0 0 10px 0;
+        @media (min-width: 600px){
+            display: inline;
+        }
     }
 
     .result__banner__text {}
@@ -115,6 +118,9 @@
             display: block;
             font-size: 0.85em;
             padding-top: 10px;
+        }
+        @media(min-width: 1008px){
+            font-size: 1em;
         }
     }
 
