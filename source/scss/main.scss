@@ -66,6 +66,10 @@ html body div.full-frame-scaffold-news-banner {
         }
     }
 
+    .bold-text {
+        font-weight: 800;
+    }
+
     .hidden {
         display: none;
         visibility: hidden;
@@ -76,6 +80,7 @@ html body div.full-frame-scaffold-news-banner {
     }
 
     div.ns_creditsHolder {
+        clear:both;
         position: relative;
         z-index: 9999;
     }

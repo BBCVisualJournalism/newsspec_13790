@@ -4,8 +4,180 @@
         text-align:center;
     }
 
-    .results {
+    .result {
+    }
+
+    .result__title {
+        line-height: 1em;
+        margin-bottom: 2.75em;
         margin-top:24px;
     }
 
+    .result__title__text-intro {
+        font-size:1.25em;
+        margin: 0;
+        margin-bottom:8px;
+    }
+
+    .result__title__text {
+        font-size:2em;
+        margin-top:0;
+    }
+
+    .result__banner {
+        float: left;
+        width: 44%;
+        @media (min-width: 450px){
+            width:50%;
+        }
+        @media (min-width: 600px){
+            float:none;
+            width:100%;
+        }
+    }
+
+    .result__banner__icon {
+        height: 120px;
+        padding-bottom: 20px;
+    }
+
+    .result__banner__icon img {
+        height: 100px;
+        margin: 0 auto;
+        max-width: 145px;
+    }
+
+    .result__banner__reaction {
+        display: block;
+        font-weight: 800;
+        margin: 0 0 10px 0;
+    }
+
+    .result__banner__text {}
+
+    .result__banner__categories {
+        float: right;
+        width: 56%;
+        padding-left: 14px;
+        text-align: left;
+        @media (min-width: 450px){
+            padding-left: 20px;
+            width:50%;
+        }
+        @media (min-width: 600px){
+            display: table;
+            table-layout: fixed;
+            float: none;
+            width: 100%;
+            padding: 0;
+            margin: 20px 0 0 0;
+        }
+    }
+
+    .result__banner__categories__icon {
+        padding-bottom: 16px;
+        vertical-align: bottom;
+        @media (min-width: 600px){
+            display: table-cell;
+            text-align: center;
+            padding: 16px 8px 0 0;
+        }
+    }
+
+    .result__banner__categories__icon img {
+        display: inline-block;
+        max-width: 45px;
+        opacity: 0.5;
+        vertical-align: middle;
+        margin-right: 5px;
+        @media(min-width:600px){
+            display: block;
+            max-width:40px;
+            max-height:40px;
+            opacity: .5;
+            margin: 0 auto;
+        }
+    }
+
+    .result__banner__categories__icon__text {
+        color: #999;
+        display:inline;
+        font-weight: 800;
+        vertical-align: middle;
+        white-space: nowrap;
+        @media(min-width: 600px){
+            display: block;
+            font-size: 0.85em;
+            padding-top: 10px;
+        }
+    }
+
+    .result .result__banner__categories .result__banner__categories__icon--selected {
+        .result__banner__categories__icon__text {
+            color: black;
+        }
+
+        img {
+            opacity: 1.0;
+        }
+    }
+
+    .result__share {
+        clear: both;
+        display: block;
+    }
+
+    .result__strengths-weaknesses {
+        clear: both;
+        display: block;
+    }
+
+    .strengths {
+        margin: 0 auto;
+        padding-top:24px;
+        width: 80%;
+        @media (min-width: 600px){
+            width:100%;
+        }
+    }
+
+    .strength {
+        font-weight: 800;
+    }
+
+    .weaknesses {
+        margin: 0 auto;
+        padding-top: 24px;
+        width: 80%;
+        @media (min-width: 600px){
+            width:100%;
+        }
+    }
+
+    .weakness {
+        font-weight: 800;
+    }
+
+    .result__graph {
+        clear: both;
+        display: block;
+    }
+
+    .result__graph__header {}
+
+    .result__graph__body {}
+
+    .result__activity-text {
+        clear: both;
+        display: block;
+    }
+
+    button {
+        @extend %button--standard;
+        &.button--reset-quiz {
+            background-color: #2E8840;
+            color: white;
+        }
+    }
 }
+
