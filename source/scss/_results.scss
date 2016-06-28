@@ -26,8 +26,8 @@
 
     .result__banner {
         float: left;
-        width: 44%;
-        @media (min-width: 450px){
+        width: 50%;
+        @media (min-width: 425px){
             width:50%;
         }
         @media (min-width: 600px){
@@ -37,7 +37,7 @@
     }
 
     .result__banner__icon {
-        padding-bottom: 20px;
+        padding-bottom: 12px;
     }
 
     .result__banner__icon img {
@@ -52,7 +52,7 @@
     .result__banner__reaction {
         display: block;
         font-weight: 800;
-        margin: 0 0 10px 0;
+        margin: 0 0 4px 0;
         @media (min-width: 600px){
             display: inline;
         }
@@ -61,17 +61,15 @@
     .result__banner__text {}
 
     .result__banner__categories {
-        float: right;
-        width: 56%;
-        padding-left: 14px;
-        text-align: left;
-        @media (min-width: 450px){
-            padding-left: 20px;
-            width:50%;
+        float: left;
+        width: 47%;
+        @media (min-width: 425px){
+            width: 50%;
+            text-align: left;
+            padding-left: 10px;
         }
         @media (min-width: 600px){
             display: table;
-            table-layout: fixed;
             float: none;
             width: 100%;
             padding: 0;
@@ -96,9 +94,11 @@
     .result__banner__categories__icon img {
         display: inline-block;
         max-width: 45px;
-        opacity: 0.5;
+        opacity: .5;
         vertical-align: middle;
-        margin-right: 5px;
+        @media(min-width:425px){
+            margin-right: 4px;
+        }
         @media(min-width:600px){
             display: block;
             max-width:40px;
@@ -114,10 +114,12 @@
 
     .result__banner__categories__icon__text {
         color: #999;
-        display:inline;
+        display:block;
         font-weight: 800;
-        vertical-align: middle;
         white-space: nowrap;
+        @media(min-width: 425px){
+            display:inline;
+        }
         @media(min-width: 600px){
             display: block;
             font-size: 0.85em;
