@@ -52,6 +52,7 @@ define(['jquery', 'model', 'wrapper', 'istats'], function ($, Model, wrapper, is
             wrapper.scrollTo({ position: scrollToPosition, duration: 500 });
         },
         hideResults: function() {
+            $('.result__title').addClass('hidden');
             $('.result').addClass('hidden');
         },
         resetQuiz: function() {
@@ -164,6 +165,7 @@ define(['jquery', 'model', 'wrapper', 'istats'], function ($, Model, wrapper, is
             $('.result__activity-text').html(resultActivityText + ' <a href="' + resultActivityUrl + '" target="_top">' + resultActivityUrlTitle + '</a>');
             this.showStrengthsAndWeaknesses();
             $('.button--see-results').addClass('hidden');
+            $('.result__title').removeClass('hidden');
             $('.result').removeClass('hidden');
         }
     };
