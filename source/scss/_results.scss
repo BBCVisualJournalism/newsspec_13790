@@ -140,14 +140,31 @@
         }
     }
 
+    .share__container {
+        margin:20px;
+    }
+
+    .result__share-header {
+        display:block;
+        margin-bottom: 10px;
+        @media(min-width: 600px){
+            display: inline;
+            margin-right:8px;
+        }
+    }
+
     .result__share {
         clear: both;
         display: block;
-        margin-top: 20px;
         .share__overlay {
             z-index: 9999;
         }
+        @media(min-width:600px){
+            display: inline-block;
+            vertical-align: middle;
+        }
     }
+
     .result__strengths-weaknesses {
         clear: both;
         display: block;
@@ -155,7 +172,6 @@
 
     .strengths {
         margin: 0 auto;
-        padding-top:24px;
         width: 80%;
         @media (min-width: 600px){
             width:100%;
