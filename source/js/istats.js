@@ -107,6 +107,8 @@ define(['wrapper', 'jquery', 'utils'], function (wrapper, $, utils) {
     };
 
     var reset = function () {
+        resultsReached = false;
+        heroReached = false;
         for (var key in sectionElements) {
             if (sectionElements[key].reached) {
                 sectionElements[key].reached = false;
@@ -116,14 +118,12 @@ define(['wrapper', 'jquery', 'utils'], function (wrapper, $, utils) {
 
     var setShareToolsLogging = function () {
         $('.share__tool').on('click', function () {
-            var parent = $(this).parents('.bbc-news-vj-sharetools');
-            var shareToolsIndex = parent.attr('id').split('--')[1];
             var istatsInfo = {
                 actionName: 'newsspec-interaction',
                 actionType: 'user-shared',
-                viewLabel: shareToolsIndex
+                viewLabel: 'result-shared'
             };
-            // console.log(istatsInfo);
+            console.log(istatsInfo);
             wrapper.callIstats(istatsInfo);
         });
     };

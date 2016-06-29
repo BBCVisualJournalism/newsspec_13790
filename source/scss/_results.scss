@@ -143,8 +143,10 @@
     .result__share {
         clear: both;
         display: block;
+        .share__overlay {
+            z-index: 9999;
+        }
     }
-
     .result__strengths-weaknesses {
         clear: both;
         display: block;

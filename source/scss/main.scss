@@ -8,6 +8,7 @@ $version: "0.1.1";
 @import "_hero";
 @import "_quiz";
 @import "_results";
+@import "_share";
 
 html body div.full-frame-scaffold-news-banner {
     z-index:999;
@@ -82,7 +83,7 @@ html body div.full-frame-scaffold-news-banner {
     div.ns_creditsHolder {
         clear:both;
         position: relative;
-        z-index: 9999;
+        z-index: 9998;
     }
 
  }
