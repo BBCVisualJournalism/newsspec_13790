@@ -97,7 +97,7 @@
         height: 100%;
         width: 50%;
         transform: skew(0deg, 6deg);
-        @media (min-width:425px){
+        @media (min-width:430px){
             background-size: 400%;
         }
         @media (min-width:600px){
@@ -117,7 +117,7 @@
         height: 100%;
         width: 50%;
         transform: skew(0deg, -6deg);
-        @media (min-width:425px){
+        @media (min-width:430px){
             background-position: 86% 100%;
             background-size: 400%;
         }
