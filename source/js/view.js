@@ -1,4 +1,4 @@
-define(['jquery', 'ShareTools', 'ShareToolsTemplate', 'model', 'wrapper', 'istats', 'vocab'],
+define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istats', 'vocab'],
     function ($, ShareTools, ShareTemplate, Model, wrapper, istats, vocab){
 
     var model = new Model();
@@ -171,47 +171,8 @@ define(['jquery', 'ShareTools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             $('.result__title').removeClass('hidden');
             $('.result').removeClass('hidden');
         },
-        addResultsToShareInfo: function (title, text, icon, reaction){
-           var shareTitle       = vocab.share_intro + ' ' + title,
-                shareMessage    = text,
-                shareIcon       = icon;
-
-                config = {
-                    holderEl: '.result__share',
-                    label: vocab.share_title,
-                    shareUrl: wrapper.url().hostUrl,
-                    messages: {
-                        twitter: shareTitle + '\r\n' + shareMessage,
-                        facebook: {
-                            title:       shareTitle,
-                            description: shareMessage,
-                            image:       '../common/img/' + shareIcon // optional
-                        },
-                        email: {
-                            subject: shareTitle,
-                            message: shareMessage
-                        },
-                        app: {
-                            shareEndpoint: 'bbcnewsapp://visualjournalism/share',
-                            popup: false,
-                            properties: {
-                                title: shareTitle,
-                                text: shareMessage
-                            }
-                        }
-                    },
-                    template: ShareTemplate
-                };
-
-            if (wrapper.wrapper === 'app') {
-                // we often want to deliver a different share view to the app
-                config.template = '\
-                    <div class="share ns__share ns__share-dropdown ns__share--app">\
-                        <a class="share__button share__png_icon share__tool--network" data-network="app" href="#"></a>\
-                    </div>';
-            }
-
-            var shareObject = new ShareTools(config);
+        addResultsToShareInfo: function (title, message, icon, reaction){
+            new ShareTools('.result__share', title, message, icon);
         }
     };
 
