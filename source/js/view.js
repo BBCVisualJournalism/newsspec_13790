@@ -1,4 +1,5 @@
-define(['jquery', 'model', 'wrapper', 'istats'], function ($, Model, wrapper, istats){
+define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istats', 'vocab'],
+    function ($, ShareTools, ShareTemplate, Model, wrapper, istats, vocab){
 
     var model = new Model();
 
@@ -52,7 +53,8 @@ define(['jquery', 'model', 'wrapper', 'istats'], function ($, Model, wrapper, is
             wrapper.scrollTo({ position: scrollToPosition, duration: 500 });
         },
         hideResults: function() {
-            $('.results').addClass('hidden');
+            $('.result__title').addClass('hidden');
+            $('.result').addClass('hidden');
         },
         resetQuiz: function() {
             this.questionsAnswered = 0;
@@ -67,6 +69,9 @@ define(['jquery', 'model', 'wrapper', 'istats'], function ($, Model, wrapper, is
             $('.age-button').prop('disabled', false);
             $feedbackContainers.each(function(){
                 $(this).addClass('hidden');
+            });
+            $('.result__banner__categories__icon').each(function(){
+                $(this).removeClass('result__banner__categories__icon--selected');
             });
             $('.questions').addClass('hidden');
             $('input.age-input').val('35');
@@ -143,16 +148,31 @@ define(['jquery', 'model', 'wrapper', 'istats'], function ($, Model, wrapper, is
         showResult: function(){
             var resultTitle             = this.quizResults.categoryTitle,
                 resultText              = this.quizResults.categoryText,
+                resultIcon              = this.quizResults.categoryIcon,
+                resultReaction          = this.quizResults.categoryReaction,
+                resultCategoryNumber    = this.quizResults.categoryNumber,
+                resultCategorySelected  = '.result__banner__categories__icon--' + resultCategoryNumber,
                 resultActivityText      = this.quizResults.activityText,
                 resultActivityUrl       = this.quizResults.activityUrl,
                 resultActivityUrlTitle  = this.quizResults.activityUrlTitle;
 
-            $('.result--title').text(resultTitle);
-            $('.result--text' ).text(resultText);
-            $('.result--activity-text').html(resultActivityText + ' <a href="' + resultActivityUrl + '" target="_top">' + resultActivityUrlTitle + '</a>');
+            this.addResultsToShareInfo(resultTitle, resultText, resultIcon, resultReaction);
+
+            $('.result__title__text').text(resultTitle);
+            $('.result__banner__icon').html('<img border="0" src="../common/img/' + resultIcon + '" alt="" />');
+            $('.result__banner__reaction').text(resultReaction);
+            $('.result__banner__text').text(resultText);
+
+            $(resultCategorySelected).addClass('result__banner__categories__icon--selected');
+
+            $('.result__activity-text').html(resultActivityText + ' <a href="' + resultActivityUrl + '" target="_top">' + resultActivityUrlTitle + '</a>');
             this.showStrengthsAndWeaknesses();
             $('.button--see-results').addClass('hidden');
-            $('.results').removeClass('hidden');
+            $('.result__title').removeClass('hidden');
+            $('.result').removeClass('hidden');
+        },
+        addResultsToShareInfo: function (title, message, icon, reaction){
+            new ShareTools('.result__share', title, message, icon);
         }
     };
 

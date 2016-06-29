@@ -5,22 +5,56 @@
 
             <button class="button--next button--see-results hidden"><%= see_results %></button>
 
-            <div class="results hidden">
-                <h2 class="result--title"></h2>
-                <p class="result--text"></p>
+            <div class="result__title hidden">
+                <p class="result__title__text-intro"><%= your_mindset_is %></p>
+                <h2 class="result__title__text"></h2>
+            </div>
+            <div class="result hidden">
 
-                <p class="strengths"> <%= strengths_text %>
-                    <span class="strength" id="strength_1"></span>,
-                    <span class="strength" id="strength_2"></span>,
-                    <span class="strength" id="strength_3"></span>.
-                </p>
-                <p class="weaknesses"> <%= weakness_text %>
-                    <span class="weakness" id="weakness_1"></span>,
-                    <span class="weakness" id="weakness_2"></span>,
-                    <span class="weakness" id="weakness_3"></span>.
-                </p>
+                <div class="result__banner">
+                    <div class="result__banner__icon"></div>
+                    <span class="result__banner__reaction"></span> <span class="result__banner__text"></span>
+                </div>
+                <div class="result__banner__categories">
 
-                <p class="result--activity-text"></p>
+                    <%  for (var i = 1; i < 6; i++) {
+                            var results_icon     = eval('results_category_' + i + '_icon');
+                            var results_category = eval('results_category_' + i);
+                    %>
+                            <div class="result__banner__categories__icon result__banner__categories__icon--<%= i %>">
+                                <img src="<%= pathStatic %>/common/img/<%= results_icon %>" alt="" />
+                                <span class="result__banner__categories__icon__text"><%= results_category %></span>
+                            </div>
+                    <% } %>
+
+                </div>
+
+                <div class="share__container">
+                    <span class="result__share-header"><%= share_your_result %></span>
+                    <div class="result__share"></div>
+                </div>
+
+                <div class="result__strengths-weaknesses">
+                    <p class="strengths"> <%= strengths_text %>
+                        <span class="strength" id="strength_1"></span>,
+                        <span class="strength" id="strength_2"></span>,
+                        <%= and_your %>
+                        <span class="strength" id="strength_3"></span>.
+                    </p>
+                    <p class="weaknesses"> <%= weakness_text %>
+                        <span class="weakness" id="weakness_1"></span>,
+                        <span class="weakness" id="weakness_2"></span>,
+                        <%= and_your %>
+                        <span class="weakness" id="weakness_3"></span>.
+                    </p>
+                </div>
+
+                <div class="result__graph">
+                    <div class="result__graph__header"></div>
+                    <div class="result__graph__body"></div>
+                </div>
+
+                <p class="result__activity-text"></p>
 
                 <button class="button--next button--reset-quiz"><%= retake_quiz %></button>
             </div>

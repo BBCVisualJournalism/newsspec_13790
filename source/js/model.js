@@ -91,7 +91,7 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
             return parseInt(total, 10);
         },
         calculateCategory: function (total){
-            var category = { 'title': '', 'text' : ''};
+            var category = { 'title': '', 'text' : '', 'icon': '', 'reaction': '', 'number': ''};
 
             var cat1_total = parseInt(vocab.results_category_1_total, 10),
                 cat2_total = parseInt(vocab.results_category_2_total, 10),
@@ -100,34 +100,55 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
                 cat5_total = parseInt(vocab.results_category_5_total, 10);
 
             if (total <= cat5_total) {
-                category.title = vocab.results_category_5;
-                category.text  = vocab.results_category_5_text;
+                category.title    = vocab.results_category_5;
+                category.text     = vocab.results_category_5_text;
+                category.icon     = vocab.results_category_5_icon;
+                category.reaction = vocab.results_reaction_5;
+                category.number   = 5;
 
             } else if (total > cat5_total && total <= cat4_total) {
-                category.title = vocab.results_category_4;
-                category.text  = vocab.results_category_4_text;
+                category.title    = vocab.results_category_4;
+                category.text     = vocab.results_category_4_text;
+                category.icon     = vocab.results_category_4_icon;
+                category.reaction = vocab.results_reaction_4;
+                category.number   = 4;
 
             } else if (total > cat4_total && total <= cat3_total) {
-                category.title = vocab.results_category_3;
-                category.text  = vocab.results_category_3_text;
+                category.title    = vocab.results_category_3;
+                category.text     = vocab.results_category_3_text;
+                category.icon     = vocab.results_category_3_icon;
+                category.reaction = vocab.results_reaction_3;
+                category.number   = 3;
 
             } else if (total > cat3_total && total <= cat2_total) {
-                category.title = vocab.results_category_2;
-                category.text  = vocab.results_category_2_text;
+                category.title    = vocab.results_category_2;
+                category.text     = vocab.results_category_2_text;
+                category.icon     = vocab.results_category_2_icon;
+                category.reaction = vocab.results_reaction_2;
+                category.number   = 2;
 
             } else if (total >= cat1_total) {
-                category.title = vocab.results_category_1;
-                category.text  = vocab.results_category_1_text;
+                category.title    = vocab.results_category_1;
+                category.text     = vocab.results_category_1_text;
+                category.icon     = vocab.results_category_1_icon;
+                category.reaction = vocab.results_reaction_1;
+                category.number   = 1;
 
             } else {
-                category.title = vocab.results_category_1;
-                category.text  = vocab.results_category_1_text;
+                category.title    = vocab.results_category_1;
+                category.text     = vocab.results_category_1_text;
+                category.icon     = vocab.results_category_1_icon;
+                category.reaction = vocab.results_reaction_1;
+                category.number   = 1;
             }
 
 
             if (this.amendKidsResult(category, vocab) === true){
-                category.title = vocab.results_category_3;
-                category.text  = vocab.results_category_3_text;
+                category.title    = vocab.results_category_3;
+                category.text     = vocab.results_category_3_text;
+                category.icon     = vocab.results_category_3_icon;
+                category.reaction = vocab.results_reaction_3;
+                category.number   = 3;
             }
 
             return category;
@@ -194,6 +215,9 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
                 activityUrlTitle = vocab.activity_1_url_title,
                 categoryTitle    = category.title,
                 categoryText     = category.text,
+                categoryIcon     = category.icon,
+                categoryNumber   = category.number,
+                categoryReaction = category.reaction,
                 quizResults      = {};
 
             if (this.userIsNotVeryActive() === true && this.userIsUnder18() === false){
@@ -210,6 +234,9 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
             quizResults = {
                 'categoryTitle'   : categoryTitle,
                 'categoryText'    : categoryText,
+                'categoryIcon'    : categoryIcon,
+                'categoryReaction': categoryReaction,
+                'categoryNumber'  : categoryNumber,
                 'total'           : total,
                 'age'             : this.age,
                 'activityLevel'   : this.activityLevel,

@@ -4,8 +4,217 @@
         text-align:center;
     }
 
-    .results {
+    .result {
+    }
+
+    .result__title {
+        line-height: 1em;
+        margin-bottom: 2.75em;
         margin-top:24px;
     }
 
+    .result__title__text-intro {
+        font-size:1.25em;
+        margin: 0;
+        margin-bottom:8px;
+    }
+
+    .result__title__text {
+        font-size:2em;
+        margin-top:0;
+    }
+
+    .result__banner {
+        float: left;
+        width: 50%;
+        @media (min-width: 414px){
+            width:50%;
+        }
+        @media (min-width: 600px){
+            float:none;
+            width:100%;
+        }
+    }
+
+    .result__banner__icon {
+        padding-bottom: 12px;
+    }
+
+    .result__banner__icon img {
+        height: 85px;
+        margin: 0 auto;
+        max-width: 145px;
+        @media (min-width: 600px){
+            height: 100px;
+        }
+    }
+
+    .result__banner__reaction {
+        display: block;
+        font-weight: 800;
+        margin: 0 0 4px 0;
+        @media (min-width: 600px){
+            display: inline;
+        }
+    }
+
+    .result__banner__text {}
+
+    .result__banner__categories {
+        float: left;
+        width: 47%;
+        @media (min-width: 414px){
+            width: 50%;
+            text-align: left;
+            padding-left: 10px;
+        }
+        @media (min-width: 600px){
+            display: table;
+            float: none;
+            width: 100%;
+            padding: 0;
+            margin: 0 auto;
+        }
+        @media (min-width: 1008px){
+            width: 90%;
+        }
+    }
+
+    .result__banner__categories__icon {
+        padding-bottom: 16px;
+        vertical-align: bottom;
+        @media (min-width: 600px){
+            display: table-cell;
+            text-align: center;
+            padding: 16px 8px 0 0;
+        }
+    }
+
+    .result__banner__categories__icon img {
+        display: inline-block;
+        max-width: 45px;
+        opacity: .5;
+        vertical-align: middle;
+        @media(min-width:425px){
+            margin-right: 4px;
+        }
+        @media(min-width:600px){
+            display: block;
+            max-width:40px;
+            max-height:40px;
+            opacity: .5;
+            margin: 0 auto;
+        }
+        @media(min-width:1008px){
+            max-width: 55px;
+            max-height: 55px;
+        }
+    }
+
+    .result__banner__categories__icon__text {
+        color: #999;
+        display:block;
+        font-weight: 800;
+        white-space: nowrap;
+        margin-top: 4px;
+        @media(min-width: 414px){
+            display:inline;
+        }
+        @media(min-width: 600px){
+            display: block;
+            font-size: 0.85em;
+            padding-top: 10px;
+        }
+        @media(min-width: 1008px){
+            font-size: 1em;
+        }
+    }
+
+    .result .result__banner__categories .result__banner__categories__icon--selected {
+        .result__banner__categories__icon__text {
+            color: black;
+        }
+
+        img {
+            opacity: 1.0;
+        }
+    }
+
+    .share__container {
+        margin:20px;
+    }
+
+    .result__share-header {
+        display:block;
+        margin-bottom: 10px;
+        @media(min-width: 600px){
+            display: inline;
+            margin-right:8px;
+        }
+    }
+
+    .result__share {
+        clear: both;
+        display: block;
+        .share__overlay {
+            z-index: 9999;
+        }
+        @media(min-width:600px){
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    .result__strengths-weaknesses {
+        clear: both;
+        display: block;
+    }
+
+    .strengths {
+        margin: 0 auto;
+        width: 80%;
+        @media (min-width: 600px){
+            width:100%;
+        }
+    }
+
+    .strength {
+        font-weight: 800;
+    }
+
+    .weaknesses {
+        margin: 0 auto;
+        padding-top: 24px;
+        width: 80%;
+        @media (min-width: 600px){
+            width:100%;
+        }
+    }
+
+    .weakness {
+        font-weight: 800;
+    }
+
+    .result__graph {
+        clear: both;
+        display: block;
+    }
+
+    .result__graph__header {}
+
+    .result__graph__body {}
+
+    .result__activity-text {
+        clear: both;
+        display: block;
+    }
+
+    button {
+        @extend %button--standard;
+        &.button--reset-quiz {
+            background-color: #2E8840;
+            color: white;
+        }
+    }
 }
+
