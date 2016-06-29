@@ -71,30 +71,39 @@
     .hero__chevron {
         position: relative;
         text-align: center;
-        height: 85px;
+        height: 50px;
         z-index: 0;
         top: -160px;
+        @media (min-width: 1008px){
+            height:80px;
+        }
     }
 
     .hero__chevron:before {
+        background: url('../img/hero_chevron.png?v=#{$version}');
+        background-position: -150px 0;
+        background-size: cover;
+        background-repeat: no-repeat;
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         height: 100%;
         width: 50%;
-        background-color: #2E8840;
         transform: skew(0deg, 6deg);
     }
 
     .hero__chevron:after {
+        background: url('../img/hero_chevron.png?v=#{$version}');
+        background-position: -150px 0;
+        background-size: cover;
+        background-repeat: no-repeat;
         content: '';
         position: absolute;
         top: 0;
         right: 0;
         height: 100%;
         width: 50%;
-        background-color: #2E8840;
         transform: skew(0deg, -6deg);
     }
 
@@ -117,13 +126,13 @@
         position: absolute;
         top: 0;
         left: 0;
-        height: 60px;
+        height: 90px;
         width: 50%;
         background-color: white;
         transform: skew(0deg, 6deg);
         z-index:999;
-        @media (min-width: 1008px){
-            height:90px;
+        @media (min-width: 768px){
+            height:100px;
         }
     }
 
@@ -132,13 +141,13 @@
         position: absolute;
         top: 0;
         right: 0;
-        height: 60px;
+        height: 90px;
         width: 50%;
         background-color: white;
         transform: skew(0deg, -6deg);
         z-index:999;
-        @media (min-width: 1008px){
-            height:90px;
+        @media (min-width: 768px){
+            height:100px;
         }
     }
 }
