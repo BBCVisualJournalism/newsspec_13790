@@ -110,6 +110,10 @@
         @media (min-width:700px){
             background-position: 100% 68%;
         }
+        @media (min-width:1280px){
+            background-position: 100% 71%;
+            background-size: 200%;
+        }
     }
 
     .hero__chevron:after {
@@ -131,6 +135,10 @@
         @media (min-width:600px){
             background-position: 96% 100%;
             background-size: 300%;
+        }
+        @media (min-width:1280px){
+            background-position: 71% 77%;
+            background-size: 200%;
         }
     }
 
