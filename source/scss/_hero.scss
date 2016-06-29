@@ -87,7 +87,7 @@
 
     .hero__chevron:before {
         background: url('../img/hero_chevron.png?v=#{$version}');
-        background-position: 100% 66%;
+        background-position: 100% 65%;
         background-size: 500%;
         background-repeat: no-repeat;
         content: '';
@@ -97,11 +97,18 @@
         height: 100%;
         width: 50%;
         transform: skew(0deg, 6deg);
+        @media (min-width:375px){
+            background-position: 100% 67%;
+        }
         @media (min-width:430px){
+            background-position: 100% 67%;
             background-size: 400%;
         }
         @media (min-width:600px){
             background-size: 300%;
+        }
+        @media (min-width:700px){
+            background-position: 100% 68%;
         }
     }
 
@@ -122,7 +129,7 @@
             background-size: 400%;
         }
         @media (min-width:600px){
-            background-position: 97% 100%;
+            background-position: 96% 100%;
             background-size: 300%;
         }
     }
