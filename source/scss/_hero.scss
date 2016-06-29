@@ -74,15 +74,21 @@
         height: 50px;
         z-index: 0;
         top: -160px;
+        @media (min-width: 600px){
+            height:70px;
+        }
         @media (min-width: 1008px){
             height:80px;
+        }
+        @media (min-width: 1280px){
+            height:100px;
         }
     }
 
     .hero__chevron:before {
         background: url('../img/hero_chevron.png?v=#{$version}');
-        background-position: -150px 0;
-        background-size: cover;
+        background-position: 100% 66%;
+        background-size: 500%;
         background-repeat: no-repeat;
         content: '';
         position: absolute;
@@ -91,12 +97,18 @@
         height: 100%;
         width: 50%;
         transform: skew(0deg, 6deg);
+        @media (min-width:425px){
+            background-size: 400%;
+        }
+        @media (min-width:600px){
+            background-size: 300%;
+        }
     }
 
     .hero__chevron:after {
         background: url('../img/hero_chevron.png?v=#{$version}');
-        background-position: -150px 0;
-        background-size: cover;
+        background-position: 81% 100%;
+        background-size: 500%;
         background-repeat: no-repeat;
         content: '';
         position: absolute;
@@ -105,6 +117,14 @@
         height: 100%;
         width: 50%;
         transform: skew(0deg, -6deg);
+        @media (min-width:425px){
+            background-position: 86% 100%;
+            background-size: 400%;
+        }
+        @media (min-width:600px){
+            background-position: 97% 100%;
+            background-size: 300%;
+        }
     }
 
     .hero__chevron__bottom {
