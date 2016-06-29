@@ -17,11 +17,11 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
                 label: vocab.share_button_title,
                 shareUrl: this.shareUrl,
                 messages: {
-                    twitter: this.shareTitle + '\r\n' + this.shareMessage,
+                    twitter: this.shareTitle + ': ' + this.shareMessage,
                     facebook: {
                         title:       this.shareTitle,
                         description: this.shareMessage,
-                        image:       '../common/img/' + this.shareImage // optional
+                        image:       'http://local.bcc.co.uk:1031/newsspec_13790/content/full-width/common/img/' + this.shareImage // optional
                     },
                     email: {
                         subject: this.shareTitle,
