@@ -85,6 +85,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 $(this).prop('disabled', false)
                 .removeClass('answer--chosen');
             });
+            $('.age-button').removeClass('hidden');
             $('.age-button').prop('disabled', false);
             $feedbackContainers.each(function(){
                 $(this).addClass('hidden');
@@ -178,6 +179,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
 
             $('.result__activity-text').html(resultActivityText + ' <a href="' + resultActivityUrl + '" target="_top">' + resultActivityUrlTitle + '</a>');
             this.showStrengthsAndWeaknesses();
+            $('.age-button').addClass('hidden');
             $('.questions').addClass('hidden');
             $('.button--see-results').addClass('hidden');
             $('.result__title').removeClass('hidden');
