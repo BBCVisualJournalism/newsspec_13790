@@ -2,6 +2,8 @@
 
     .section--results {
         text-align:center;
+        z-index: 99;
+        position: relative;
     }
 
     .result {

@@ -28,6 +28,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             $('.button--see-results').click(function(){
                 self.calculateResult();
                 self.showResult();
+                self.scrollToResults();
             });
             $('.button--reset-quiz').click(function () {
                 self.hideResults();
@@ -44,13 +45,31 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
 
             if ($scrollElem.length){
                 var scrollToPosition = $scrollElem.offset().top;
-                wrapper.scrollTo({ position: scrollToPosition, duration: 500 });
+                wrapper.scrollTo({ position: scrollToPosition, duration: 400 });
                 $('.question1 .button--answer')[0].focus();
+            }
+        },
+        scrollToNextQuestion: function (chosenButton){
+            var $scrollElem = $(chosenButton).parents('.question').find('.question__feedback');
+
+            if ($scrollElem.length){
+                var scrollToPosition = $scrollElem.offset().top;
+                wrapper.delay(function () {
+                    wrapper.scrollTo({ position: scrollToPosition, duration: 600 });
+                }, 500);
+            }
+        },
+        scrollToResults: function(){
+            var $scrollElem = $('.result__title');
+
+            if ($scrollElem.length){
+                var scrollToPosition = $scrollElem.offset().top;
+                wrapper.scrollTo({ position: scrollToPosition, duration: 1 });
             }
         },
         scrollToTop: function(){
             var scrollToPosition = $('.section--hero').offset().top;
-            wrapper.scrollTo({ position: scrollToPosition, duration: 500 });
+            wrapper.scrollTo({ position: scrollToPosition, duration: 400 });
         },
         hideResults: function() {
             $('.result__title').addClass('hidden');
@@ -90,14 +109,6 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             this.questionsAnswered++;
             if (this.quizIsComplete()){
                 this.enableShowResultButton();
-            }
-        },
-        scrollToNextQuestion: function (chosenButton){
-            var $scrollElem = $(chosenButton).parents('.question').find('.question__feedback');
-
-            if ($scrollElem.length){
-                var scrollToPosition = $scrollElem.offset().top;
-                wrapper.scrollTo({ position: scrollToPosition, duration: 500 });
             }
         },
         showAnswerFeedback: function(questionNumber){
