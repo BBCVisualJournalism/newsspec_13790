@@ -25,14 +25,14 @@
                         <picture>
                             <source
                                 media="(min-width: 1008px)"
-                                srcset="<%= pathStatic %>/common/img/medal_<%= i-1 %>_desktop.png?v=<%= version %>">
+                                srcset="<%= pathStatic %>/common/img/medal_<%= i %>_desktop.png?v=<%= version %>">
                             <source
                                 media="(min-width: 320px)"
-                                srcset="<%= pathStatic %>/common/img/medal_<%= i-1 %>_mobile.png?v=<%= version %>">
+                                srcset="<%= pathStatic %>/common/img/medal_<%= i %>_mobile.png?v=<%= version %>">
 
                             <img class="question__icon question<%= i %>__icon"
-                                 src="<%= pathStatic %>/common/img/medal_<%= i-1 %>_desktop.png?v=<%= version %>"
-                                 srcset="<%= pathStatic %>/common/img/medal_<%= i-1 %>_desktop.png?v=<%= version %>"
+                                 src="<%= pathStatic %>/common/img/medal_<%= i %>_desktop.png?v=<%= version %>"
+                                 srcset="<%= pathStatic %>/common/img/medal_<%= i %>_desktop.png?v=<%= version %>"
                                  alt="">
                         </picture>
                         <div class="question__number"><%= question_number %></div>
@@ -60,7 +60,19 @@
             <div class="question question14" data-question="14">
                <div class="bbc-news-vj-grid-wrapper">
                     <div class="bbc-news-vj-grid-wrapper__fluid-inner">
-                        <img class="question__icon question14__icon" src="<%= pathStatic %>/common/img/medal_12_desktop.png" alt="<%= olympic_medal_icon_alt_text %> <%= question_14_number %>" />
+                        <picture>
+                            <source
+                                media="(min-width: 1008px)"
+                                srcset="<%= pathStatic %>/common/img/medal_13_desktop.png?v=<%= version %>">
+                            <source
+                                media="(min-width: 320px)"
+                                srcset="<%= pathStatic %>/common/img/medal_13_mobile.png?v=<%= version %>">
+
+                            <img class="question__icon question14__icon"
+                                 src="<%= pathStatic %>/common/img/medal_13_desktop.png?v=<%= version %>"
+                                 srcset="<%= pathStatic %>/common/img/medal_13_desktop.png?v=<%= version %>"
+                                 alt="">
+                        </picture>
                         <div class="question__number"><%= question_14_number %></div>
                         <p class="question__text"><%= question_14_question %></p>
                         <div class="answers">
