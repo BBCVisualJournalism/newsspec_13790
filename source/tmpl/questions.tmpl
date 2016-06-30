@@ -22,7 +22,19 @@
              <div class="question question<%= i %>" data-question="<%= i %>">
                <div class="bbc-news-vj-grid-wrapper">
                     <div class="bbc-news-vj-grid-wrapper__fluid-inner">
-                        <img class="question__icon question<%= i %>__icon" src="<%= pathStatic %>/common/img/medal_<%= i-1 %>_desktop.png" alt="<%= olympic_medal_icon_alt_text %> <%= question_number %>" />
+                        <picture>
+                            <source
+                                media="(min-width: 1008px)"
+                                srcset="<%= pathStatic %>/common/img/medal_<%= i-1 %>_desktop.png?v=<%= version %>">
+                            <source
+                                media="(min-width: 320px)"
+                                srcset="<%= pathStatic %>/common/img/medal_<%= i-1 %>_mobile.png?v=<%= version %>">
+
+                            <img class="question__icon question<%= i %>__icon"
+                                 src="<%= pathStatic %>/common/img/medal_<%= i-1 %>_desktop.png?v=<%= version %>"
+                                 srcset="<%= pathStatic %>/common/img/medal_<%= i-1 %>_desktop.png?v=<%= version %>"
+                                 alt="">
+                        </picture>
                         <div class="question__number"><%= question_number %></div>
                         <p class="question__text"><%= question_text %></p>
                         <div class="answers">
