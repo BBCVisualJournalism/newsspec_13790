@@ -220,7 +220,7 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
                 categoryReaction = category.reaction,
                 quizResults      = {};
 
-            if (this.userIsNotVeryActive() === true && this.userIsUnder18() === false){
+            if (this.userIsNotVeryActive() === true){
                 activityText     = vocab.activity_2_text;
                 activityUrl      = vocab.activity_2_url;
                 activityUrlTitle = vocab.activity_2_url_title;

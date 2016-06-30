@@ -167,6 +167,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
 
             $('.result__activity-text').html(resultActivityText + ' <a href="' + resultActivityUrl + '" target="_top">' + resultActivityUrlTitle + '</a>');
             this.showStrengthsAndWeaknesses();
+            $('.questions').addClass('hidden');
             $('.button--see-results').addClass('hidden');
             $('.result__title').removeClass('hidden');
             $('.result').removeClass('hidden');
