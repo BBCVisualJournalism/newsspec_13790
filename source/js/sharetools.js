@@ -20,7 +20,7 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
                     facebook: {
                         title:       this.shareTitle,
                         description: vocab.share_outro_text,
-                        image:       'http://local.bcc.co.uk:1031/newsspec_13790/content/full-width/common/img/' + this.shareImage // optional
+                        image:       'http://local.bcc.co.uk:1031/newsspec_13790/content/iframe/common/img/' + this.shareImage // optional
                     },
                     email: {
                         subject: this.shareTitle,

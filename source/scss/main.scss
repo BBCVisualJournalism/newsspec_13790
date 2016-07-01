@@ -10,7 +10,7 @@ $version: "0.1.13";
 @import "_results";
 @import "_share";
 
-html body div.full-frame-scaffold-news-banner {
+html body .full-frame-scaffold-news-banner {
     z-index:999;
 }
 
@@ -96,7 +96,7 @@ html body div.full-frame-scaffold-news-banner {
         max-width: 195px;
     }
 
-    div.ns_creditsHolder {
+    .ns_creditsHolder {
         clear:both;
         position: relative;
         z-index: 88;
