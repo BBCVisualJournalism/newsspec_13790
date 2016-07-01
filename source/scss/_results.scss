@@ -159,7 +159,7 @@
         clear: both;
         display: block;
         .share__overlay {
-            z-index: 9999;
+            z-index: 99;
         }
         @media(min-width:600px){
             display: inline-block;
@@ -216,6 +216,14 @@
         &.button--reset-quiz {
             background-color: #2E8840;
             color: white;
+            -webkit-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            -moz-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            -ms-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            -o-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            &:hover {
+                background-color: #44A042;
+            }
         }
     }
 }

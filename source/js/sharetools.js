@@ -1,9 +1,10 @@
 define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], function (wrapper, $, ShareTools, ShareToolsTemplate, vocab) {
-    var ShareToolsWrapper = function (selector, title, message, icon) {
+    var ShareToolsWrapper = function (selector, categoryNumber, icon) {
         this.selector     = selector;
         this.$element     = $(this.selector);
-        this.shareTitle   = vocab.share_intro + ' ' + title;
-        this.shareMessage = message;
+        shareResultText   = 'share_result_' + categoryNumber;
+        this.shareResult  = vocab[shareResultText];
+        this.shareTitle   = vocab.share_intro_text + ' ' + this.shareResult;
         this.shareImage   = icon;
         this.shareUrl     = wrapper.url().hostUrl;
 
@@ -17,22 +18,22 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
                 label: vocab.share_button_title,
                 shareUrl: this.shareUrl,
                 messages: {
-                    twitter: this.shareTitle + ': ' + this.shareMessage,
+                    twitter: this.shareTitle + ' ' + vocab.share_outro_text,
                     facebook: {
                         title:       this.shareTitle,
-                        description: this.shareMessage,
+                        description: vocab.share_outro_text,
                         image:       'http://local.bcc.co.uk:1031/newsspec_13790/content/full-width/common/img/' + this.shareImage // optional
                     },
                     email: {
                         subject: this.shareTitle,
-                        message: this.shareMessage
+                        message: this.shareTitle + ' ' + vocab.share_outro_text
                     },
                     app: {
                         shareEndpoint: 'bbcnewsapp://visualjournalism/share',
                         popup: false,
                         properties: {
                             title: this.shareTitle,
-                            text: this.shareMessage
+                            text: this.shareTitle + ' ' + vocab.share_outro_text
                         }
                     }
                 },

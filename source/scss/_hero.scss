@@ -200,6 +200,14 @@
         display: block;
         text-align: center;
         z-index:999;
+        -webkit-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+        -moz-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+        -ms-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+        -o-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+        transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+        &:hover {
+            background-color: #44A042;
+        }
     }
 
     .age-input {

@@ -168,7 +168,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 resultActivityUrl       = this.quizResults.activityUrl,
                 resultActivityUrlTitle  = this.quizResults.activityUrlTitle;
 
-            this.addResultsToShareInfo(resultTitle, resultText, resultIcon, resultReaction);
+            this.addResultsToShareInfo(resultCategoryNumber, resultIcon);
 
             $('.result__title__text').text(resultTitle);
             $('.result__banner__icon').html('<img border="0" src="../common/img/' + resultIcon + '" alt="" />');
@@ -185,8 +185,8 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             $('.result__title').removeClass('hidden');
             $('.result').removeClass('hidden');
         },
-        addResultsToShareInfo: function (title, message, icon, reaction){
-            new ShareTools('.result__share', title, message, icon);
+        addResultsToShareInfo: function (resultCategoryNumber, icon){
+            new ShareTools('.result__share', resultCategoryNumber, icon);
         }
     };
 

@@ -3,7 +3,7 @@
 @import "./../../bower_components/sharetools/bin/templates/dropdown/share.scss"; // Developer: choose your sharetools of choice ('dropdown', 'buttons'). This should match the ShareToolsTemplate value in config.json
 
 
-$version: "0.1.9";
+$version: "0.1.11";
 
 @import "_hero";
 @import "_quiz";
@@ -60,10 +60,26 @@ html body div.full-frame-scaffold-news-banner {
             margin: 0 auto;
             max-width: 300px;
             width: 100%;
+            -webkit-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            -moz-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            -ms-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            -o-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            &:hover {
+                background-color: #44A042;
+            }
         }
         &.button--reset-quiz {
             background-color: #2E8840;
             color: white;
+            -webkit-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            -moz-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            -ms-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            -o-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
+            &:hover {
+                background-color: #44A042;
+            }
         }
     }
 
@@ -83,7 +99,7 @@ html body div.full-frame-scaffold-news-banner {
     div.ns_creditsHolder {
         clear:both;
         position: relative;
-        z-index: 9998;
+        z-index: 88;
     }
 
  }
