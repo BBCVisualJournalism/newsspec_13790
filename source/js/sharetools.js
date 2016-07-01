@@ -2,11 +2,11 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
     var ShareToolsWrapper = function (selector, categoryNumber, icon) {
         this.selector     = selector;
         this.$element     = $(this.selector);
-        shareResultText   = 'share_result_' + categoryNumber;
-        this.shareResult  = vocab[shareResultText];
-        this.shareTitle   = vocab.share_intro_text + ' ' + this.shareResult;
+        this.shareTitle   = vocab['share_result_' + categoryNumber];
         this.shareImage   = icon;
         this.shareUrl     = wrapper.url().hostUrl;
+
+        console.log(this.shareTitle + ' ' + vocab.share_outro_text);
 
         this.init();
     };
