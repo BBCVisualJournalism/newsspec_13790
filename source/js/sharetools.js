@@ -6,8 +6,6 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
         this.shareImage   = icon;
         this.shareUrl     = wrapper.url().hostUrl;
 
-        console.log(this.shareTitle + ' ' + vocab.share_outro_text);
-
         this.init();
     };
 
