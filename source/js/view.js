@@ -22,10 +22,10 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             });
             $('.button--answer').click(function () {
                 var btn = $(this);
+                self.setChosenAnswer(this);
                 if (btn.hasClass('age-button')){
                     return false;
                 }
-                self.setChosenAnswer(this);
                 self.scrollToNextQuestion(this);
             });
             $('.button--see-results').click(function(){
