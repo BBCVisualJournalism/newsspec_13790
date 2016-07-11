@@ -55,8 +55,8 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             if ($scrollElem.length){
                 var scrollToPosition = $scrollElem.offset().top;
                 wrapper.delay(function () {
-                    wrapper.scrollTo({ position: scrollToPosition, duration: 600 });
-                }, 500);
+                    wrapper.scrollTo({ position: scrollToPosition, duration: 500 });
+                }, 350);
             }
         },
         scrollToResults: function(){
