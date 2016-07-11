@@ -52,6 +52,10 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
         scrollToNextQuestion: function (chosenButton){
             var $scrollElem = $(chosenButton).parents('.question').find('.question__feedback');
 
+            if ($scrollElem.length === 0){
+                $scrollElem = $('.button--see-results');
+            }
+
             if ($scrollElem.length){
                 var scrollToPosition = $scrollElem.offset().top;
                 wrapper.delay(function () {

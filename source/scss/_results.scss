@@ -64,12 +64,12 @@
     .result__banner__text {}
 
     .result__banner__categories {
-        float: left;
+        float: right;
         width: 47%;
         @media (min-width: 414px){
             width: 50%;
             text-align: left;
-            padding-left: 10px;
+            padding-left: 18px;
         }
         @media (min-width: 600px){
             display: table;
@@ -224,6 +224,7 @@
         &.button--reset-quiz {
             background-color: #2E8840;
             color: white;
+            margin: 20px;
             -webkit-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
             -moz-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
             -ms-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
