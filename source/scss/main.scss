@@ -3,7 +3,7 @@
 @import "./../../bower_components/sharetools/bin/templates/dropdown/share.scss"; // Developer: choose your sharetools of choice ('dropdown', 'buttons'). This should match the ShareToolsTemplate value in config.json
 
 
-$version: "0.1.17";
+$version: "0.1.27";
 
 @import "_hero";
 @import "_quiz";
@@ -24,6 +24,7 @@ html body .bbc-news-vj-wrapper--iframe .bbc-news-vj-grid-wrapper {
 .bbc-news-vj-wrapper {
 
     max-width:none;
+    padding-top: 0;
 
     input[type="submit"],
     input[type="button"],
@@ -106,6 +107,12 @@ html body .bbc-news-vj-wrapper--iframe .bbc-news-vj-grid-wrapper {
         max-width: 195px;
     }
 
+    .method--section {
+        clear:both;
+        position: relative;
+        z-index: 88;
+    }
+
     .ns_creditsHolder {
         clear:both;
         position: relative;
@@ -113,3 +120,10 @@ html body .bbc-news-vj-wrapper--iframe .bbc-news-vj-grid-wrapper {
     }
 
  }
+
+// in sport page
+.main .gel-mb {
+    padding: 0;
+    max-width: none;
+}
+

@@ -10,7 +10,6 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
     View.prototype = {
         init: function () {
             this.quizResults = {};
-            this.questionsAnswered = 0;
             this.setEvents();
             this.hideResults();
         },
@@ -22,6 +21,10 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 self.scrollToQuiz();
             });
             $('.button--answer').click(function () {
+                var btn = $(this);
+                if (btn.hasClass('age-button')){
+                    return false;
+                }
                 self.setChosenAnswer(this);
                 self.scrollToNextQuestion(this);
             });
@@ -80,7 +83,6 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             $('.result').addClass('hidden');
         },
         resetQuiz: function() {
-            this.questionsAnswered = 0;
             var $answerButtons = $('div.question').find('button'),
                 $feedbackContainers = $('.question__feedback');
 
@@ -106,12 +108,11 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             var currentQuestion = 'question' + $(chosenButton).parents('.question').attr('data-question'),
                 questionScore   = $(chosenButton).attr('data-score');
 
+            this.resetAnswers(currentQuestion);
             $(chosenButton).addClass('answer--chosen');
             this.setScore(currentQuestion, questionScore);
-            this.disableAnswers(currentQuestion);
             this.showAnswerFeedback(currentQuestion);
 
-            this.questionsAnswered++;
             if (this.quizIsComplete()){
                 this.enableShowResultButton();
             }
@@ -122,14 +123,19 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
         setScore: function (questionNumber, score){
             model.setScore(questionNumber, score);
         },
-        disableAnswers: function (currentQuestion) {
+        resetAnswers: function (currentQuestion) {
             var $answerButtons = $('div.' + currentQuestion).find('button');
             $answerButtons.each(function(){
-                $(this).prop('disabled', true);
+                $(this).removeClass('answer--chosen');
             });
         },
         quizIsComplete: function() {
-            return (this.questionsAnswered === model.getQuizDataLength());
+            var answeredQuestions = $('.answer--chosen').length;
+            if (answeredQuestions === model.getQuizDataLength()){
+                return true;
+            } else {
+                return false;
+            }
         },
         enableShowResultButton: function() {
             $('.button--see-results').prop('disabled', false).removeClass('hidden');
