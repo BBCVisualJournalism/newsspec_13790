@@ -3,25 +3,34 @@
 @import "./../../bower_components/sharetools/bin/templates/dropdown/share.scss"; // Developer: choose your sharetools of choice ('dropdown', 'buttons'). This should match the ShareToolsTemplate value in config.json
 
 
-$version: "0.1.13";
+$version: "0.1.17";
 
 @import "_hero";
 @import "_quiz";
 @import "_results";
 @import "_share";
 
-html body div.full-frame-scaffold-news-banner {
+html body .full-frame-scaffold-news-banner {
     z-index:999;
 }
 
+html body .bbc-news-vj-wrapper--iframe .bbc-news-vj-grid-wrapper {
+    max-width:none;
+    @media(min-width:1280px){
+        margin: 0 auto;
+    }
+}
+
 .bbc-news-vj-wrapper {
+
+    max-width:none;
 
     input[type="submit"],
     input[type="button"],
     button {
         @extend %button--standard;
 
-        color: #000;
+        color: #404040;
         border: 0;
 
         &:active, &:pressed {
@@ -96,7 +105,7 @@ html body div.full-frame-scaffold-news-banner {
         max-width: 195px;
     }
 
-    div.ns_creditsHolder {
+    .ns_creditsHolder {
         clear:both;
         position: relative;
         z-index: 88;

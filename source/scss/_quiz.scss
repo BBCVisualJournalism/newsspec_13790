@@ -6,12 +6,14 @@
     }
 
     .quiz-body {
+        position: relative;
         text-align: center;
+        top: -30px;
     }
 
     .question {
         margin-bottom: 40px;
-        margin-top: 40px;
+        margin-top: 80px;
     }
 
     .question__icon {
@@ -51,13 +53,13 @@
 
     .button--answer {
         background-color: #bbb;
-        color: #000;
+        color: #404040;
         width:100%;
     }
 
     .question__feedback {
         color: white;
-        margin-bottom: 70px;
+        margin-bottom: 30px;
         position: relative;
         @media(min-width: 600px){
             margin-bottom:96px;
@@ -111,8 +113,6 @@
     {} //fixes linter
 
     .feedback__text {
-        font-size: 1.25em;
-        line-height: 1.4em;
         max-width: 600px;
         margin: 0 auto;
         text-align: center;
