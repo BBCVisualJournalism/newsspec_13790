@@ -1,22 +1,18 @@
  .bbc-news-vj-wrapper {
 
     div.section--hero {
-        background: url('../img/hero_image_dark.jpg?v=#{$version}');
-        background-position: -150px 0;
+        background: url('../img/hero_image.jpg?v=#{$version}');
+        background-position: center right;
         background-size: cover;
         background-repeat: no-repeat;
         margin: 0;
         margin-bottom: 40px;
-        min-height: 530px;
+        min-height: 600px;
         padding: 0;
         padding-top: 18px;
         text-align: center;
-        top: -50px;
-        @media (min-width: 600px){
-            background-position: -65px 0;
-        }
-        @media (min-width: 720px){
-            background-position: 0 0;
+        @media (min-width: 320px){
+            min-height: 550px;
         }
         @media (min-width: 800px){
             min-height: 600px;
