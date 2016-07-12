@@ -3,6 +3,8 @@ define(['wrapper', 'istats', 'jquery', 'view'],
 
     $('.bbc-news-vj-wrapper').addClass('bbc-news-vj-wrapper-js-enabled');
 
+    // check if in app, if so, append '.app' to all href urls..
+
     // create the view - to handle inputs, UI changes, etc
     var view = new View();
 

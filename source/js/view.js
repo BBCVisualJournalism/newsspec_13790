@@ -104,14 +104,28 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
 
             istats.reset();
         },
+        highlightCurrentQuestion: function (questionNumber){
+            var nextQuestionNumber;
+            if (questionNumber === 13){
+                nextQuestionNumber = 1;
+            } else {
+                nextQuestionNumber = questionNumber + 1;
+            }
+            console.log(questionNumber, nextQuestionNumber);
+
+            $('.question' + questionNumber).removeClass('question--current');
+            $('.question' + nextQuestionNumber).addClass('question--current');
+        },
         setChosenAnswer: function (chosenButton){
-            var currentQuestion = 'question' + $(chosenButton).parents('.question').attr('data-question'),
+            var questionNumber  = parseInt($(chosenButton).parents('.question').attr('data-question'), 10),
+                currentQuestion = 'question' + questionNumber,
                 questionScore   = $(chosenButton).attr('data-score');
 
             this.resetAnswers(currentQuestion);
             $(chosenButton).addClass('answer--chosen');
             this.setScore(currentQuestion, questionScore);
             this.showAnswerFeedback(currentQuestion);
+            this.highlightCurrentQuestion(questionNumber);
 
             if (this.quizIsComplete()){
                 this.enableShowResultButton();

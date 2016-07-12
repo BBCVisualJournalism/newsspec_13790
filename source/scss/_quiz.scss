@@ -8,12 +8,28 @@
     .quiz-body {
         position: relative;
         text-align: center;
-        top: -30px;
+        top: -10px;
     }
 
     .question {
-        margin-bottom: 40px;
-        margin-top: 80px;
+        padding-bottom: 0;
+        padding-top: 90px;
+        -webkit-transition: background-color .3s ease, min-width .5s ease, color .3s ease, border-color .3s ease;
+        -moz-transition: background-color .3s ease, min-width .5s ease, color .3s ease, border-color .3s ease;
+        -ms-transition: background-color .3s ease, min-width .5s ease, color .3s ease, border-color .3s ease;
+        -o-transition: background-color .3s ease, min-width .5s ease, color .3s ease, border-color .3s ease;
+        transition: background-color .3s ease, min-width .5s ease, color .3s ease, border-color .3s ease;
+    }
+
+    .question--current {
+        background-color: #efefef;
+        padding-bottom: 60px;
+        padding-top: 100px;
+        -webkit-transition: background-color .3s ease, min-width .5s ease, color .3s ease, border-color .3s ease;
+        -moz-transition: background-color .3s ease, min-width .5s ease, color .3s ease, border-color .3s ease;
+        -ms-transition: background-color .3s ease, min-width .5s ease, color .3s ease, border-color .3s ease;
+        -o-transition: background-color .3s ease, min-width .5s ease, color .3s ease, border-color .3s ease;
+        transition: background-color .3s ease, min-width .5s ease, color .3s ease, border-color .3s ease;
     }
 
     .question__icon {
@@ -59,14 +75,7 @@
 
     .question__feedback {
         color: white;
-        margin-bottom: 30px;
         position: relative;
-        @media(min-width: 600px){
-            margin-bottom:96px;
-        }
-        @media(min-width: 1008px){
-            margin-bottom:110px;
-        }
     }
 
     .chevron {
