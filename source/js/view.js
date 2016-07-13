@@ -111,7 +111,6 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             } else {
                 nextQuestionNumber = questionNumber + 1;
             }
-            console.log(questionNumber, nextQuestionNumber);
 
             $('.question' + questionNumber).removeClass('question--current');
             $('.question' + nextQuestionNumber).addClass('question--current');
