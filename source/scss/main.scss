@@ -3,12 +3,13 @@
 @import "./../../bower_components/sharetools/bin/templates/dropdown/share.scss"; // Developer: choose your sharetools of choice ('dropdown', 'buttons'). This should match the ShareToolsTemplate value in config.json
 
 
-$version: "0.1.29";
+$version: "0.1.31";
 
 @import "_hero";
 @import "_quiz";
 @import "_results";
 @import "_share";
+@import "_lang";
 
 html body .full-frame-scaffold-news-banner {
     z-index:999;
