@@ -30,6 +30,8 @@
 
     .result__banner {
         float: left;
+        padding-left: 10px;
+        padding-right: 10px;
         width: 50%;
         @media (min-width: 414px){
             width:50%;
@@ -220,6 +222,7 @@
     .result__activity-text {
         clear: both;
         display: block;
+        padding: 0 10px 0 10px;
     }
 
     button {
