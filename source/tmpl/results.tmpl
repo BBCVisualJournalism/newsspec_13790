@@ -51,54 +51,55 @@
 
                 <div class="result__graph">
                     <div class="result__graph__header"></div>
-                    <div class="result__graph__body">
+                    <div class="result__graph__body graph">
+                        <div class="graph__status graph__status--tooltip_view hidden">Ego (1)</div>
                         <svg class="graph__dial" height="228" width="228">
                             <g transform="translate(114,114)">
-                                <g class="graph__slice graph__slice--seen" data-property="conscientiousness" data-title="<%= question1_result_noun %>">
+                                <g class="graph__slice graph__slice--seen" data-property="conscientiousness" data-title="<%= question_1_result_noun %>" data-value="">
                                     <path class="graph__dial__background" d="M6.980486755139913e-15,-114A114,114 0 0,1 54.51427312018685,-100.12089705040438L16.35428193605605,-30.03626911512131A34.199999999999996,34.199999999999996 0 0,0 2.0941460265419736e-15,-34.199999999999996Z"/>
                                     <path class="graph__slice-path" d="M2.582780099401768e-15,-42.18A42.18,42.18 0 0,1 20.170281054469132,-37.044731908649624L16.35428193605605,-30.03626911512131A34.199999999999996,34.199999999999996 0 0,0 2.0941460265419736e-15,-34.199999999999996Z"/>
                                 </g>
-                                <g class="graph__slice graph__slice--seen" data-property="perfectionism" data-title="<%= question2_result_noun %>">
+                                <g class="graph__slice graph__slice--seen" data-property="perfectionism" data-title="<%= question_2_result_noun %>" data-value="">
                                     <path class="graph__dial__background" d="M56.999999999999986,-98.72689603142601A114,114 0 0,1 97.27119391612719,-59.450103735243246L29.181358174838152,-17.83503112057297A34.199999999999996,34.199999999999996 0 0,0 17.099999999999994,-29.6180688094278Z"/>
                                     <path class="graph__slice-path" d="M21.089999999999996,-36.52895153162763A42.18,42.18 0 0,1 35.99034174896706,-21.99653838204L29.181358174838152,-17.83503112057297A34.199999999999996,34.199999999999996 0 0,0 17.099999999999994,-29.6180688094278Z"/>
                                 </g>
-                                <g class="graph__slice graph__slice--seen" data-property="mental-toughness" data-title="<%= question3_result_noun %>">
+                                <g class="graph__slice graph__slice--seen" data-property="mental toughness" data-title="<%= question_3_result_noun %>" data-value="">
                                     <path class="graph__dial__background" d="M98.726896031426,-57A114,114 0 0,1 113.9643768554301,-2.8497031342771955L34.189313056629025,-0.8549109402831586A34.199999999999996,34.199999999999996 0 0,0 29.618068809427797,-17.099999999999998Z"/>
                                     <path class="graph__slice-path" d="M36.52895153162762,-21.09A42.18,42.18 0 0,1 42.16681943650914,-1.0543901596825624L34.189313056629025,-0.8549109402831586A34.199999999999996,34.199999999999996 0 0,0 29.618068809427797,-17.099999999999998Z"/>
                                 </g>
-                                <g class="graph__slice graph__slice--seen" data-property="ego" data-title="<%= question4_result_noun %>">
+                                <g class="graph__slice graph__slice--seen" data-property="ego" data-title="<%= question_4_result_noun %>" data-value="">
                                     <path class="graph__dial__background" d="M114,0A114,114 0 0,1 100.12089705040438,54.51427312018684L30.03626911512131,16.35428193605605A34.199999999999996,34.199999999999996 0 0,0 34.199999999999996,0Z"/>
                                     <path class="graph__slice-path" d="M42.18,0A42.18,42.18 0 0,1 37.044731908649624,20.170281054469132L30.03626911512131,16.35428193605605A34.199999999999996,34.199999999999996 0 0,0 34.199999999999996,0Z"/>
                                 </g>
-                                <g class="graph__slice graph__slice--seen" data-property="competitiveness" data-title="<%= question5_result_noun %>">
+                                <g class="graph__slice graph__slice--seen" data-property="competitiveness" data-title="<%= question_5_result_noun %>" data-value="">
                                     <path class="graph__dial__background" d="M98.72689603142601,56.99999999999998A114,114 0 0,1 59.45010373524327,97.27119391612716L17.835031120572978,29.181358174838145A34.199999999999996,34.199999999999996 0 0,0 29.6180688094278,17.09999999999999Z"/>
                                     <path class="graph__slice-path" d="M36.52895153162763,21.089999999999993A42.18,42.18 0 0,1 21.99653838204001,35.99034174896705L17.835031120572978,29.181358174838145A34.199999999999996,34.199999999999996 0 0,0 29.6180688094278,17.09999999999999Z"/>
                                 </g>
-                                <g class="graph__slice graph__slice--seen" data-property="proactive-approach" data-title="<%= question6_result_noun %>">
+                                <g class="graph__slice graph__slice--seen" data-property="proactive approach" data-title="<%= question_6_result_noun %>" data-value="">
                                     <path class="graph__dial__background" d="M57.000000000000036,98.726896031426A114,114 0 0,1 2.8497031342772026,113.9643768554301L0.8549109402831607,34.189313056629025A34.199999999999996,34.199999999999996 0 0,0 17.10000000000001,29.618068809427797Z"/>
                                     <path class="graph__slice-path" d="M21.090000000000014,36.52895153162762A42.18,42.18 0 0,1 1.054390159682565,42.16681943650914L0.8549109402831607,34.189313056629025A34.199999999999996,34.199999999999996 0 0,0 17.10000000000001,29.618068809427797Z"/>
                                 </g>
-                                <g class="graph__slice graph__slice--seen" data-property="motivation" data-title="<%= question7_result_noun %>">
+                                <g class="graph__slice graph__slice--seen" data-property="motivation" data-title="<%= question_7_result_noun %>" data-value="">
                                     <path class="graph__dial__background" d="M6.980486755139913e-15,114A114,114 0 0,1 -54.514273120186836,100.1208970504044L-16.354281936056047,30.036269115121314A34.199999999999996,34.199999999999996 0 0,0 2.0941460265419736e-15,34.199999999999996Z"/>
                                     <path class="graph__slice-path" d="M2.582780099401768e-15,42.18A42.18,42.18 0 0,1 -20.17028105446913,37.04473190864963L-16.354281936056047,30.036269115121314A34.199999999999996,34.199999999999996 0 0,0 2.0941460265419736e-15,34.199999999999996Z"/>
                                 </g>
-                                <g class="graph__slice graph__slice--seen" data-property="task-orientation" data-title="<%= question8_result_noun %>">
+                                <g class="graph__slice graph__slice--seen" data-property="task orientation" data-title="<%= question_8_result_noun %>" data-value="">
                                     <path class="graph__dial__background" d="M-56.99999999999997,98.72689603142601A114,114 0 0,1 -97.27119391612713,59.45010373524332L-29.181358174838138,17.835031120572992A34.199999999999996,34.199999999999996 0 0,0 -17.09999999999999,29.6180688094278Z"/>
                                     <path class="graph__slice-path" d="M-21.08999999999999,36.52895153162763A42.18,42.18 0 0,1 -35.99034174896704,21.99653838204003L-29.181358174838138,17.835031120572992A34.199999999999996,34.199999999999996 0 0,0 -17.09999999999999,29.6180688094278Z"/>
                                 </g>
-                                <g class="graph__slice graph__slice--seen" data-property="self-confidence" data-title="<%= question9_result_noun %>">
+                                <g class="graph__slice graph__slice--seen" data-property="self confidence" data-title="<%= question_9_result_noun %>" data-value="">
                                     <path class="graph__dial__background" d="M-98.726896031426,57.000000000000036A114,114 0 0,1 -113.9643768554301,2.84970313427726L-34.189313056629025,0.8549109402831779A34.199999999999996,34.199999999999996 0 0,0 -29.618068809427793,17.10000000000001Z"/>
                                     <path class="graph__slice-path" d="M-36.52895153162761,21.090000000000014A42.18,42.18 0 0,1 -42.16681943650914,1.0543901596825862L-34.189313056629025,0.8549109402831779A34.199999999999996,34.199999999999996 0 0,0 -29.618068809427793,17.10000000000001Z"/>
                                 </g>
-                                <g class="graph__slice graph__slice--seen" data-property="focus" data-title="<%= question10_result_noun %>">
+                                <g class="graph__slice graph__slice--seen" data-property="focus" data-title="<%= question_10_result_noun %>" data-value="">
                                     <path class="graph__dial__background" d="M-114,1.3960973510279826e-14A114,114 0 0,1 -100.12089705040445,-54.51427312018674L-30.036269115121332,-16.35428193605602A34.199999999999996,34.199999999999996 0 0,0 -34.199999999999996,4.188292053083947e-15Z"/>
                                     <path class="graph__slice-path" d="M-42.18,5.165560198803536e-15A42.18,42.18 0 0,1 -37.044731908649645,-20.170281054469093L-30.036269115121332,-16.35428193605602A34.199999999999996,34.199999999999996 0 0,0 -34.199999999999996,4.188292053083947e-15Z"/>
                                 </g>
-                                <g class="graph__slice graph__slice--seen" data-property="social-support" data-title="<%= question11_result_noun %>">
+                                <g class="graph__slice graph__slice--seen" data-property="social support" data-title="<%= question_11_result_noun %>" data-value="">
                                     <path class="graph__dial__background" d="M-98.72689603142605,-56.99999999999993A114,114 0 0,1 -59.45010373524332,-97.27119391612712L-17.835031120572992,-29.181358174838135A34.199999999999996,34.199999999999996 0 0,0 -29.61806880942781,-17.099999999999977Z"/>
                                     <path class="graph__slice-path" d="M-36.52895153162764,-21.089999999999975A42.18,42.18 0 0,1 -21.99653838204003,-35.99034174896703L-17.835031120572992,-29.181358174838135A34.199999999999996,34.199999999999996 0 0,0 -29.61806880942781,-17.099999999999977Z"/>
                                 </g>
-                                <g class="graph__slice graph__slice--seen" data-property="goal-setting" data-title="<%= question12_result_noun %>">
+                                <g class="graph__slice graph__slice--seen" data-property="goal-setting" data-title="<%= question_12_result_noun %>" data-value="">
                                     <path class="graph__dial__background" d="M-57.00000000000005,-98.72689603142598A114,114 0 0,1 -2.8497031342772674,-113.9643768554301L-0.85491094028318,-34.189313056629025A34.199999999999996,34.199999999999996 0 0,0 -17.100000000000012,-29.61806880942779Z"/>
                                     <path class="graph__slice-path" d="M-21.090000000000018,-36.52895153162761A42.18,42.18 0 0,1 -1.0543901596825889,-42.16681943650914L-0.85491094028318,-34.189313056629025A34.199999999999996,34.199999999999996 0 0,0 -17.100000000000012,-29.61806880942779Z"/>
                                 </g>

@@ -162,6 +162,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             if (model.fiveOrMoreScoresAreTheSame()){
                 $('.weaknesses').addClass('hidden');
                 $('.strengths' ).addClass('hidden');
+                $('.result__strengths-weaknesses').addClass('hidden');
             } else {
                 if ( model.userHasBottomResult() === false){
                     $('#strength_1').text(this.quizResults['strengths'][0]);
@@ -169,7 +170,6 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                     $('#strength_3').text(this.quizResults['strengths'][2]);
                     $('.strengths' ).removeClass('hidden');
                 }
-
                 if (model.getAge() < 17){
                     $('.weaknesses').addClass('hidden');
                 } else {
@@ -180,8 +180,48 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                         $('.weaknesses').removeClass('hidden');
                     }
                 }
+                $('.result__strengths-weaknesses').removeClass('hidden');
             }
         },
+        addResultsToShareInfo: function (resultCategoryNumber, icon){
+            new ShareTools('.result__share', resultCategoryNumber, icon);
+        },
+        showResult: function(){
+            var resultTitle             = this.quizResults.categoryTitle,
+                resultText              = this.quizResults.categoryText,
+                resultIcon              = this.quizResults.categoryIcon,
+                resultReaction          = this.quizResults.categoryReaction,
+                resultCategoryNumber    = this.quizResults.categoryNumber,
+                resultCategorySelected  = '.result__banner__categories__icon--' + resultCategoryNumber,
+                resultActivityText      = this.quizResults.activityText,
+                resultActivityUrl       = this.quizResults.activityUrl,
+                resultActivityUrlTitle  = this.quizResults.activityUrlTitle,
+                graphData               = this.getGraphData();
+
+            this.addResultsToShareInfo(resultCategoryNumber, resultIcon);
+
+            $('.result__title__text').text(resultTitle);
+            $('.result__banner__icon').html('<img border="0" src="../common/img/' + resultIcon + '" alt="" />');
+            $('.result__banner__reaction').text(resultReaction);
+            $('.result__banner__text').text(resultText);
+
+            $(resultCategorySelected).addClass('result__banner__categories__icon--selected');
+
+            $('.result__activity-text').html(resultActivityText + ' <a href="' + resultActivityUrl + '" target="_top">' + resultActivityUrlTitle + '</a>');
+            this.showStrengthsAndWeaknesses();
+            $('.age-button').addClass('hidden');
+            $('.questions').addClass('hidden');
+            $('.button--see-results').addClass('hidden');
+            $('.result__title').removeClass('hidden');
+            $('.result').removeClass('hidden');
+
+            this.updateGraph(graphData);
+
+        },
+
+
+
+
         getGraphContainerSize: function () {
             var size = $('.result__graph__body').width();
 
@@ -191,21 +231,21 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             return size;
         },
         getGraphData: function (){
-            var quizData = model.getQuizData();
-            var graphData = [
-                { title: vocab.question_1_result_noun,   property: 'conscientiousness',  value: (quizData.question1.score * 2)   },
-                { title: vocab.question_2_result_noun,   property: 'perfectionism',      value: (quizData.question2.score * 2)   },
-                { title: vocab.question_3_result_noun,   property: 'mental-toughness',   value: (quizData.question3.score * 2)   },
-                { title: vocab.question_4_result_noun,   property: 'ego',                value: (quizData.question4.score * 2)   },
-                { title: vocab.question_5_result_noun,   property: 'competitiveness',    value: (quizData.question5.score * 2)   },
-                { title: vocab.question_6_result_noun,   property: 'proactive-approach', value: (quizData.question6.score * 2)   },
-                { title: vocab.question_7_result_noun,   property: 'motivation',         value: (quizData.question7.score * 2)   },
-                { title: vocab.question_8_result_noun,   property: 'task orientation',   value: (quizData.question8.score * 2)   },
-                { title: vocab.question_9_result_noun,   property: 'self confidence',    value: (quizData.question9.score * 2)   },
-                { title: vocab.question_10_result_noun,  property: 'focus',              value: (quizData.question10.score * 2)  },
-                { title: vocab.question_11_result_noun,  property: 'social support',     value: (quizData.question11.score * 2)  },
-                { title: vocab.question_12_result_noun,  property: 'goal-setting',       value: (quizData.question12.score * 2)  }
-            ];
+            var quizData = model.getQuizData(),
+                graphData = [
+                    { title: vocab.question_1_result_noun,   property: 'conscientiousness',  value: (quizData.question1.score * 2)   },
+                    { title: vocab.question_2_result_noun,   property: 'perfectionism',      value: (quizData.question2.score * 2)   },
+                    { title: vocab.question_3_result_noun,   property: 'mental toughness',   value: (quizData.question3.score * 2)   },
+                    { title: vocab.question_4_result_noun,   property: 'ego',                value: (quizData.question4.score * 2)   },
+                    { title: vocab.question_5_result_noun,   property: 'competitiveness',    value: (quizData.question5.score * 2)   },
+                    { title: vocab.question_6_result_noun,   property: 'proactive approach', value: (quizData.question6.score * 2)   },
+                    { title: vocab.question_7_result_noun,   property: 'motivation',         value: (quizData.question7.score * 2)   },
+                    { title: vocab.question_8_result_noun,   property: 'task orientation',   value: (quizData.question8.score * 2)   },
+                    { title: vocab.question_9_result_noun,   property: 'self confidence',    value: (quizData.question9.score * 2)   },
+                    { title: vocab.question_10_result_noun,  property: 'focus',              value: (quizData.question10.score * 2)  },
+                    { title: vocab.question_11_result_noun,  property: 'social support',     value: (quizData.question11.score * 2)  },
+                    { title: vocab.question_12_result_noun,  property: 'goal-setting',       value: (quizData.question12.score * 2)  }
+                ];
             return graphData;
         },
         updateGraph: function (graphData){
@@ -247,41 +287,66 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 .transition()
                 .duration(700)
                 .attr('d', arc);
+
+
+            // set data-value .. picked up in this.listenForHover()
+            var i=0;
+            $('.graph__slice').each(function (){
+                $(this).data('value', (graphData[i].value / 2));
+                i++;
+            });
+            if(!('ontouchstart' in document.documentElement)){
+                this.listenForHover('.graph__slice-path');
+            }
         },
-        showResult: function(){
-            var resultTitle             = this.quizResults.categoryTitle,
-                resultText              = this.quizResults.categoryText,
-                resultIcon              = this.quizResults.categoryIcon,
-                resultReaction          = this.quizResults.categoryReaction,
-                resultCategoryNumber    = this.quizResults.categoryNumber,
-                resultCategorySelected  = '.result__banner__categories__icon--' + resultCategoryNumber,
-                resultActivityText      = this.quizResults.activityText,
-                resultActivityUrl       = this.quizResults.activityUrl,
-                resultActivityUrlTitle  = this.quizResults.activityUrlTitle,
-                graphData               = this.getGraphData();
-
-            this.addResultsToShareInfo(resultCategoryNumber, resultIcon);
-
-            $('.result__title__text').text(resultTitle);
-            $('.result__banner__icon').html('<img border="0" src="../common/img/' + resultIcon + '" alt="" />');
-            $('.result__banner__reaction').text(resultReaction);
-            $('.result__banner__text').text(resultText);
-
-            $(resultCategorySelected).addClass('result__banner__categories__icon--selected');
-
-            $('.result__activity-text').html(resultActivityText + ' <a href="' + resultActivityUrl + '" target="_top">' + resultActivityUrlTitle + '</a>');
-            this.showStrengthsAndWeaknesses();
-            $('.age-button').addClass('hidden');
-            $('.questions').addClass('hidden');
-            $('.button--see-results').addClass('hidden');
-            $('.result__title').removeClass('hidden');
-            $('.result').removeClass('hidden');
-
-            this.updateGraph(graphData);
-
+        listenForHover: function (insertInThisElement) {
+            var self = this;
+            $(insertInThisElement).on('mousemove', function (e) {
+                self.moveTooltip(e);
+                self.updateGraphStatusText(this);
+            });
+            $(insertInThisElement).on('mouseout', function (e) {
+                self.hideTooltip(e);
+            });
+            $('.graph__status').addClass('graph__status--tooltip_view');
         },
-        addResultsToShareInfo: function (resultCategoryNumber, icon){
-            new ShareTools('.result__share', resultCategoryNumber, icon);
+        updateGraphStatusText: function (elem) {
+            var title = $(elem).parent().data('property'),
+                val   = $(elem).parent().data('value');
+            $('.graph__status').html(title + ' (' + val + ')');
+        },
+        moveTooltip: function (e) {
+
+            var tooltip = $('.graph__status--tooltip_view'),
+                cursorOffset = 10,
+                displayTooltipToRightOfCursor = true,
+                graphSize,
+                tooltipX,
+                tooltipY;
+
+            graphSize = $('.graph__dial').width();
+
+            if (graphSize / 2 < e.offsetX) {
+                displayTooltipToRightOfCursor = false;
+            }
+
+            tooltipY = (e.offsetY + cursorOffset);
+            tooltipX = (e.offsetX + cursorOffset);
+
+            if (!displayTooltipToRightOfCursor) {
+                tooltipX = tooltipX - tooltip.width();
+            }
+
+            tooltip
+                .removeClass('hidden')
+                .css('display', 'block')
+                .css('left', tooltipX + 'px')
+                .css('top',  tooltipY + 'px');
+        },
+        hideTooltip: function (e) {
+            $('.graph__status--tooltip_view')
+                .css('display', 'none')
+                .addClass('hidden');
         }
     };
 
