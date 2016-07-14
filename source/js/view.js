@@ -195,10 +195,10 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             var graphData = [
                 { title: vocab.question_1_result_noun,   property: 'conscientiousness',  value: (quizData.question1.score * 2)   },
                 { title: vocab.question_2_result_noun,   property: 'perfectionism',      value: (quizData.question2.score * 2)   },
-                { title: vocab.question_3_result_noun,   property: 'mental toughness',   value: (quizData.question3.score * 2)   },
+                { title: vocab.question_3_result_noun,   property: 'mental-toughness',   value: (quizData.question3.score * 2)   },
                 { title: vocab.question_4_result_noun,   property: 'ego',                value: (quizData.question4.score * 2)   },
                 { title: vocab.question_5_result_noun,   property: 'competitiveness',    value: (quizData.question5.score * 2)   },
-                { title: vocab.question_6_result_noun,   property: 'proactive approach', value: (quizData.question6.score * 2)   },
+                { title: vocab.question_6_result_noun,   property: 'proactive-approach', value: (quizData.question6.score * 2)   },
                 { title: vocab.question_7_result_noun,   property: 'motivation',         value: (quizData.question7.score * 2)   },
                 { title: vocab.question_8_result_noun,   property: 'task orientation',   value: (quizData.question8.score * 2)   },
                 { title: vocab.question_9_result_noun,   property: 'self confidence',    value: (quizData.question9.score * 2)   },
