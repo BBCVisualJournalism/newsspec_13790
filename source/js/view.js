@@ -289,7 +289,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 .attr('d', arc);
 
 
-            // set data-value .. picked up in this.listenForHover()
+            // set data-value .. picked up in this.updateGraphStatusText()
             var i=0;
             $('.graph__slice').each(function (){
                 $(this).data('value', (graphData[i].value / 2));
@@ -311,7 +311,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             $('.graph__status').addClass('graph__status--tooltip_view');
         },
         updateGraphStatusText: function (elem) {
-            var title = $(elem).parent().data('property'),
+            var title = $(elem).parent().data('title'),
                 val   = $(elem).parent().data('value');
             $('.graph__status').html(title + ' (' + val + ')');
         },
