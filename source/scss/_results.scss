@@ -219,7 +219,11 @@
 
     .result__graph__header {}
 
-    .result__graph__body {}
+    .result__graph__body {
+        margin: 0 auto;
+        max-width: 228px;
+        width: 228px;
+    }
 
     .result__activity-text {
         clear: both;

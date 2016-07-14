@@ -114,6 +114,9 @@ $fontColor: #404040;
             .graph__slice-path {
                 fill: #2E8840;
             }
+            .graph__slice-path:hover {
+                fill: #266AB1;
+            }
         }
 
         .graph__slice--selected {
