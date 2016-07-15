@@ -252,5 +252,6 @@
     "credits_external_sites_message": "The BBC is not responsible for the content of external Internet sites",
     "legacy_ie_message": "You should upgrade to a modern browser.",
     "method_header": "Methodology",
-    "method_text": "This quiz was developed in collaboration with Dr David Fletcher, a sports psychologist from Loughborough University. The questions were designed to highlight key mental characteristics that are important for achieving at the highest levels of competitive sport."
+    "method_text": "This quiz was developed in collaboration with Dr David Fletcher, a sports psychologist from Loughborough University. The questions were designed to highlight key mental characteristics that are important for achieving at the highest levels of competitive sport.",
+    "hover_over_section": "Hover over section to see attribute"
 }

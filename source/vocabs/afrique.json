@@ -252,5 +252,6 @@
     "credits_external_sites_message": "La BBC n'est pas responsable du contenu des sites Internet externes",
     "legacy_ie_message": "Vous devriez passer à une version plus moderne de votre navigateur",
     "method_header": "Méthodologie",
-    "method_text": ""
+    "method_text": "",
+    "hover_over_section": ""
 }

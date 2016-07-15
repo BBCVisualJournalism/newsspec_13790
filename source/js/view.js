@@ -219,13 +219,13 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             $('.result__title').removeClass('hidden');
             $('.result').removeClass('hidden');
 
-            this.updateGraph(graphData);
-
+            if(model.kidsResultAmended){
+                $('.result__graph').addClass('hidden');
+            } else {
+                $('.result__graph').removeClass('hidden');
+                this.updateGraph(graphData);
+            }
         },
-
-
-
-
         getGraphContainerSize: function () {
             var size = $('.result__graph__body').width();
 
@@ -277,7 +277,9 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 $(insertInThisElement).on('mouseout', function (e) {
                     self.hideGraphTooltip(e);
                 });
-                $('.result__graph__header').addClass('hidden');
+                $('.result__graph__header__text').addClass('hidden');
+                $('.result__graph__header__text--tap').addClass('hidden');
+                $('.result__graph__header__text--hover').removeClass('hidden');
                 $('.graph__status').addClass('graph__status--tooltip_view');
                 $('.graph__status').removeClass('hidden');
             }
@@ -287,7 +289,9 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                     $('.graph__slice').removeClass('graph__slice--selected');
                     $(this).parent().addClass('graph__slice--selected');
                 });
-                $('.result__graph__header').removeClass('hidden');
+                $('.result__graph__header__text').removeClass('hidden');
+                $('.result__graph__header__text--tap').removeClass('hidden');
+                $('.result__graph__header__text--hover').addClass('hidden');
                 $('.graph__status').addClass('hidden');
             }
         },

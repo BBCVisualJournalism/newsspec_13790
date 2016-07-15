@@ -9,6 +9,12 @@
         position: relative;
         text-align: center;
         top: -10px;
+        @media(min-width:1008px){
+            top: -40px;
+        }
+        @media(min-width:1280px){
+            top: -50px;
+        }
     }
 
     .question {

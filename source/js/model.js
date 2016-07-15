@@ -9,6 +9,7 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
             this.age = 0;
             this.activityLevel = 0;
             this.scoresArray = [];
+            this.kidsResultAmended = false;
         },
         getQuizDataLength: function(){
             var length = Object.keys(quizData).length;
@@ -157,9 +158,11 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
             return category;
         },
         amendKidsResult: function (category, vocab){
-            if ( this.age < 17 && category.title === vocab.results_category_5 ) {
+            if ( this.age < 17 && (category.title === vocab.results_category_5 || category.title === vocab.results_category_4) ) {
+                this.kidsResultAmended = true;
                 return true;
             }
+            this.kidsResultAmended = false;
             return false;
         },
         calculateStrengths: function (){

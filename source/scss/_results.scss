@@ -154,7 +154,7 @@
 
     .share__container {
         clear: both;
-        margin:20px;
+        margin:10px;
     }
 
     .result__share-header {
@@ -183,7 +183,7 @@
     .result__strengths-weaknesses {
         clear: both;
         display: block;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
 
     .strengths {
@@ -214,16 +214,22 @@
     .result__graph {
         clear: both;
         display: block;
-        padding: 20px;
+        padding: 10px;
     }
 
     .result__graph__header {
-        padding: 10px;
+        padding-top: 10px;
+        padding-bottom: 20px;
     }
 
     .result__graph__header__text--tap {
         font-weight: bold;
-        margin-bottom: 1em;
+        display: inline-block;
+    }
+
+    .result__graph__header__text--hover {
+        font-weight: bold;
+        display: inline-block;
     }
 
     .result__graph__header__text {
