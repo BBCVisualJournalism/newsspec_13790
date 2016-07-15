@@ -44,3 +44,44 @@
         }
     }
 }
+
+.footer_share {
+    &__title {
+        margin: 1em 0 0;
+    }
+
+    .footer_share__about {
+        font-size: 12px;
+        text-decoration: none;
+        font-weight: 400;
+        letter-spacing: normal;
+        color: inherit;
+        border-bottom: none;
+    }
+
+    .footer_share__link {
+        width: 44px;
+        height: 32px;
+        text-decoration: none;
+        display: inline-block;
+        margin: 8px 8px 8px 0;
+        border-bottom: none;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &--email {
+            background-color: #615f5d;
+        }
+
+        &--facebook {
+            background-color: #3c5a98;
+        }
+
+        &--twitter {
+            background-color: #47c7fa;
+        }
+    }
+}
