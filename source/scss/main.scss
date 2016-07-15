@@ -126,6 +126,16 @@ html body .bbc-news-vj-wrapper--iframe .bbc-news-vj-grid-wrapper {
         z-index: 88;
     }
 
+    .ns_onwardJourneys {
+        a {
+            display:block;
+            border: none;
+            text-decoration: none;
+            font-weight:bold;
+            padding-bottom:6px;
+        }
+    }
+
  }
 
 // in sport page
