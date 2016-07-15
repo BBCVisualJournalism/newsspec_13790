@@ -14,6 +14,9 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
             var length = Object.keys(quizData).length;
             return length;
         },
+        getQuizData: function(){
+            return quizData;
+        },
         convertObjectToArray: function (obj){
             var arr = Object.keys(obj).map(function (key) {
                 return obj[key];
@@ -246,7 +249,7 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
                 'strengths'       : strengths,
                 'weaknesses'      : weaknesses
             };
-            console.log('quizData:', quizData, 'quizResults:', quizResults);
+            // console.log('quizData:', quizData, 'quizResults:', quizResults);
             return quizResults;
         }
     };

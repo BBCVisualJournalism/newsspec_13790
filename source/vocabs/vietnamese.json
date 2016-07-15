@@ -1,7 +1,7 @@
 {
     "": "KHÁC",
     "hero_title": "Bạn có trí lực của một vận động viên Olympic?",
-    "hero_subtitle": "Mời bạn làm trắc nhiệm 60 giây để biết cần những yếu tố gì nếu muốn giành huy chương vàng.",
+    "hero_subtitle": "Mời bạn làm trắc nghiệm 60 giây để biết cần những yếu tố gì nếu muốn giành huy chương vàng.",
     "start_quiz": "Làm trắc nghiệm",
     "feedback_title": "Ý kiến chuyên gia",
     "olympic_medal_icon_alt_text": "Thần tượng huy chương Olympic",
@@ -238,7 +238,7 @@
     "activity_2_url_title": "BBC Make your Move",
     "share_your_result": "Chia sẻ kết quả",
     "share_button_title": "Chia sẻ",
-    "tap_on_section": "Bấm vào để xem thêm",
+    "tap_on_section": "",
     "share_text_example": "Tôi có tinh thần của  {insert result}. Thử xem liệu bạn có khả năng tranh tài ở Rio2016. {insert url}",
     "share_result_1": "Tôi có tinh thần của nhà vô địch",
     "share_result_2": "Tôi có tinh thần của vận động viên",

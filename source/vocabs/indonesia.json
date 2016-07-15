@@ -106,7 +106,7 @@
     "question_7_result_priority": "1",
     "question_7_question": "Apakah Anda melakukan sesuatu karena suka bertanding atau karena mengejar materi?",
     "question_7_lowest": "Mengejar materi adalah motivasi saya",
-    "question_7_low": "Megenjar materi adalah motivasi utama saya",
+    "question_7_low": "Mengejar materi adalah motivasi utama saya",
     "question_7_med": "Posisi saya di tengah",
     "question_7_high": "Saya suka dan bukan menggandrungi",
     "question_7_highest": "Karena menyenangi pertandingan",
@@ -238,7 +238,7 @@
     "activity_2_url_title": "BBC Make your Move",
     "share_your_result": "Bagikan hasil",
     "share_button_title": "Bagikan",
-    "tap_on_section": "Klik untuk melihat atrubut",
+    "tap_on_section": "",
     "share_text_example": "",
     "share_result_1": "Saya memiliki mental atlet Olimpiade",
     "share_result_2": "Saya memiliki mental atlet solid",
@@ -252,5 +252,5 @@
     "credits_external_sites_message": "BBC tidak bertanggung jawab atas konten situs eksternal",
     "legacy_ie_message": "Browser Anda harus diperbarui",
     "method_header": "Metodelogi",
-    "method_text": "Kuis ini dikembangkan dengan berkolaborasi bersama Dr David Fletcher, psikolog olahraga dari Universitas  Loughborough. Pertanyaan-pertanyaan ini dirancang untuk mengangkat karakteristik mental yang penting untuk untuk meraih hasil tertinggi dalam pertandingan olahraga."
+    "method_text": "Kuis ini dikembangkan dengan berkolaborasi bersama Dr David Fletcher, psikolog olahraga dari Universitas  Loughborough. Pertanyaan-pertanyaan ini dirancang untuk mengangkat karakteristik mental yang penting untuk meraih hasil tertinggi dalam pertandingan olahraga."
 }

@@ -3,11 +3,13 @@
 @import "./../../bower_components/sharetools/bin/templates/dropdown/share.scss"; // Developer: choose your sharetools of choice ('dropdown', 'buttons'). This should match the ShareToolsTemplate value in config.json
 
 
-$version: "0.1.33";
+$version: "0.1.39";
 
+@import "_media_query";
 @import "_hero";
 @import "_quiz";
 @import "_results";
+@import "_graph";
 @import "_share";
 @import "_lang";
 

@@ -1,5 +1,5 @@
-define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istats', 'vocab'],
-    function ($, ShareTools, ShareTemplate, Model, wrapper, istats, vocab){
+define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istats', 'vocab', 'lib/d3.v3.min'],
+    function ($, ShareTools, ShareTemplate, Model, wrapper, istats, vocab, d3){
 
     var model = new Model();
 
@@ -12,6 +12,8 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             this.quizResults = {};
             this.setEvents();
             this.hideResults();
+            this.d3 = d3;
+            this.maximumGraphSize = 228;
         },
         setEvents: function () {
             var self = this;
@@ -41,6 +43,9 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 var activityLevel = $(this).attr('data-activity-level');
                 model.setActivityLevel(activityLevel);
             });
+        },
+        mouseIsSupported: function(){
+            return !('ontouchstart' in document.documentElement);
         },
         scrollToQuiz: function(){
             $('.questions').removeClass('hidden');
@@ -111,7 +116,6 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             } else {
                 nextQuestionNumber = questionNumber + 1;
             }
-            console.log(questionNumber, nextQuestionNumber);
 
             $('.question' + questionNumber).removeClass('question--current');
             $('.question' + nextQuestionNumber).addClass('question--current');
@@ -161,6 +165,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             if (model.fiveOrMoreScoresAreTheSame()){
                 $('.weaknesses').addClass('hidden');
                 $('.strengths' ).addClass('hidden');
+                $('.result__strengths-weaknesses').addClass('hidden');
             } else {
                 if ( model.userHasBottomResult() === false){
                     $('#strength_1').text(this.quizResults['strengths'][0]);
@@ -168,7 +173,6 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                     $('#strength_3').text(this.quizResults['strengths'][2]);
                     $('.strengths' ).removeClass('hidden');
                 }
-
                 if (model.getAge() < 17){
                     $('.weaknesses').addClass('hidden');
                 } else {
@@ -179,7 +183,11 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                         $('.weaknesses').removeClass('hidden');
                     }
                 }
+                $('.result__strengths-weaknesses').removeClass('hidden');
             }
+        },
+        addResultsToShareInfo: function (resultCategoryNumber, icon){
+            new ShareTools('.result__share', resultCategoryNumber, icon);
         },
         showResult: function(){
             var resultTitle             = this.quizResults.categoryTitle,
@@ -190,7 +198,8 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 resultCategorySelected  = '.result__banner__categories__icon--' + resultCategoryNumber,
                 resultActivityText      = this.quizResults.activityText,
                 resultActivityUrl       = this.quizResults.activityUrl,
-                resultActivityUrlTitle  = this.quizResults.activityUrlTitle;
+                resultActivityUrlTitle  = this.quizResults.activityUrlTitle,
+                graphData               = this.getGraphData();
 
             this.addResultsToShareInfo(resultCategoryNumber, resultIcon);
 
@@ -208,9 +217,161 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             $('.button--see-results').addClass('hidden');
             $('.result__title').removeClass('hidden');
             $('.result').removeClass('hidden');
+
+            this.updateGraph(graphData);
+
         },
-        addResultsToShareInfo: function (resultCategoryNumber, icon){
-            new ShareTools('.result__share', resultCategoryNumber, icon);
+
+
+
+
+        getGraphContainerSize: function () {
+            var size = $('.result__graph__body').width();
+
+            if (size > this.maximumGraphSize) {
+                size = this.maximumGraphSize;
+            }
+            return size;
+        },
+        getGraphData: function (){
+            var quizData = model.getQuizData(),
+                graphData = [
+                    { title: vocab.question_1_result_noun,   property: 'conscientiousness',  value: (quizData.question1.score * 2)   },
+                    { title: vocab.question_2_result_noun,   property: 'perfectionism',      value: (quizData.question2.score * 2)   },
+                    { title: vocab.question_3_result_noun,   property: 'mental toughness',   value: (quizData.question3.score * 2)   },
+                    { title: vocab.question_4_result_noun,   property: 'ego',                value: (quizData.question4.score * 2)   },
+                    { title: vocab.question_5_result_noun,   property: 'competitiveness',    value: (quizData.question5.score * 2)   },
+                    { title: vocab.question_6_result_noun,   property: 'proactive approach', value: (quizData.question6.score * 2)   },
+                    { title: vocab.question_7_result_noun,   property: 'motivation',         value: (quizData.question7.score * 2)   },
+                    { title: vocab.question_8_result_noun,   property: 'task orientation',   value: (quizData.question8.score * 2)   },
+                    { title: vocab.question_9_result_noun,   property: 'self confidence',    value: (quizData.question9.score * 2)   },
+                    { title: vocab.question_10_result_noun,  property: 'focus',              value: (quizData.question10.score * 2)  },
+                    { title: vocab.question_11_result_noun,  property: 'social support',     value: (quizData.question11.score * 2)  },
+                    { title: vocab.question_12_result_noun,  property: 'goal-setting',       value: (quizData.question12.score * 2)  }
+                ];
+            return graphData;
+        },
+        getGraphDataValues: function(elem){
+            var title = $(elem).parent().data('title');
+            var value = $(elem).parent().data('value');
+            return {
+                'title': title,
+                'value': value
+            };
+        },
+        setGraphDataValues: function(graphData){
+            var i=0;
+            $('.graph__slice').each(function (){
+                $(this).data('value', (graphData[i].value / 2));
+                i++;
+            });
+        },
+        setGraphEventsOn: function (insertInThisElement) {
+            var self = this;
+            if (this.mouseIsSupported()){
+                $(insertInThisElement).on('mousemove', function (e) {
+                    self.updateGraphTooltip(this);
+                    self.moveGraphTooltip(e);
+                });
+                $(insertInThisElement).on('mouseout', function (e) {
+                    self.hideGraphTooltip(e);
+                });
+                $('.result__graph__header').addClass('hidden');
+                $('.graph__status').addClass('graph__status--tooltip_view');
+                $('.graph__status').removeClass('hidden');
+            }
+            else {
+                $(insertInThisElement).on('mousedown', function (e) {
+                    self.updateGraphHeader(this);
+                    $('.graph__slice').removeClass('graph__slice--selected');
+                    $(this).parent().addClass('graph__slice--selected');
+                });
+                $('.result__graph__header').removeClass('hidden');
+                $('.graph__status').addClass('hidden');
+            }
+        },
+        moveGraphTooltip: function (e) {
+            var tooltip = $('.graph__status--tooltip_view'),
+                cursorOffset = 10,
+                displayTooltipToRightOfCursor = true,
+                graphSize,
+                tooltipX,
+                tooltipY;
+
+            graphSize = $('.graph__dial').width();
+
+            if (graphSize / 2 < e.offsetX) {
+                displayTooltipToRightOfCursor = false;
+            }
+
+            tooltipY = (e.offsetY + cursorOffset);
+            tooltipX = (e.offsetX + cursorOffset);
+
+            if (!displayTooltipToRightOfCursor) {
+                tooltipX = tooltipX - tooltip.width();
+            }
+
+            tooltip
+                .removeClass('hidden')
+                .css('display', 'block')
+                .css('left', tooltipX + 'px')
+                .css('top',  tooltipY + 'px');
+        },
+        hideGraphTooltip: function (e) {
+            $('.graph__status--tooltip_view')
+                .css('display', 'none')
+                .addClass('hidden');
+        },
+        updateGraph: function (graphData){
+
+            var d3               = this.d3,
+                slices           = d3.selectAll('.graph__slice-path'),
+                size             = this.maximumGraphSize,
+                radius           = size / 2,
+                centralGap       = 36,
+                quizLength       = model.getQuizDataLength()-2;
+
+            function startAngle(d, i) {
+                return 2 * (Math.PI / quizLength) * (i);
+            }
+
+            function endAngle(d, i) {
+                var properEndAngle = 2 * (Math.PI / quizLength) * (i + 1),
+                    endAngleWithPixelGap = properEndAngle - 0.025;
+                return endAngleWithPixelGap;
+            }
+
+            var pie =
+                    d3.layout.pie()
+                        .value(function (d) { return d.value; }),
+                arc =
+                    d3.svg.arc()
+                        .outerRadius(function (d) {
+                            var maxHeight = radius - centralGap,
+                                distanceFromTop = maxHeight - (d.value * (maxHeight / 10)),
+                                height = maxHeight - distanceFromTop + centralGap;
+                            return height;
+                        })
+                        .innerRadius(centralGap)
+                        .startAngle(startAngle)
+                        .endAngle(endAngle);
+
+            slices
+                .data(pie(graphData))
+                .transition()
+                .duration(700)
+                .attr('d', arc);
+
+            this.setGraphDataValues(graphData);
+            this.setGraphEventsOn('.graph__slice-path');
+        },
+        updateGraphHeader: function (elem){
+            var graphDataValues = this.getGraphDataValues(elem);
+            $('.result__graph__header__text').text(graphDataValues.title + ' (' + graphDataValues.value + ')');
+        },
+        updateGraphTooltip: function (elem) {
+            var graphDataValues = this.getGraphDataValues(elem);
+            $('.graph__status').html(graphDataValues.title + ' (' + graphDataValues.value + ')');
         }
     };
 
