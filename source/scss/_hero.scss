@@ -177,6 +177,11 @@
         background-color: white;
         transform: skew(0deg, 6deg);
         z-index:999;
+        -webkit-transition: background-color .5s ease, min-width .5s ease, color .5s ease, border-color .5s ease;
+        -moz-transition: background-color .5s ease, min-width .5s ease, color .5s ease, border-color .5s ease;
+        -ms-transition: background-color .5s ease, min-width .5s ease, color .5s ease, border-color .5s ease;
+        -o-transition: background-color .5s ease, min-width .5s ease, color .5s ease, border-color .5s ease;
+        transition: background-color .5s ease, min-width .5s ease, color .5s ease, border-color .5s ease;
         @media (min-width: 768px){
             height:100px;
         }
@@ -192,13 +197,22 @@
         background-color: white;
         transform: skew(0deg, -6deg);
         z-index:999;
+        -webkit-transition: background-color .5s ease, min-width .5s ease, color .5s ease, border-color .5s ease;
+        -moz-transition: background-color .5s ease, min-width .5s ease, color .5s ease, border-color .5s ease;
+        -ms-transition: background-color .5s ease, min-width .5s ease, color .5s ease, border-color .5s ease;
+        -o-transition: background-color .5s ease, min-width .5s ease, color .5s ease, border-color .5s ease;
+        transition: background-color .5s ease, min-width .5s ease, color .5s ease, border-color .5s ease;
         @media (min-width: 768px){
             height:100px;
         }
     }
+
+    .hero__chevron__bottom--selected:before, .hero__chevron__bottom--selected:after {
+        background-color: #efefef;
+    }
 }
 
-    body div.bbc-news-vj-wrapper-js-enabled .section {
+body div.bbc-news-vj-wrapper-js-enabled .section {
 
     .no-js-message {
         display: none;

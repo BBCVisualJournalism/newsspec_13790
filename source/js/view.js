@@ -113,10 +113,11 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             var nextQuestionNumber;
             if (questionNumber === 13){
                 nextQuestionNumber = 1;
+                $('.hero__chevron__bottom').addClass('hero__chevron__bottom--selected');
             } else {
                 nextQuestionNumber = questionNumber + 1;
+                $('.hero__chevron__bottom').removeClass('hero__chevron__bottom--selected');
             }
-
             $('.question' + questionNumber).removeClass('question--current');
             $('.question' + nextQuestionNumber).addClass('question--current');
         },
