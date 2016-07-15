@@ -50,9 +50,13 @@
                 </div>
 
                 <div class="result__graph">
-                    <div class="result__graph__header"></div>
+                    <div class="result__graph__header">
+                        <span class="result__graph__header__text--tap"><%= tap_on_section %></span>
+                        <img class="result__graph__header__img" src="<%= pathStatic %>/common/img/hand_icon.png" alt="" />
+                        <h2 class="result__graph__header__text"><%= question_1_result_noun %></h2>
+                    </div>
                     <div class="result__graph__body graph">
-                        <div class="graph__status graph__status--tooltip_view hidden">Ego (1)</div>
+                        <div class="graph__status graph__status--tooltip_view hidden"></div>
                         <svg class="graph__dial" height="228" width="228">
                             <g transform="translate(114,114)">
                                 <g class="graph__slice graph__slice--seen" data-property="conscientiousness" data-title="<%= question_1_result_noun %>">

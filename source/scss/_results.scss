@@ -217,7 +217,24 @@
         padding: 20px;
     }
 
-    .result__graph__header {}
+    .result__graph__header {
+        padding: 10px;
+    }
+
+    .result__graph__header__text--tap {
+        font-weight: bold;
+        margin-bottom: 1em;
+    }
+
+    .result__graph__header__text {
+        font-weight: bold;
+    }
+
+    .result__graph__header__img {
+        display: inline-block;
+        margin-bottom: -2px;
+        padding-left: 4px;
+    }
 
     .result__graph__body {
         margin: 0 auto;

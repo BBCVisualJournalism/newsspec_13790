@@ -44,6 +44,9 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 model.setActivityLevel(activityLevel);
             });
         },
+        mouseIsSupported: function(){
+            return !('ontouchstart' in document.documentElement);
+        },
         scrollToQuiz: function(){
             $('.questions').removeClass('hidden');
             var $scrollElem = $('.questions');
@@ -248,6 +251,77 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 ];
             return graphData;
         },
+        getGraphDataValues: function(elem){
+            var title = $(elem).parent().data('title');
+            var value = $(elem).parent().data('value');
+            return {
+                'title': title,
+                'value': value
+            };
+        },
+        setGraphDataValues: function(graphData){
+            var i=0;
+            $('.graph__slice').each(function (){
+                $(this).data('value', (graphData[i].value / 2));
+                i++;
+            });
+        },
+        setGraphEventsOn: function (insertInThisElement) {
+            var self = this;
+            if (this.mouseIsSupported()){
+                $(insertInThisElement).on('mousemove', function (e) {
+                    self.updateGraphTooltip(this);
+                    self.moveGraphTooltip(e);
+                });
+                $(insertInThisElement).on('mouseout', function (e) {
+                    self.hideGraphTooltip(e);
+                });
+                $('.result__graph__header').addClass('hidden');
+                $('.graph__status').addClass('graph__status--tooltip_view');
+                $('.graph__status').removeClass('hidden');
+            }
+            else {
+                $(insertInThisElement).on('mousedown', function (e) {
+                    self.updateGraphHeader(this);
+                    $('.graph__slice').removeClass('graph__slice--selected');
+                    $(this).parent().addClass('graph__slice--selected');
+                });
+                $('.result__graph__header').removeClass('hidden');
+                $('.graph__status').addClass('hidden');
+            }
+        },
+        moveGraphTooltip: function (e) {
+            var tooltip = $('.graph__status--tooltip_view'),
+                cursorOffset = 10,
+                displayTooltipToRightOfCursor = true,
+                graphSize,
+                tooltipX,
+                tooltipY;
+
+            graphSize = $('.graph__dial').width();
+
+            if (graphSize / 2 < e.offsetX) {
+                displayTooltipToRightOfCursor = false;
+            }
+
+            tooltipY = (e.offsetY + cursorOffset);
+            tooltipX = (e.offsetX + cursorOffset);
+
+            if (!displayTooltipToRightOfCursor) {
+                tooltipX = tooltipX - tooltip.width();
+            }
+
+            tooltip
+                .removeClass('hidden')
+                .css('display', 'block')
+                .css('left', tooltipX + 'px')
+                .css('top',  tooltipY + 'px');
+        },
+        hideGraphTooltip: function (e) {
+            $('.graph__status--tooltip_view')
+                .css('display', 'none')
+                .addClass('hidden');
+        },
         updateGraph: function (graphData){
 
             var d3               = this.d3,
@@ -288,65 +362,16 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 .duration(700)
                 .attr('d', arc);
 
-
-            // set data-value .. picked up in this.updateGraphStatusText()
-            var i=0;
-            $('.graph__slice').each(function (){
-                $(this).data('value', (graphData[i].value / 2));
-                i++;
-            });
-            if(!('ontouchstart' in document.documentElement)){
-                this.listenForHover('.graph__slice-path');
-            }
+            this.setGraphDataValues(graphData);
+            this.setGraphEventsOn('.graph__slice-path');
         },
-        listenForHover: function (insertInThisElement) {
-            var self = this;
-            $(insertInThisElement).on('mousemove', function (e) {
-                self.moveTooltip(e);
-                self.updateGraphStatusText(this);
-            });
-            $(insertInThisElement).on('mouseout', function (e) {
-                self.hideTooltip(e);
-            });
-            $('.graph__status').addClass('graph__status--tooltip_view');
+        updateGraphHeader: function (elem){
+            var graphDataValues = this.getGraphDataValues(elem);
+            $('.result__graph__header__text').text(graphDataValues.title + ' (' + graphDataValues.value + ')');
         },
-        updateGraphStatusText: function (elem) {
-            var title = $(elem).parent().data('title'),
-                val   = $(elem).parent().data('value');
-            $('.graph__status').html(title + ' (' + val + ')');
-        },
-        moveTooltip: function (e) {
-
-            var tooltip = $('.graph__status--tooltip_view'),
-                cursorOffset = 10,
-                displayTooltipToRightOfCursor = true,
-                graphSize,
-                tooltipX,
-                tooltipY;
-
-            graphSize = $('.graph__dial').width();
-
-            if (graphSize / 2 < e.offsetX) {
-                displayTooltipToRightOfCursor = false;
-            }
-
-            tooltipY = (e.offsetY + cursorOffset);
-            tooltipX = (e.offsetX + cursorOffset);
-
-            if (!displayTooltipToRightOfCursor) {
-                tooltipX = tooltipX - tooltip.width();
-            }
-
-            tooltip
-                .removeClass('hidden')
-                .css('display', 'block')
-                .css('left', tooltipX + 'px')
-                .css('top',  tooltipY + 'px');
-        },
-        hideTooltip: function (e) {
-            $('.graph__status--tooltip_view')
-                .css('display', 'none')
-                .addClass('hidden');
+        updateGraphTooltip: function (elem) {
+            var graphDataValues = this.getGraphDataValues(elem);
+            $('.graph__status').html(graphDataValues.title + ' (' + graphDataValues.value + ')');
         }
     };
 
