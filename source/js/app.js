@@ -11,6 +11,7 @@ define(['wrapper', 'istats', 'jquery', 'view'],
     }
 
     // check if in app, if so, append '.app' to all href urls..
+    console.log($('a').attr('href'));
 
     // create the view - to handle inputs, UI changes, etc
     var view = new View();

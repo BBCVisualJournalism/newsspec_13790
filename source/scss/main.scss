@@ -3,7 +3,7 @@
 @import "./../../bower_components/sharetools/bin/templates/dropdown/share.scss"; // Developer: choose your sharetools of choice ('dropdown', 'buttons'). This should match the ShareToolsTemplate value in config.json
 
 
-$version: "0.1.47";
+$version: "0.1.49";
 
 @import "_media_query";
 @import "_hero";
@@ -97,6 +97,26 @@ html body .bbc-news-vj-wrapper--iframe .bbc-news-vj-grid-wrapper {
         }
     }
 
+    .fluid-inner {
+        padding-left: 8px;
+        padding-right: 8px;
+
+        @media (min-width: 400px) {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        @media (min-width: 600px) {
+            margin-left: 8.1%;
+            margin-right: 8.1%;
+        }
+
+        @media (min-width: 800px) {
+            margin-left: 16.4%;
+            margin-right: 16.4%;
+        }
+    }
+
     .bold-text {
         font-weight: 800;
     }
@@ -134,6 +154,11 @@ html body .bbc-news-vj-wrapper--iframe .bbc-news-vj-grid-wrapper {
             font-weight:bold;
             padding-bottom:6px;
         }
+    }
+
+    .external-links-text {
+        display: block;
+        padding-top: 20px;
     }
 
  }
