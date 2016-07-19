@@ -61,7 +61,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             var $scrollElem = $(chosenButton).parents('.question').find('.question__feedback');
 
             if ($scrollElem.length === 0){
-                $scrollElem = $('.button--see-results');
+                $scrollElem = $('.question14__icon');
             }
 
             if ($scrollElem.length){
