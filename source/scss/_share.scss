@@ -4,7 +4,7 @@
         &__button {
             max-width: none;
             height: auto;
-            background-color: #41850d;
+            background-color: #2E8840;
             margin: 0 auto;
             display: inline-block;
             border: none;
@@ -15,7 +15,7 @@
             -o-transition: background-color .3s ease, min-width .5s ease, color .3s ease, border-color .3s ease;
             transition: background-color .3s ease, min-width .5s ease, color .3s ease, border-color .3s ease;
             &:hover {
-                background-color: #44A042;
+                background-color: #217B33;
             }
             p {
                 float: left;

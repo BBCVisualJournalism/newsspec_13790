@@ -97,7 +97,7 @@
     }
 
     .hero__chevron:before {
-        background: url('../img/hero_chevron.png?v=#{$version}');
+        background: url('../img/hero_chevron_v2.png?v=#{$version}');
         background-position: 100% 65%;
         background-size: 500%;
         background-repeat: no-repeat;
@@ -108,7 +108,7 @@
         height: 100%;
         width: 50%;
         transform: skew(0deg, 6deg);
-        @media (min-width:375px){
+        @media (min-width:335px){
             background-position: 100% 67%;
         }
         @media (min-width:430px){
@@ -116,9 +116,21 @@
             background-size: 400%;
         }
         @media (min-width:600px){
+            background-position: 100% 63.5%;
             background-size: 300%;
         }
-        @media (min-width:700px){
+        @media (min-width:620px){
+            background-position: 100% 65%;
+            background-size: 300%;
+        }
+        @media (min-width:650px){
+            background-position: 100% 66%;
+            background-size: 300%;
+        }
+        @media (min-width:740px){
+            background-position: 100% 67%;
+        }
+        @media (min-width:800px){
             background-position: 100% 68%;
         }
         @media (min-width:1280px){
@@ -128,7 +140,7 @@
     }
 
     .hero__chevron:after {
-        background: url('../img/hero_chevron.png?v=#{$version}');
+        background: url('../img/hero_chevron_v2.png?v=#{$version}');
         background-position: 81% 100%;
         background-size: 500%;
         background-repeat: no-repeat;
@@ -231,7 +243,7 @@ body div.bbc-news-vj-wrapper-js-enabled .section {
         -o-transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
         transition: background-color .3s ease,min-width .5s ease,color .3s ease,border-color .3s ease;
         &:hover {
-            background-color: #44A042;
+            background-color: #217B33;
         }
     }
 
