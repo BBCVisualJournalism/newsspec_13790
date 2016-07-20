@@ -28,7 +28,7 @@
 .bbc-news-vj-language--arabic {
     div.section--hero {
         min-height: 515px;
-        @media (min-width: 390px){
+        @media (min-width: 333px){
             min-height: 485px;
         }
         @media (min-width: 600px){
@@ -53,9 +53,6 @@
         }
         @media (min-width: 331px){
             min-height: 550px;
-        }
-        @media (min-width: 346px){
-            min-height: 530px;
         }
         @media (min-width: 486px){
             min-height: 500px;
@@ -161,20 +158,20 @@
         @media (min-width: 365px){
             min-height: 530px;
         }
-        @media (min-width: 410px){
-            min-height: 480px;
-        }
-        @media (min-width: 600px){
+        @media (min-width: 434px){
             min-height: 510px;
         }
+        @media (min-width: 600px){
+            min-height: 540px;
+        }
         @media (min-width: 800px){
-            min-height: 555px;
+            min-height: 585px;
         }
         @media (min-width: 1008px){
-            min-height: 520px;
+            min-height: 540px;
         }
         @media (min-width: 1280px){
-            min-height: 570px;
+            min-height: 580px;
         }
     }
 }
