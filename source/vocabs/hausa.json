@@ -171,11 +171,11 @@
     "question_11_low": "Na kan nemi taimako a wasu lokutan",
     "question_11_lowest": "Ina neman taimako a duk sanda bukatar hakan ta taso",
     "question_11_feedback": "Ba wanda zai iya komai shi kadai. Kana bukatar taimako? Tambayi abokan aikinka, 'yan uwa, abokai, 'yan tawagarku ko koci - duk za su iya taimaka maka wajen ci gaban yadda ka ke abubuwa.",
-    "question_11_score_highest": "1",
-    "question_11_score_high": "2",
+    "question_11_score_highest": "5",
+    "question_11_score_high": "4",
     "question_11_score_med": "3",
-    "question_11_score_low": "4",
-    "question_11_score_lowest": "5",
+    "question_11_score_low": "2",
+    "question_11_score_lowest": "1",
     "question_12_number": "12/13",
     "question_12_result_noun": "dabarun samun nasara",
     "question_12_result_priority": "9",
@@ -253,5 +253,10 @@
     "legacy_ie_message": "Ka sabunta mashigin shafin",
     "method_header": "Tsari",
     "method_text": "An yi wannan kacici-kacici ne tare da hadin gwiwar Dr David Fletcher, wani masanin halayyar dan adam ta fuskar wasanni da ke Jami'ar Loughborough. An tsara tambayoyin ne domin fito da irin dabi'un da ke da matukar muhimmanci wajen cimma nasara a harkar wasanni.",
-    "hover_over_section": ""
+    "hover_over_section": "",
+    "number_1": "1",
+    "number_2": "2",
+    "number_3": "3",
+    "number_4": "4",
+    "number_5": "5"
 }

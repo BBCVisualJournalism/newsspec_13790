@@ -171,11 +171,11 @@
     "question_11_low": "De vez em quando eu busco ajuda",
     "question_11_lowest": "Sempre busco ajuda quando preciso",
     "question_11_feedback": "Ninguém é uma ilha e pode viver em isolamento. Precisa de ajuda? Peça a seus amigos, parentes, colegas de escola ou trabalho, ao seu técnico, todos podem ajudá-lo a melhorar seu desempenho.",
-    "question_11_score_highest": "1",
-    "question_11_score_high": "2",
+    "question_11_score_highest": "5",
+    "question_11_score_high": "4",
     "question_11_score_med": "3",
-    "question_11_score_low": "4",
-    "question_11_score_lowest": "5",
+    "question_11_score_low": "2",
+    "question_11_score_lowest": "1",
     "question_12_number": "12/13",
     "question_12_result_noun": "estabelecendo metas",
     "question_12_result_priority": "9",
@@ -253,5 +253,10 @@
     "legacy_ie_message": "Você precisa atualizar seu navegador.",
     "method_header": "Metodologia",
     "method_text": "Este quiz foi criado em colaboração com David Fletcher, psicólogo esportivo da Univesidade de Loughborough. As perguntas foram elaboradas para realçar as caracterísitcas mentais importantes para a obtenção de elevados níveis de competição no esporte.",
-    "hover_over_section": ""
+    "hover_over_section": "",
+    "number_1": "1",
+    "number_2": "2",
+    "number_3": "3",
+    "number_4": "4",
+    "number_5": "5"
 }

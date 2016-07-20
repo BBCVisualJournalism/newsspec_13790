@@ -1,7 +1,7 @@
  .bbc-news-vj-wrapper {
 
     div.section--hero {
-        background: url('../img/hero_image.jpg?v=#{$version}');
+        background: url('../img/hero_image_v3.jpg?v=#{$version}');
         background-position: center right;
         background-size: cover;
         background-repeat: no-repeat;
@@ -128,9 +128,6 @@
             background-size: 300%;
         }
         @media (min-width:740px){
-            background-position: 100% 67%;
-        }
-        @media (min-width:800px){
             background-position: 100% 68%;
         }
         @media (min-width:1280px){

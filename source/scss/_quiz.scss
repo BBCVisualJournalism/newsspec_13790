@@ -44,7 +44,9 @@
         padding-bottom: 12px;
     }
 
-    .question__number {}
+    .question__number {
+        display:block;
+    }
 
     .question__text {
         font-size:1.4em;

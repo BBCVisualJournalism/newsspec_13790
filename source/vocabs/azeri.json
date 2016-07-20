@@ -171,11 +171,11 @@
     "question_11_low": "Çox vaxt köməyə ehtiyacım olur",
     "question_11_lowest": "Həmişə ehtiyacım olanda kömək axtarıram",
     "question_11_feedback": "Narahat olmayın, adada yaşamırsınız ki. Köməyə ehtiyacınız var? İş yoldaşlarınıza, ailənizə, dostlarınıza, komanda yoldaşlarınıza, məşqçinizə müraciət edin - onlar hamısı sizə kömək edə bilərlər.",
-    "question_11_score_highest": "1",
-    "question_11_score_high": "2",
+    "question_11_score_highest": "5",
+    "question_11_score_high": "4",
     "question_11_score_med": "3",
-    "question_11_score_low": "4",
-    "question_11_score_lowest": "5",
+    "question_11_score_low": "2",
+    "question_11_score_lowest": "1",
     "question_12_number": "12/13",
     "question_12_result_noun": "hədəf qoymaq",
     "question_12_result_priority": "9",
@@ -253,5 +253,10 @@
     "legacy_ie_message": "Siz brauzerinizi yeniləməlisiniz",
     "method_header": "Metodologiya",
     "method_text": "Sorğu Loughborough Universitetindən Dr David Fletcher-lə əməkdaşlıq nəticəsində hazırlanmışdır. Suallar yüksək səviyyəli idman növlərində iştirak üçün lazım olan əsas mental qabiliyyətləri qeyd etmək üçün tərtib edilib.",
-    "hover_over_section": ""
+    "hover_over_section": "",
+    "number_1": "1",
+    "number_2": "2",
+    "number_3": "3",
+    "number_4": "4",
+    "number_5": "5"
 }

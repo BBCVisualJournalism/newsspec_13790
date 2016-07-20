@@ -171,11 +171,11 @@
     "question_11_low": "Saya terkadang meminta bantuan",
     "question_11_lowest": "Saya selalu meminta bantuan bila perlu.",
     "question_11_feedback": "Perlu bantuan? Tanya rekan Anda, keluarga, rekan kerja, pelatih. Mereka semuanya dapat membantu prestasi Anda.",
-    "question_11_score_highest": "1",
-    "question_11_score_high": "2",
+    "question_11_score_highest": "5",
+    "question_11_score_high": "4",
     "question_11_score_med": "3",
-    "question_11_score_low": "4",
-    "question_11_score_lowest": "5",
+    "question_11_score_low": "2",
+    "question_11_score_lowest": "1",
     "question_12_number": "12/13",
     "question_12_result_noun": "menetapkan sasaran",
     "question_12_result_priority": "9",
@@ -253,5 +253,10 @@
     "legacy_ie_message": "Browser Anda harus diperbarui",
     "method_header": "Metodelogi",
     "method_text": "Kuis ini dikembangkan dengan berkolaborasi bersama Dr David Fletcher, psikolog olahraga dari Universitas  Loughborough. Pertanyaan-pertanyaan ini dirancang untuk mengangkat karakteristik mental yang penting untuk meraih hasil tertinggi dalam pertandingan olahraga.",
-    "hover_over_section": ""
+    "hover_over_section": "",
+    "number_1": "1",
+    "number_2": "2",
+    "number_3": "3",
+    "number_4": "4",
+    "number_5": "5"
 }

@@ -11,9 +11,6 @@ Scenario: Initiate the interactive quiz
     When Bob visits the page
     Then the quiz data should be created with empty 'score' values
     And Bob should see a list of questions
-    And the 'start again' button should be hidden
-    And the 'see results' button should be disabled
-    And the quiz results should be hidden
 
 Scenario: Bob chooses an answer to a question
     Given that a given question has not yet been answered
@@ -21,11 +18,10 @@ Scenario: Bob chooses an answer to a question
     Then the chosen answer button should change colour
     And Bob should see some answer feedback
     And the quiz data for that answer should be updated
-    And all the answer buttons for that question should be disabled
 
 Scenario: Bob completes all questions
     Given that Bob has answered all questions
-    Then the 'see results' button should be enab    led
+    Then the 'see results' button should be enabled
 
 Scenario: Bob clicks the 'see results' button
     Given that the quiz has been completed,
@@ -35,11 +31,15 @@ Scenario: Bob clicks the 'see results' button
     And Bob should see his main strengths and weaknesses
     And which results category his fits into
 
-Scenario: Bob chose the same score for all questions
-    Given that Bob chose the first answer for all questions
-    And that each answer will therefore get the same score
+Scenario: Bob chose the same score for 5 or more questions
+    Given that Bob chose 5 or more answers with the same score
     When Bob clicks 'see results'
     Then Bob will not see any strengths or weaknesses in the results
+
+Scenario: Bob scored 'Olympian'
+    Given that Bob scored 'Olympian', which is the highest category
+    When Bob clicks 'see results'
+    Then Bob will see not see any weaknesses
 
 Scenario: Bob clicks the 'start again' button
     Given that the 'start again' button is visible
@@ -48,17 +48,17 @@ Scenario: Bob clicks the 'start again' button
     And the quiz results should be hidden
     And the answer buttons should be re-enabled
 
-Scenario: Bob is younger than 18
-    Given that Bob is under 18
+Scenario: Bob is younger than 17
+    Given that Bob is under 17
     And we don't want to upset Bob or put him off sport
     When Bob clicks 'see results'
     Then he should not see a list of weaknesses
     And if Bob's final score is 18 or less
-    Then Bob should see result band 4
+    Then Bob should see result band 3 (Fitness Fan)
     And Bob should see a link to 'BBC Get Inspired'
 
 Scenario: Bob tells us he is not physically active
-    Given that Bob answered 'not physically active' to question 14
+    Given that Bob answered 'not physically active' to the final question
     And that Bob is over 18 years old
     When Bob views his quiz results
     Then Bob should see a link to 'BBC Make Your Move'

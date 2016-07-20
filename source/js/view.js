@@ -101,6 +101,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             $feedbackContainers.each(function(){
                 $(this).addClass('hidden');
             });
+            $('.result__graph__header__text').text(' ');
             $('.result__banner__categories__icon').each(function(){
                 $(this).removeClass('result__banner__categories__icon--selected');
             });
@@ -168,6 +169,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 $('.strengths' ).addClass('hidden');
                 $('.result__strengths-weaknesses').addClass('hidden');
             } else {
+                $('.result__strengths-weaknesses').removeClass('hidden');
                 if ( model.userHasBottomResult() === false){
                     $('#strength_1').text(this.quizResults['strengths'][0]);
                     $('#strength_2').text(this.quizResults['strengths'][1]);
@@ -184,10 +186,16 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                         $('.weaknesses').removeClass('hidden');
                     }
                 }
-                $('.result__strengths-weaknesses').removeClass('hidden');
             }
         },
         addResultsToShareInfo: function (resultCategoryNumber, icon){
+            if (wrapper.wrapper === 'app') {
+                // we often want to deliver a different share view to the app
+                config.template = '\
+                    <div class="share ns__share ns__share-dropdown ns__share--app">\
+                        <a class="share__button share__png_icon share__tool--network" data-network="app" href="#"></a>\
+                    </div>';
+            }
             new ShareTools('.result__share', resultCategoryNumber, icon);
         },
         showResult: function(){
@@ -255,6 +263,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
         getGraphDataValues: function(elem){
             var title = $(elem).parent().data('title');
             var value = $(elem).parent().data('value');
+            value = vocab['number_' + value];
             return {
                 'title': title,
                 'value': value
@@ -371,12 +380,20 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             this.setGraphEventsOn('.graph__slice-path');
         },
         updateGraphHeader: function (elem){
-            var graphDataValues = this.getGraphDataValues(elem);
-            $('.result__graph__header__text').text(graphDataValues.title + ' (' + graphDataValues.value + ')');
+            this.updateGraphDetails(elem, '.result__graph__header__text');
         },
         updateGraphTooltip: function (elem) {
-            var graphDataValues = this.getGraphDataValues(elem);
-            $('.graph__status').html(graphDataValues.title + ' (' + graphDataValues.value + ')');
+            this.updateGraphDetails(elem, '.graph__status');
+        },
+        updateGraphDetails: function (graphElem, graphInfoElem){
+            var graphDataValues = this.getGraphDataValues(graphElem),
+                graphHeaderText = graphDataValues.title + ' (' + graphDataValues.value + ')',
+                rightToLeftLanguage = ( $('.bbc-news-vj-wrapper').hasClass('bbc-news-vj-direction--rtl') );
+
+            if (rightToLeftLanguage) {
+                graphHeaderText = graphDataValues.value + ' - ' + graphDataValues.title;
+            }
+            $(graphInfoElem).text(graphHeaderText);
         }
     };
 

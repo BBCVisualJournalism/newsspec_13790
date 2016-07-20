@@ -3,20 +3,20 @@ define(['wrapper', 'istats', 'jquery', 'view'],
 
     $('.bbc-news-vj-wrapper').addClass('bbc-news-vj-wrapper-js-enabled');
 
-    //show credits only for english page
+    //show activity links, and credits section only for english page
     if( $('.bbc-news-vj-wrapper').hasClass('bbc-news-vj-language--news') ){
         $('.ns_creditsHolder').removeClass('hidden');
+        $('.result__activity-text').removeClass('hidden');
     } else {
         $('.ns_creditsHolder').addClass('hidden');
+        $('.result__activity-text').addClass('hidden');
     }
-
-    // check if in app, if so, append '.app' to all href urls..
-    console.log($('a').attr('href'));
 
     // create the view - to handle inputs, UI changes, etc
     var view = new View();
 
     istats.init();
+
 
     wrapper.markPageAsLoaded();
 

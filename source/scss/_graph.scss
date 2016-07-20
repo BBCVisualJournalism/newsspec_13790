@@ -130,3 +130,18 @@ $fontColor: #404040;
         }
     }
 }
+
+.bbc-news-vj-language--news {
+    .section--results {
+        .result__graph__header {
+            h2.result__graph__header__text:first-letter {
+                text-transform: capitalize;
+            }
+        }
+        .result__graph__body {
+            div.graph__status--tooltip_view:first-letter {
+                text-transform: capitalize;
+            }
+        }
+    }
+}
