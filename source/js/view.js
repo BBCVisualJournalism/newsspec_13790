@@ -378,6 +378,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
 
             this.setGraphDataValues(graphData);
             this.setGraphEventsOn('.graph__slice-path');
+            this.setGraphEventsOn('.graph__dial__background');
         },
         updateGraphHeader: function (elem){
             this.updateGraphDetails(elem, '.result__graph__header__text');

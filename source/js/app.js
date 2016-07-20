@@ -30,7 +30,6 @@ define(['wrapper', 'istats', 'jquery', 'view'],
         } else {
             console.log('Not using IE8 or lower');
         }
-
     }
 
     var usingIE8 = checkIfUsingIE(8, 'lte');
