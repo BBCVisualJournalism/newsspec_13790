@@ -329,15 +329,18 @@
 
 .bbc-news-vj-language--portuguese {
     div.section--hero {
-        min-height: 585px;
-        @media (min-width: 366px){
+        min-height: 635px;
+        @media (min-width: 322px){
+            min-height: 600px;
+        }
+        @media (min-width: 390px){
             min-height: 540px;
         }
-        @media (min-width: 400px){
-            min-height: 535px;
+        @media (min-width: 434px){
+            min-height: 515px;
         }
         @media (min-width: 600px){
-            min-height: 545px;
+            min-height: 560px;
         }
         @media (min-width: 800px){
             min-height: 610px;
