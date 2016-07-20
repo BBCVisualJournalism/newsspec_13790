@@ -21,6 +21,6 @@ define(['wrapper', 'istats', 'jquery', 'view'],
     wrapper.markPageAsLoaded();
 
 
-    console.log(wrapper.wrapper);
+    console.log('current wrapper: ' + wrapper.wrapper);
 
 });
