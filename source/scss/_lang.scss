@@ -153,10 +153,10 @@
     div.section--hero {
         min-height: 580px;
         @media (min-width: 300px){
-            min-height: 540px;
+            min-height: 550px;
         }
-        @media (min-width: 365px){
-            min-height: 530px;
+        @media (min-width: 360px){
+            min-height: 525px;
         }
         @media (min-width: 434px){
             min-height: 510px;
