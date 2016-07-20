@@ -20,4 +20,7 @@ define(['wrapper', 'istats', 'jquery', 'view'],
 
     wrapper.markPageAsLoaded();
 
+
+    console.log(wrapper.wrapper);
+
 });

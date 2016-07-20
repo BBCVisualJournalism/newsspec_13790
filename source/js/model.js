@@ -256,7 +256,7 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
                 'strengths'       : strengths,
                 'weaknesses'      : weaknesses
             };
-            // console.log('quizData:', quizData, 'quizResults:', quizResults);
+            console.log('quizData:', quizData, 'quizResults:', quizResults);
             return quizResults;
         }
     };
