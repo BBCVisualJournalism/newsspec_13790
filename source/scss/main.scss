@@ -138,15 +138,16 @@ html body .bbc-news-vj-wrapper--iframe .bbc-news-vj-grid-wrapper {
         max-width: 195px;
     }
 
-    .method--section {
+    .section--method {
         clear:both;
         padding-left: 16px;
         padding-right: 16px;
         position: relative;
+        text-align:left;
         z-index: 88;
     }
 
-    .ns_creditsHolder {
+    .section--credits {
         clear:both;
         padding-left: 16px;
         padding-right: 16px;

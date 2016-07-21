@@ -11,13 +11,11 @@
     }
 
     .result__title {
-        line-height: 1em;
         margin-bottom: 1.75em;
         margin-top:24px;
     }
 
     .result__title__text-intro {
-        font-size:1.25em;
         margin: 0;
         margin-bottom:8px;
     }
@@ -135,6 +133,7 @@
         @media(min-width: 600px){
             display: block;
             font-size: 0.85em;
+            margin-top: 0;
             padding-top: 10px;
         }
         @media(min-width: 1008px){

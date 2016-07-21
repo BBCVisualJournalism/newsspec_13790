@@ -1,3 +1,37 @@
+div.bbc-news-vj-direction--rtl {
+    .section--hero {
+        direction: rtl;
+    }
+    .section--questions {
+        .quiz-body {
+            direction: rtl;
+        }
+    }
+    .section--results {
+        .result__title {
+            .result__title__text-intro {
+                direction: rtl;
+            }
+        }
+        .result {
+            direction: rtl;
+            .result__share-header {
+                margin-left:8px;
+            }
+            .result__banner__categories {
+                direction: ltr;
+            }
+            .result__banner__categories__icon__text {
+                direction: rtl;
+            }
+        }
+    }
+    .section--method {
+        direction: rtl;
+        text-align: right;
+    }
+}
+
 .bbc-news-vj-language--afrique {
     div.section--hero {
         min-height: 680px;
@@ -580,7 +614,7 @@
     }
 }
 
-.bbc-news-vj-language--zhongwen{
+.bbc-news-vj-language--zhongwen {
     div.section--hero {
         min-height: 515px;
         @media (min-width: 390px){

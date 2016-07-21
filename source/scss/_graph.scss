@@ -21,37 +21,6 @@ $fontColor: #404040;
             @include unselectable;
         }
 
-        .graph__barchart {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .graph__barchart-bar {
-            margin-bottom: 0.5em;
-        }
-
-        .graph__bar_header {
-            font-weight: normal;
-            margin: 0.2em 0;
-            font-size: 0.8em;
-        }
-
-        .graph__bar_total {
-            width: 100%;
-            height: 10px;
-            background: $secondary;
-        }
-
-        .graph__bar_input {
-            background: #979797;
-            height: 100%;
-            transition: width 1s;
-        }
-
-        .graph__bar_input--seen {
-            background: $primary;
-        }
-
         @include respondMinMax(380px, false) {
             .graph__barchart {
                 width: 48%;
