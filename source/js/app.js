@@ -1,22 +1,11 @@
 define(['wrapper', 'istats', 'jquery', 'utils', 'view'],
     function (wrapper, istats, $, utils, View) {
 
-    var usingIE8 = utils.checkIfUsingIE(8, 'lte');
-    function tellUserToUpgradeTheirBrowserIf(usingIE8){
-        if(usingIE8){
-            console.warn('Using IE8 or lower');
-            $('.age-button').addClass('hidden');
-            $('.age-input').addClass('hidden');
-            $('.question--age').addClass('hidden').css('height', '10px');
-            $('.no-js-message').removeClass('hidden').css('display', 'block');
-        } else {
-            console.log('Not using IE8 or lower');
-        }
-    }
-    tellUserToUpgradeTheirBrowserIf(usingIE8);
-
-    // we're not using IE8 or worse, let's enabled JS an get on with it
+    // we're not using IE8 or worse, so enable the view and JS, and get on with it
     $('.bbc-news-vj-wrapper').addClass('bbc-news-vj-wrapper-js-enabled');
+    $('.question--age').css('display', 'inherit');
+    $('.section--questions').css('display', 'inherit');
+    $('.section--results').css('display', 'inherit');
 
     //show activity links, and credits section only for english page
     var pageIsEnglish = $('.bbc-news-vj-wrapper').hasClass('bbc-news-vj-language--news');

@@ -16,27 +16,7 @@ define(['jquery'], function ($) {
         }
     };
 
-    //detect IE8, from https://gist.github.com/paulirish/357741
-    var checkIfUsingIE = function (version, comparison) {
-        var cc      = 'IE',
-            b       = document.createElement('B'),
-            docElem = document.documentElement,
-            isIE;
-
-        if(version){
-            cc += ' ' + version;
-            if(comparison){ cc = comparison + ' ' + cc; }
-        }
-
-        b.innerHTML = '<!--[if '+ cc +']><b id="iecctest"></b><![endif]-->';
-        docElem.appendChild(b);
-        isIE = !!document.getElementById('iecctest');
-        docElem.removeChild(b);
-        return isIE;
-    };
-
     return {
-        isElementInViewport : isElementInViewport,
-        checkIfUsingIE : checkIfUsingIE
+        isElementInViewport : isElementInViewport
     };
 });

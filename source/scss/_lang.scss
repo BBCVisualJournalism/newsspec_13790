@@ -1,19 +1,19 @@
 div.bbc-news-vj-direction--rtl {
-    .section--hero {
+    div.section--hero {
         direction: rtl;
     }
-    .section--questions {
+    div.section--questions {
         .quiz-body {
             direction: rtl;
         }
     }
-    .section--results {
+    div.section--results {
         .result__title {
             .result__title__text-intro {
                 direction: rtl;
             }
         }
-        .result {
+        div.result {
             direction: rtl;
             .result__share-header {
                 margin-left:8px;
@@ -26,7 +26,7 @@ div.bbc-news-vj-direction--rtl {
             }
         }
     }
-    .section--method {
+    div.section--method {
         direction: rtl;
         text-align: right;
     }
