@@ -2,7 +2,7 @@
 @import "./../../bower_components/news-vj-css-defaults/css/main";
 @import "./../../bower_components/sharetools/bin/templates/dropdown/share.scss"; // Developer: choose your sharetools of choice ('dropdown', 'buttons'). This should match the ShareToolsTemplate value in config.json
 
-$version: "0.1.66";
+$version: "0.1.70";
 
 @import "_media_query";
 @import "_hero";
@@ -10,6 +10,7 @@ $version: "0.1.66";
 @import "_results";
 @import "_graph";
 @import "_share";
+@import "_credits";
 @import "_lang";
 
 html body .full-frame-scaffold-news-banner {
@@ -135,38 +136,6 @@ html body .bbc-news-vj-wrapper--iframe .bbc-news-vj-grid-wrapper {
 
     .tmpShareToolsHolder div.share__button {
         max-width: 195px;
-    }
-
-    .section--method {
-        clear:both;
-        padding-left: 16px;
-        padding-right: 16px;
-        position: relative;
-        text-align:left;
-        z-index: 88;
-    }
-
-    .section--credits {
-        clear:both;
-        padding-left: 16px;
-        padding-right: 16px;
-        position: relative;
-        z-index: 88;
-    }
-
-    .ns_onwardJourneys {
-        a {
-            display:block;
-            border: none;
-            text-decoration: none;
-            font-weight:bold;
-            padding-bottom:6px;
-        }
-    }
-
-    .external-links-text {
-        display: block;
-        padding-top: 20px;
     }
 
  }

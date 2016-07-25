@@ -87,7 +87,7 @@ define(['wrapper', 'jquery', 'utils'], function (wrapper, $, utils) {
                             actionType: '' + key + '-reached',
                             viewLabel: true
                         };
-                        // console.log(istatsInfo);
+                        console.log(istatsInfo);
                         wrapper.callIstats(istatsInfo);
                     }
                 }
@@ -117,19 +117,40 @@ define(['wrapper', 'jquery', 'utils'], function (wrapper, $, utils) {
     };
 
     var setShareToolsLogging = function () {
-        $('.share__tool').on('click', function () {
-            var istatsInfo = {
+        $('.footer_share__link--email').click(function () {
+            console.log('share__tool--network clicked...');
+            istatsInfo = {
                 actionName: 'newsspec-interaction',
-                actionType: 'user-shared',
-                viewLabel: 'result-shared'
+                actionType: 'page_share--email-clicked',
+                viewLabel: true
             };
-            console.log(istatsInfo);
+            // console.log(istatsInfo);
+            wrapper.callIstats(istatsInfo);
+        });
+        $('.footer_share__link--twitter').click(function () {
+            console.log('share__tool--network clicked...');
+            istatsInfo = {
+                actionName: 'newsspec-interaction',
+                actionType: 'page_share--twitter-clicked',
+                viewLabel: true
+            };
+            // console.log(istatsInfo);
+            wrapper.callIstats(istatsInfo);
+        });
+        $('.footer_share__link--facebook').click(function () {
+            console.log('share__tool--network clicked...');
+            istatsInfo = {
+                actionName: 'newsspec-interaction',
+                actionType: 'page_share--facebook-clicked',
+                viewLabel: true
+            };
+            // console.log(istatsInfo);
             wrapper.callIstats(istatsInfo);
         });
     };
 
     var init = function () {
-        wrapper.onOptimizedScroll(handleScroll);
+        // wrapper.onOptimizedScroll(handleScroll);
         setShareToolsLogging();
     };
 

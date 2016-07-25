@@ -177,8 +177,8 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
                 // Sort by score (highest scores first)
                 var currentItem = parseInt(b.score, 10) - parseInt(a.score, 10);
                 if(currentItem) { return currentItem; }
-                // If there is a tie, sort by result_priority (highest numbr is highest priority)
-                var priority = parseInt(b.result_priority, 10) - parseInt(a.result_priority, 10);
+                // If there is a tie, sort by result_priority (lowest numbr is highest priority)
+                var priority = parseInt(a.result_priority, 10) - parseInt(b.result_priority, 10);
                 return priority;
             }).splice(3, 14);
 
@@ -196,7 +196,7 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
             weaknesses.sort(function(a, b) {
                 var currentItem = parseInt(b.score, 10) - parseInt(a.score, 10);
                 if(currentItem) { return currentItem; }
-                var priority = parseInt(b.result_priority, 10) - parseInt(a.result_priority, 10);
+                var priority = parseInt(a.result_priority, 10) - parseInt(b.result_priority, 10);
                 return priority;
             }).splice(0, 3);
 
@@ -204,8 +204,8 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
                 // Sort by score (lowest scores first)
                 var currentItem = parseInt(a.score, 10) - parseInt(b.score, 10);
                 if(currentItem) { return currentItem; }
-                // If there is a tie, sort by result priority (highest numbr is highest priority)
-                var priority = parseInt(b.result_priority, 10) - parseInt(a.result_priority, 10);
+                // If there is a tie, sort by result priority (lowest numbr is highest priority)
+                var priority = parseInt(a.result_priority, 10) - parseInt(b.result_priority, 10);
                 return priority;
             }).splice(3, 14);
 

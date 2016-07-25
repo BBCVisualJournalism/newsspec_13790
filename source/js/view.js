@@ -15,15 +15,36 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             this.d3 = d3;
             this.maximumGraphSize = 228;
         },
+        istatsUpdate: function (elem) {
+            if (elem === 'question13'){
+                elem = 'age_button';
+            } else if (elem === 'question14') {
+                elem = 'question13';
+            }
+            istatsInfo = {
+                actionName: 'newsspec-interaction',
+                actionType: elem + '-clicked',
+                viewLabel: true
+            };
+            console.log(istatsInfo);
+            wrapper.callIstats(istatsInfo);
+        },
         setEvents: function () {
             var self = this;
             $('button.age-button').click(function () {
                 var age = parseInt($('input.age-input').val(), 10);
                 model.setAge(age);
+
+                self.istatsUpdate('take_quiz');
+
                 self.scrollToQuiz();
             });
             $('.button--answer').click(function () {
                 var btn = $(this);
+                var qNumber = btn.parents('.question').data('question');
+
+                self.istatsUpdate('question' + qNumber);
+
                 self.setChosenAnswer(this);
                 if (btn.hasClass('age-button')){
                     return false;
@@ -34,10 +55,12 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 self.calculateResult();
                 self.showResult();
                 self.scrollToResults();
+                self.istatsUpdate('see_results');
             });
             $('.button--reset-quiz').click(function () {
                 self.hideResults();
                 self.resetQuiz();
+                self.istatsUpdate('retake_quiz');
             });
             $('button.activity-level--answer').click(function () {
                 var activityLevel = $(this).attr('data-activity-level');
