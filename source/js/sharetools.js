@@ -37,6 +37,17 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
                 },
                 template: ShareToolsTemplate
             });
+
+            // istats logging
+            this.shareObject.onShareButtonClick(function (network) {
+                var istatsInfo = {
+                    actionName: 'newsspec-interaction',
+                    actionType: network + '_share-clicked',
+                    viewLabel: true
+                };
+                console.log(istatsInfo);
+                wrapper.callIstats(istatsInfo);
+            });
         }
     };
 

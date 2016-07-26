@@ -29,12 +29,16 @@ html body .bbc-news-vj-wrapper--iframe .bbc-news-vj-grid-wrapper {
     max-width:none;
     padding-top: 0;
 
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
         margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance:textfield;
     }
 
     input[type="submit"],

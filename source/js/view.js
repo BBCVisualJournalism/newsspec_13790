@@ -95,7 +95,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             }
         },
         scrollToResults: function(){
-            var $scrollElem = $('.result__title');
+            var $scrollElem = $('.hero__chevron__bottom');
 
             if ($scrollElem.length){
                 var scrollToPosition = $scrollElem.offset().top;
