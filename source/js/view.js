@@ -21,30 +21,30 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             } else if (elem === 'question14') {
                 elem = 'question13';
             }
-            istatsInfo = {
+            var istatsInfo = {
                 actionName: 'newsspec-interaction',
                 actionType: elem + '-clicked',
                 viewLabel: true
             };
-            console.log(istatsInfo);
+            // console.log(istatsInfo);
             wrapper.callIstats(istatsInfo);
         },
         setEvents: function () {
             var self = this;
+            $('.age-input').change(function (e){
+                if (this.value < 5)   { this.value = 5;   }
+                if (this.value > 110) { this.value = 110; }
+            });
             $('button.age-button').click(function () {
                 var age = parseInt($('input.age-input').val(), 10);
                 model.setAge(age);
-
                 self.istatsUpdate('take_quiz');
-
                 self.scrollToQuiz();
             });
             $('.button--answer').click(function () {
                 var btn = $(this);
                 var qNumber = btn.parents('.question').data('question');
-
                 self.istatsUpdate('question' + qNumber);
-
                 self.setChosenAnswer(this);
                 if (btn.hasClass('age-button')){
                     return false;
@@ -330,22 +330,18 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
         moveGraphTooltip: function (e) {
             var tooltip = $('.graph__status--tooltip_view'),
                 cursorOffset = 10,
-                displayTooltipToRightOfCursor = true,
                 graphSize,
                 tooltipX,
                 tooltipY;
 
             graphSize = $('.graph__dial').width();
 
-            if (graphSize / 2 < e.offsetX) {
-                displayTooltipToRightOfCursor = false;
-            }
-
-            tooltipY = (e.offsetY + cursorOffset);
+            tooltipY = (e.offsetY - cursorOffset);
             tooltipX = (e.offsetX + cursorOffset);
 
-            if (!displayTooltipToRightOfCursor) {
-                tooltipX = tooltipX - tooltip.width();
+            //firefox fix
+            if ((tooltipY - e.offsetY) < 20){
+                tooltipY -= 20;
             }
 
             tooltip
@@ -355,9 +351,11 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 .css('top',  tooltipY + 'px');
         },
         hideGraphTooltip: function (e) {
-            $('.graph__status--tooltip_view')
-                .css('display', 'none')
-                .addClass('hidden');
+            setTimeout(function() {
+                $('.graph__status--tooltip_view')
+                    .css('display', 'none')
+                    .addClass('hidden');
+            }, 5);
         },
         updateGraph: function (graphData){
 
@@ -401,7 +399,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
 
             this.setGraphDataValues(graphData);
             this.setGraphEventsOn('.graph__slice-path');
-            this.setGraphEventsOn('.graph__dial__background');
+            // this.setGraphEventsOn('.graph__dial__background');
         },
         updateGraphHeader: function (elem){
             this.updateGraphDetails(elem, '.result__graph__header__text');
