@@ -81,14 +81,14 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             }
         },
         scrollToNextQuestion: function (chosenButton){
-            var $scrollElem = $(chosenButton).parents('.question').find('.question__feedback');
+            var $scrollElem = $(chosenButton).parents('.question').find('.feedback__title');
 
             if ($scrollElem.length === 0){
                 $scrollElem = $('.question14__icon');
             }
 
             if ($scrollElem.length){
-                var scrollToPosition = $scrollElem.offset().top;
+                var scrollToPosition = ($scrollElem.offset().top)-25;
                 wrapper.delay(function () {
                     wrapper.scrollTo({ position: scrollToPosition, duration: 500 });
                 }, 350);

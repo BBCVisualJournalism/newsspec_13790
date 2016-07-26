@@ -6,6 +6,16 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
         this.shareImage   = icon;
         this.shareUrl     = wrapper.url().hostUrl;
 
+        function string_endsWith(str, end) {
+            var temp = str.slice(str.length - end.length);
+            return (end == temp);
+        }
+
+        var shareLinkEndsWithDotApp = string_endsWith(this.shareUrl, '.app');
+        if (shareLinkEndsWithDotApp){
+            this.shareUrl = this.shareUrl.substring( 0, this.shareUrl.indexOf( ".app" ) );
+        }
+
         this.init();
     };
 
