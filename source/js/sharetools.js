@@ -6,25 +6,16 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
         this.shareImage   = icon;
         this.shareUrl     = wrapper.url().hostUrl;
 
-        function string_endsWith(str, end) {
-            var temp = str.slice(str.length - end.length);
-            return (end == temp);
-        }
-
-        var shareLinkEndsWithDotApp = string_endsWith(this.shareUrl, '.app');
-        if (shareLinkEndsWithDotApp){
-            this.shareUrl = this.shareUrl.substring( 0, this.shareUrl.indexOf( ".app" ) );
-        }
-
         this.init();
     };
 
     ShareToolsWrapper.prototype = {
         init: function () {
+            var self = this;
             this.shareObject = new ShareTools({
                 holderEl: this.selector,
                 label: vocab.share_button_title,
-                shareUrl: this.shareUrl,
+                shareUrl: self.setShareUrl(),
                 messages: {
                     twitter: this.shareTitle + ' ' + vocab.share_outro_text,
                     facebook: {
@@ -58,6 +49,17 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
                 console.log(istatsInfo);
                 wrapper.callIstats(istatsInfo);
             });
+        },
+        string_endsWith: function (str, end) {
+            var temp = str.slice(str.length - end.length);
+            return (end === temp);
+        },
+        setShareUrl: function () {
+            var shareLinkEndsWithDotApp = this.string_endsWith(this.shareUrl, '.app');
+            if (shareLinkEndsWithDotApp){
+                this.shareUrl = this.shareUrl.substring( 0, this.shareUrl.indexOf( '.app' ) );
+            }
+            return this.shareUrl;
         }
     };
 
