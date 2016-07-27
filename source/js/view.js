@@ -44,18 +44,17 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             $('.button--answer').click(function () {
                 var btn = $(this);
                 var qNumber = btn.parents('.question').data('question');
-                self.istatsUpdate('question' + qNumber);
                 self.setChosenAnswer(this);
                 if (btn.hasClass('age-button')){
                     return false;
                 }
+                self.istatsUpdate('question' + qNumber);
                 self.scrollToNextQuestion(this);
             });
             $('.button--see-results').click(function(){
                 self.calculateResult();
                 self.showResult();
                 self.scrollToResults();
-                self.istatsUpdate('see_results');
             });
             $('.button--reset-quiz').click(function () {
                 self.hideResults();
@@ -265,6 +264,8 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 $('.result__graph').removeClass('hidden');
                 this.updateGraph(graphData);
             }
+
+            this.istatsUpdate('see_results');
         },
         getGraphContainerSize: function () {
             var size = $('.result__graph__body').width();
