@@ -1,7 +1,7 @@
 {
     "": "OTHER",
     "hero_title": "Quiz: Do you have the mentality of an Olympian?",
-    "hero_subtitle": "Take our 60 second quiz and see if you have what's needed to win gold, regardless of your sporting ability.",
+    "hero_subtitle": "Find out if you have the mindset needed to win gold or are you just an Olympic day dreamer?",
     "start_quiz": "Take the quiz",
     "feedback_title": "Expert feedback",
     "olympic_medal_icon_alt_text": "Olympic medal icon",
@@ -35,7 +35,7 @@
     "question_2_med": "I'm somewhere in the middle",
     "question_2_low": "I'm tempted by the easy option",
     "question_2_lowest": "Easy roller every time",
-    "question_2_feedback": "Setting high personal standards can be helpful for a top athlete, but it's also important not to be too tough on yourself and keep your expectations realistic.",
+    "question_2_feedback": "Setting high personal standards is helpful for a top athlete, but it's also important not to be too tough on yourself and keep your expectations realistic.",
     "question_2_score_highest": "5",
     "question_2_score_high": "4",
     "question_2_score_med": "3",
