@@ -26,7 +26,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 actionType: elem + '-clicked',
                 viewLabel: true
             };
-            // console.log(istatsInfo);
+            console.log(istatsInfo);
             wrapper.callIstats(istatsInfo);
         },
         setEvents: function () {
@@ -65,6 +65,15 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             $('button.activity-level--answer').click(function () {
                 var activityLevel = $(this).attr('data-activity-level');
                 model.setActivityLevel(activityLevel);
+            });
+            $('.footer_share__link--email').click(function(){
+                self.istatsUpdate('page_share_email');
+            });
+            $('.footer_share__link--facebook').click(function(){
+                self.istatsUpdate('page_share_facebook');
+            });
+            $('.footer_share__link--twitter').click(function(){
+                self.istatsUpdate('page_share_twitter');
             });
         },
         mouseIsSupported: function(){
@@ -302,9 +311,10 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
         setGraphEventsOn: function (insertInThisElement) {
             var self = this;
             if (this.mouseIsSupported()){
+                var isFirefox = (typeof InstallTrigger !== 'undefined');
                 $(insertInThisElement).on('mousemove', function (e) {
                     self.updateGraphTooltip(this);
-                    self.moveGraphTooltip(e);
+                    self.moveGraphTooltip(e, isFirefox);
                 });
                 $(insertInThisElement).on('mouseout', function (e) {
                     self.hideGraphTooltip(e);
@@ -327,7 +337,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 $('.graph__status').addClass('hidden');
             }
         },
-        moveGraphTooltip: function (e) {
+        moveGraphTooltip: function (e, isFirefox) {
             var tooltip = $('.graph__status--tooltip_view'),
                 cursorOffset = 10,
                 graphSize,
@@ -336,12 +346,13 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
 
             graphSize = $('.graph__dial').width();
 
-            tooltipY = (e.offsetY - cursorOffset);
+            tooltipY = e.offsetY;
             tooltipX = (e.offsetX + cursorOffset);
 
             //firefox fix
-            if ((tooltipY - e.offsetY) < 20){
-                tooltipY -= 20;
+            if (isFirefox){
+                tooltipY = (e.offsetY - cursorOffset)-20;
+                tooltipX = (e.offsetX + (graphSize/2)+15);
             }
 
             tooltip
