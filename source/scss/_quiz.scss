@@ -2,6 +2,7 @@
 
     .section--questions {
         position:relative;
+        text-align: center;
         z-index:20;
     }
 
@@ -145,5 +146,12 @@
         @media(min-width: 1008px){
             max-width: 800px;
         }
+    }
+
+    .see-results {
+        border: 0;
+        display:block;
+        margin-top:40px;
+        text-decoration: none;
     }
 }

@@ -21,7 +21,7 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
                     facebook: {
                         title:       this.shareTitle,
                         description: vocab.share_outro_text,
-                        image:       'http://www.stage.bbc.co.uk/news/special/2016/newsspec_13790/content/iframe/common/img/' + this.shareImage // optional
+                        image:       'http://www.stage.bbc.co.uk/news/special/2016/newsspec_13790/content/iframe/common/img/' + this.shareImage
                     },
                     email: {
                         subject: this.shareTitle,
@@ -39,7 +39,6 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
                 template: ShareToolsTemplate
             });
 
-            // istats logging
             this.shareObject.onShareButtonClick(function (network) {
                 var istatsInfo = {
                     actionName: 'newsspec-interaction',
