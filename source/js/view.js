@@ -14,6 +14,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             this.hideResults();
             this.d3 = d3;
             this.maximumGraphSize = 228;
+            this.updateUrlsForSportApp();
         },
         istatsUpdate: function (elem) {
             if (elem === 'question13'){
@@ -28,6 +29,16 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             };
             console.log(istatsInfo);
             wrapper.callIstats(istatsInfo);
+        },
+        updateUrlsForSportApp: function() {
+            if (wrapper.meta().product === 'sport-app'){
+                $('a').each(function() {
+                    if ($(this).hasClass('share--url')){
+                        return true;
+                    }
+                    this.href += (/\.app/.test(this.href) ? '' : '.app');
+                });
+            }
         },
         setEvents: function () {
             var self = this;
@@ -258,6 +269,8 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 $('.result__graph').removeClass('hidden');
                 this.updateGraph(graphData);
             }
+
+            this.updateUrlsForSportApp();
 
             $('.see-results').addClass('hidden');
             this.istatsUpdate('see_results');

@@ -26,4 +26,5 @@ define(['wrapper', 'istats', 'jquery', 'utils', 'view'],
 
     console.log('wrapper = ' + wrapper.meta().wrapper);
     console.log('product = ' + wrapper.meta().product);
+
 });
