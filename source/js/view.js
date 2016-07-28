@@ -31,57 +31,48 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
         },
         setEvents: function () {
             var self = this;
-             $(document).ready(function(){
-                $('.age-input').change(function (e){
-                    if (this.value < 5)   { this.value = 5;   }
-                    if (this.value > 110) { this.value = 110; }
-                });
-                $('button.age-button').click(function () {
-                    var age = parseInt($('input.age-input').val(), 10);
-                    model.setAge(age);
-                    self.istatsUpdate('take_quiz');
-                    self.scrollToQuiz();
-                });
-                $('.button--answer').click(function () {
-                    var btn = $(this);
-                    var qNumber = btn.parents('.question').data('question');
-                    self.setChosenAnswer(this);
-                    if (btn.hasClass('age-button')){
-                        return false;
-                    }
-                    self.istatsUpdate('question' + qNumber);
-                    self.scrollToNextQuestion(this);
-                });
-                $('.button--see-results').on('touchstart', function(e){
-                    console.log(e);
-                    self.calculateResult();
-                    self.showResult();
-                    self.scrollToResults();
-                });
-                $('.button--see-results').on('touchstart click', function(e){
-                    console.log(e);
-                    self.calculateResult();
-                    self.showResult();
-                    self.scrollToResults();
-                });
-                $('.button--reset-quiz').click(function () {
-                    self.hideResults();
-                    self.resetQuiz();
-                    self.istatsUpdate('retake_quiz');
-                });
-                $('button.activity-level--answer').click(function () {
-                    var activityLevel = $(this).attr('data-activity-level');
-                    model.setActivityLevel(activityLevel);
-                });
-                $('.footer_share__link--email').click(function(){
-                    self.istatsUpdate('page_share_email');
-                });
-                $('.footer_share__link--facebook').click(function(){
-                    self.istatsUpdate('page_share_facebook');
-                });
-                $('.footer_share__link--twitter').click(function(){
-                    self.istatsUpdate('page_share_twitter');
-                });
+            $('.age-input').change(function (e){
+                if (this.value < 5)   { this.value = 5;   }
+                if (this.value > 110) { this.value = 110; }
+            });
+            $('button.age-button').click(function () {
+                var age = parseInt($('input.age-input').val(), 10);
+                model.setAge(age);
+                self.istatsUpdate('take_quiz');
+                self.scrollToQuiz();
+            });
+            $('.button--answer').click(function () {
+                var btn = $(this);
+                var qNumber = btn.parents('.question').data('question');
+                self.setChosenAnswer(this);
+                if (btn.hasClass('age-button')){
+                    return false;
+                }
+                self.istatsUpdate('question' + qNumber);
+                self.scrollToNextQuestion(this);
+            });
+            $('.see-results').on('click', function(e){
+                self.calculateResult();
+                self.showResult();
+                self.scrollToResults();
+            });
+            $('.button--reset-quiz').click(function () {
+                self.hideResults();
+                self.resetQuiz();
+                self.istatsUpdate('retake_quiz');
+            });
+            $('button.activity-level--answer').click(function () {
+                var activityLevel = $(this).attr('data-activity-level');
+                model.setActivityLevel(activityLevel);
+            });
+            $('.footer_share__link--email').click(function(){
+                self.istatsUpdate('page_share_email');
+            });
+            $('.footer_share__link--facebook').click(function(){
+                self.istatsUpdate('page_share_facebook');
+            });
+            $('.footer_share__link--twitter').click(function(){
+                self.istatsUpdate('page_share_twitter');
             });
         },
         mouseIsSupported: function(){
@@ -232,13 +223,6 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
         },
         addResultsToShareInfo: function (resultCategoryNumber, icon){
             var result_share = new ShareToolsWrapper('.result__share', resultCategoryNumber, icon);
-            if (wrapper.wrapper === 'app') {
-                // we often want to deliver a different share view to the app
-                config.template = '\
-                    <div class="share ns__share ns__share-dropdown ns__share--app">\
-                        <a class="share__button share__png_icon share__tool--network" data-network="app" href="#"></a>\
-                    </div>';
-            }
         },
         showResult: function(){
             var resultTitle             = this.quizResults.categoryTitle,

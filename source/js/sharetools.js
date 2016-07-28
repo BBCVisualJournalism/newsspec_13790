@@ -12,7 +12,7 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
     ShareToolsWrapper.prototype = {
         init: function () {
             var self = this;
-            this.shareObject = new ShareTools({
+            var config = {
                 holderEl: this.selector,
                 label: vocab.share_button_title,
                 shareUrl: self.setShareUrl(),
@@ -37,7 +37,17 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
                     }
                 },
                 template: ShareToolsTemplate
-            });
+            };
+
+            if (wrapper.wrapper === 'app') {
+                // we often want to deliver a different share view to the app
+                config.template = '\
+                    <div class="share ns__share-dropdown ns__share--app">\
+                        <a class="share__button share__tool--network" data-network="app" href="#" style="height: 30px; background-size: 25%; width: 90px; font-weight: normal;">' + vocab.share_button_title + '</a>\
+                    </div>';
+            }
+
+            this.shareObject = new ShareTools(config);
 
             this.shareObject.onShareButtonClick(function (network) {
                 var istatsInfo = {
