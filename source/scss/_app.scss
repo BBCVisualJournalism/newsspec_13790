@@ -1,0 +1,12 @@
+.bbc-news-app .bbc-news-vj-wrapper--app .bbc-news-vj-grid-wrapper {
+    max-width:none;
+    @media(min-width:1280px){
+        margin: 0 auto;
+    }
+}
+
+.bbc-news-app .bbc-news-vj-wrapper--app .bbc-news-vj-grid-wrapper__fluid-inner {
+    margin: 0;
+    padding: 0
+}
+
