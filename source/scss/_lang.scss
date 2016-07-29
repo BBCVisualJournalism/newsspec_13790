@@ -484,18 +484,27 @@ div.bbc-news-vj-direction--rtl {
 
 .bbc-news-vj-language--tamil {
     div.section--hero {
-        min-height: 695px;
-        @media (min-width: 378px){
-            min-height: 620px;
+        .hero__titles {
+            max-width: 630px;
+            .hero__heading {
+                font-size: 2em;
+            }
+            .hero__subheading {
+                font-size: 1.6em;
+            }
         }
-        @media (min-width: 391px){
-            min-height: 590px;
+        min-height: 845px;
+        @media (min-width: 367px){
+            min-height: 745px;
         }
-        @media (min-width: 480px){
-            min-height: 560px;
+        @media (min-width: 375px){
+            min-height: 700px;
+        }
+        @media (min-width: 445px){
+            min-height: 640px;
         }
         @media (min-width: 600px){
-            min-height: 620px;
+            min-height: 690px;
         }
         @media (min-width: 800px){
             min-height: 685px;

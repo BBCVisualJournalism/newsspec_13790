@@ -33,8 +33,8 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'vocab
         updateUrlsForSportApp: function() {
             if (wrapper.meta().product === 'sport-app'){
                 $('a').each(function() {
-                    if ($(this).hasClass('share--url')){
-                        return true;
+                    if ($(this).hasClass('share--url') || $(this).attr('href') === 'http://www.bbc.co.uk/programmes/p03m53p1'){
+                        return true; // and dont append .app
                     }
                     this.href += (/\.app/.test(this.href) ? '' : '.app');
                 });
