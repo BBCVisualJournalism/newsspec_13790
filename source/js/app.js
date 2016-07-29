@@ -1,5 +1,5 @@
-define(['wrapper', 'istats', 'jquery', 'utils', 'view'],
-    function (wrapper, istats, $, utils, View) {
+define(['wrapper', 'jquery', 'utils', 'view'],
+    function (wrapper, $, utils, View) {
 
     // we're not using IE8 or worse, so enable the view and JS, and get on with it
     $('.bbc-news-vj-wrapper').addClass('bbc-news-vj-wrapper-js-enabled');
