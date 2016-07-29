@@ -79,6 +79,9 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'vocab
                 var activityLevel = $(this).attr('data-activity-level');
                 model.setActivityLevel(activityLevel);
             });
+            $('.result__activity-url').click(function(){
+                self.istatsUpdate('page_link_to_get_moving');
+            });
             $('.footer_share__link--email').click(function(){
                 self.istatsUpdate('page_share_email');
             });
@@ -259,7 +262,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'vocab
 
             $(resultCategorySelected).addClass('result__banner__categories__icon--selected');
 
-            $('.result__activity-text').html(resultActivityText + ' <a href="' + resultActivityUrl + '" target="_top">' + resultActivityUrlTitle + '</a>');
+            $('.result__activity-text').html(resultActivityText + ' <a class="result__activity-url" href="' + resultActivityUrl + '" target="_top">' + resultActivityUrlTitle + '</a>');
             this.showStrengthsAndWeaknesses();
             $('.age-button').addClass('hidden');
             $('.questions').addClass('hidden');
