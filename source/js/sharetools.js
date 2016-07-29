@@ -39,7 +39,7 @@ define(['wrapper', 'jquery', 'ShareTools', 'ShareToolsTemplate', 'vocab'], funct
                 template: ShareToolsTemplate
             };
 
-            if (wrapper.wrapper === 'app') {
+            if (wrapper.meta().wrapper === 'news-app') {
                 // we often want to deliver a different share view to the app
                 config.template = '\
                     <div class="share ns__share-dropdown ns__share--app">\

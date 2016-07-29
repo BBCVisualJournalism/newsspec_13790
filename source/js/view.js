@@ -1,5 +1,5 @@
-define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istats', 'vocab', 'lib/d3.v3.min'],
-    function ($, ShareToolsWrapper, ShareTemplate, Model, wrapper, istats, vocab, d3){
+define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'vocab', 'lib/d3.v3.min'],
+    function ($, ShareToolsWrapper, ShareTemplate, Model, wrapper, vocab, d3){
 
     var model = new Model();
 
@@ -155,7 +155,6 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             $('input.age-input').val('35');
 
             model.resetQuizData();
-            istats.reset();
         },
         highlightCurrentQuestion: function (questionNumber){
             var nextQuestionNumber;
