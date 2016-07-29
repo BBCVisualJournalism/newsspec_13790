@@ -53,13 +53,16 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
                 self.scrollToQuiz();
             });
             $('.button--answer').click(function () {
-                var btn = $(this);
-                var qNumber = btn.parents('.question').data('question');
+                var $btn = $(this);
+                var questionNumber = $btn.parents('.question').data('question');
+                var questionNotAlreadyAnswered = (model.getQuestionScore(questionNumber) === '');
                 self.setChosenAnswer(this);
-                if (btn.hasClass('age-button')){
+                if ($btn.hasClass('age-button')){
                     return false;
                 }
-                self.istatsUpdate('question' + qNumber);
+                if (questionNotAlreadyAnswered){
+                    self.istatsUpdate('question' + questionNumber);
+                }
                 self.scrollToNextQuestion(this);
             });
             $('.see-results').on('click', function(e){
@@ -151,6 +154,7 @@ define(['jquery', 'sharetools', 'ShareToolsTemplate', 'model', 'wrapper', 'istat
             $('.questions').addClass('hidden');
             $('input.age-input').val('35');
 
+            model.resetQuizData();
             istats.reset();
         },
         highlightCurrentQuestion: function (questionNumber){

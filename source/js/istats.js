@@ -64,48 +64,6 @@ define(['wrapper', 'jquery', 'utils'], function (wrapper, $, utils) {
         }
     };
 
-    var handleScroll = function () {
-
-        for (var key in sectionElements) {
-            if (utils.isElementInViewport(sectionElements[key].element)) {
-
-                if (heroReached === false){
-                    heroReached = true;
-                    istatsInfo = {
-                        actionName: 'newsspec-interaction',
-                        actionType: 'hero-reached',
-                        viewLabel: true
-                    };
-                    wrapper.callIstats(istatsInfo);
-                }
-
-                if ($('.questions').hasClass('hidden') === false) {
-                    if (!sectionElements[key].reached) {
-                        sectionElements[key].reached = true;
-                        istatsInfo = {
-                            actionName: 'newsspec-interaction',
-                            actionType: '' + key + '-reached',
-                            viewLabel: true
-                        };
-                        // console.log(istatsInfo);
-                        wrapper.callIstats(istatsInfo);
-                    }
-                }
-
-                if (resultsReached === false && $('.result__title').hasClass('hidden') === false){
-                    resultsReached = true;
-                    istatsInfo = {
-                        actionName: 'newsspec-interaction',
-                        actionType: 'results-reached',
-                        viewLabel: true
-                    };
-                    wrapper.callIstats(istatsInfo);
-                }
-
-            }
-        }
-    };
-
     var reset = function () {
         resultsReached = false;
         heroReached = false;
@@ -116,12 +74,7 @@ define(['wrapper', 'jquery', 'utils'], function (wrapper, $, utils) {
         }
     };
 
-    var init = function () {
-        // wrapper.onOptimizedScroll(handleScroll);
-    };
-
     return {
-        init: init,
         reset: reset
     };
 });

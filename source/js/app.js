@@ -20,11 +20,9 @@ define(['wrapper', 'istats', 'jquery', 'utils', 'view'],
     // create the view - to handle inputs, UI changes, etc
     var view = new View();
 
-    istats.init();
-
     wrapper.markPageAsLoaded();
 
-    console.log('wrapper = ' + wrapper.meta().wrapper);
-    console.log('product = ' + wrapper.meta().product);
+    // console.log('wrapper = ' + wrapper.meta().wrapper);
+    // console.log('product = ' + wrapper.meta().product);
 
 });

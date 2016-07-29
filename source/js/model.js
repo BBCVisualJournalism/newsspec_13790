@@ -27,6 +27,11 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
         setScore: function (questionNumber, scoreValue){
             quizData[questionNumber].score = scoreValue;
         },
+        getQuestionScore: function (qNumber){
+            var questionNumber = 'question' + qNumber;
+            var questionScore = quizData[questionNumber].score;
+            return questionScore;
+        },
         getScoresArray: function() {
             return this.scoresArray;
         },
@@ -258,6 +263,19 @@ define(['vocab', 'quizdata'], function (vocab, quizData){
             };
             console.log('quizData:', quizData, 'quizResults:', quizResults);
             return quizResults;
+        },
+        resetQuizData: function (){
+            for (var key in quizData) {
+                if (quizData.hasOwnProperty(key)) {
+                    for (var val in quizData[key]) {
+                        if (quizData[key].hasOwnProperty(val)) {
+                            if (val === 'score'){
+                                quizData[key][val] = '';
+                            }
+                        }
+                    }
+                }
+            }
         }
     };
 
