@@ -1,5 +1,5 @@
 {
-    "": "其他",
+    "": "",
     "hero_title": "你有奥运选手的意志吗？",
     "hero_subtitle": "无论体能如何，用一分钟检测是否具备金牌运动员的意志力？",
     "start_quiz": "开始测验",
@@ -258,5 +258,21 @@
     "number_2": "二",
     "number_3": "三",
     "number_4": "四",
-    "number_5": "五"
+    "number_5": "五",
+    "meta:url": "",
+    "meta:type": "",
+    "meta:title": "",
+    "meta:description": "",
+    "meta:site_name": "",
+    "meta:locale": "",
+    "meta:publisher": "",
+    "meta:section": "",
+    "meta:image": "",
+    "meta:twitter:card": "",
+    "meta:twitter:site": "",
+    "meta:twitter:creator": "",
+    "meta:twitter:title": "",
+    "meta:twitter:description": "",
+    "meta:twitter:image": "",
+    "share:short_url": ""
 }

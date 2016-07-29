@@ -1,5 +1,5 @@
 {
-    "": "نور",
+    "": "",
     "hero_title": "ایا د اولمپیک اتل کېدو ذهناً چمتو یاست؟",
     "hero_subtitle": "په دې ۶۰ ثانیو ازموینه کې ګډون وکړئ او وګورئ که ستاسې لوبیزه وړتیا هرڅه وي، چې د اولمپیک طلايي مډال ګټلو لپاره څه شي ته اړتیا ده.",
     "start_quiz": "ازموینه کې ګډون وکړئ",
@@ -258,5 +258,21 @@
     "number_2": "۲",
     "number_3": "۳",
     "number_4": "۴",
-    "number_5": "۵"
+    "number_5": "۵",
+    "meta:url": "",
+    "meta:type": "",
+    "meta:title": "",
+    "meta:description": "",
+    "meta:site_name": "",
+    "meta:locale": "",
+    "meta:publisher": "",
+    "meta:section": "",
+    "meta:image": "",
+    "meta:twitter:card": "",
+    "meta:twitter:site": "",
+    "meta:twitter:creator": "",
+    "meta:twitter:title": "",
+    "meta:twitter:description": "",
+    "meta:twitter:image": "",
+    "share:short_url": ""
 }

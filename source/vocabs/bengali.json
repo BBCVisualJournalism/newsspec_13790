@@ -1,5 +1,5 @@
 {
-    "": "অন্যান্য",
+    "": "",
     "hero_title": "আপনার মানসিকতা কি অলিম্পিক প্রতিযোগীদের মত?",
     "hero_subtitle": "আমাদের ৬০ সেকেন্ডের কুইজে অংশগ্রহণ করুন এবং দেখুন, খেলা-ধুলায় নৈপুণ্য না থাকলেও, স্বর্ণ পদক পাওয়ার মানসিকতা আপনার আছে কি না।",
     "start_quiz": "কুইজে অংশ নিন",
@@ -258,5 +258,21 @@
     "number_2": "২",
     "number_3": "৩",
     "number_4": "৪",
-    "number_5": "৫"
+    "number_5": "৫",
+    "meta:url": "",
+    "meta:type": "",
+    "meta:title": "",
+    "meta:description": "",
+    "meta:site_name": "",
+    "meta:locale": "",
+    "meta:publisher": "",
+    "meta:section": "",
+    "meta:image": "",
+    "meta:twitter:card": "",
+    "meta:twitter:site": "",
+    "meta:twitter:creator": "",
+    "meta:twitter:title": "",
+    "meta:twitter:description": "",
+    "meta:twitter:image": "",
+    "share:short_url": ""
 }

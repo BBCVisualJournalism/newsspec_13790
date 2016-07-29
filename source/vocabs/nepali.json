@@ -1,5 +1,5 @@
 {
-    "": "अन्य",
+    "": "",
     "hero_title": "प्रश्न: तपाईंको मानसिक अवस्था ओलिम्पिक खेलाडीको जस्तो छ कि छैन?",
     "hero_subtitle": "स्वर्णपदक जित्नका लागि आवश्यक क्षमता तपाईंमा छ कि छैन, जान्नका लागि यो ६० सेकेण्डको प्रश्नोत्तरमा भाग लिनुहोस्।",
     "start_quiz": "प्रश्नोत्तरमा भाग लिनुहोस्",
@@ -258,5 +258,21 @@
     "number_2": "२",
     "number_3": "३",
     "number_4": "४",
-    "number_5": "५"
+    "number_5": "५",
+    "meta:url": "",
+    "meta:type": "",
+    "meta:title": "",
+    "meta:description": "",
+    "meta:site_name": "",
+    "meta:locale": "",
+    "meta:publisher": "",
+    "meta:section": "",
+    "meta:image": "",
+    "meta:twitter:card": "",
+    "meta:twitter:site": "",
+    "meta:twitter:creator": "",
+    "meta:twitter:title": "",
+    "meta:twitter:description": "",
+    "meta:twitter:image": "",
+    "share:short_url": ""
 }

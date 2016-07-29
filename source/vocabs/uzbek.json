@@ -1,5 +1,5 @@
 {
-    "": "МАЪЛУМОТ",
+    "": "",
     "hero_title": "Сизда Олимпиадачининг руҳияти борми?",
     "hero_subtitle": "60 сония вақтингизни аяманг ва олтин медал ютишга қодир-қодир эмаслигингизни синаб кўринг.",
     "start_quiz": "Викторинамизни бошланг:",
@@ -258,5 +258,21 @@
     "number_2": "2",
     "number_3": "3",
     "number_4": "4",
-    "number_5": "5"
+    "number_5": "5",
+    "meta:url": "",
+    "meta:type": "",
+    "meta:title": "",
+    "meta:description": "",
+    "meta:site_name": "",
+    "meta:locale": "",
+    "meta:publisher": "",
+    "meta:section": "",
+    "meta:image": "",
+    "meta:twitter:card": "",
+    "meta:twitter:site": "",
+    "meta:twitter:creator": "",
+    "meta:twitter:title": "",
+    "meta:twitter:description": "",
+    "meta:twitter:image": "",
+    "share:short_url": ""
 }

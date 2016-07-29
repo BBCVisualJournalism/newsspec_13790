@@ -1,5 +1,5 @@
 {
-    "": "MENGINE",
+    "": "",
     "hero_title": "Je, una mtazamo wa Mwanaolimpiki?",
     "hero_subtitle": "Jaribu kujibu maswali haya ya sekunde 60 na uone unahitaji nini kushinda dhahabu, licha ya uwezo wako kimichezo.",
     "start_quiz": "Jibu maswali",
@@ -245,7 +245,7 @@
     "share_result_3": "Nina mtazamo wa Mpenda Mazoezi",
     "share_result_4": "Nina mtazamo wa Mtembea Wikendi",
     "share_result_5": "Nina mtazamo wa Mpenda Kulala Mchana",
-    "share_outro_text": "Kujua kama una nini zinahitajika kushindana katika ",
+    "share_outro_text": "Kujua kama una nini zinahitajika kushindana katika",
     "credits_title": "Waliochangia",
     "credits_sub_title": "Imeandaliwa na Ashleigh Jackson, Scott Jarvis, Nathan Mercer na John Walton.",
     "credits_more_title": "Zaidi kuhusu taarifa hii",
@@ -258,5 +258,21 @@
     "number_2": "2",
     "number_3": "3",
     "number_4": "4",
-    "number_5": "5"
+    "number_5": "5",
+    "meta:url": "",
+    "meta:type": "",
+    "meta:title": "",
+    "meta:description": "",
+    "meta:site_name": "",
+    "meta:locale": "",
+    "meta:publisher": "",
+    "meta:section": "",
+    "meta:image": "",
+    "meta:twitter:card": "",
+    "meta:twitter:site": "",
+    "meta:twitter:creator": "",
+    "meta:twitter:title": "",
+    "meta:twitter:description": "",
+    "meta:twitter:image": "",
+    "share:short_url": ""
 }

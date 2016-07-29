@@ -1,5 +1,5 @@
 {
-    "": "Otros",
+    "": "",
     "hero_title": "¿Tienes la mentalidad de un atleta olímpico?",
     "hero_subtitle": "Ponte a prueba y en 60 segundos sabrás si reúnes las cualidades de un medallista de oro, sin importar si eres deportista o no.",
     "start_quiz": "Comenzar",
@@ -258,5 +258,21 @@
     "number_2": "2",
     "number_3": "3",
     "number_4": "4",
-    "number_5": "5"
+    "number_5": "5",
+    "meta:url": "",
+    "meta:type": "",
+    "meta:title": "",
+    "meta:description": "",
+    "meta:site_name": "",
+    "meta:locale": "",
+    "meta:publisher": "",
+    "meta:section": "",
+    "meta:image": "",
+    "meta:twitter:card": "",
+    "meta:twitter:site": "",
+    "meta:twitter:creator": "",
+    "meta:twitter:title": "",
+    "meta:twitter:description": "",
+    "meta:twitter:image": "",
+    "share:short_url": ""
 }

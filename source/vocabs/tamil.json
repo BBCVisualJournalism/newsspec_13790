@@ -1,5 +1,5 @@
 {
-    "": "மற்ற",
+    "": "",
     "hero_title": "ஒரு ஒலிம்பிக் வீரருக்குரிய மனோபாவம் உங்களுக்கு இருக்கிறதா?",
     "hero_subtitle": "இந்த 60 விநாடி க்விஸ்ஸுக்கு பதிலளியுங்கள்; உங்களுக்கு விளையாட்டுத் திறன் இருக்கிறதோ இல்லையோ, தங்கப்பதக்கம் வெல்லத் தேவையான திறன் இருக்கிறதா என்று பாருங்கள்",
     "start_quiz": "குவிஸ்ஸுக்குச் செல்க",
@@ -258,5 +258,21 @@
     "number_2": "௨",
     "number_3": "௩",
     "number_4": "௪",
-    "number_5": "௫"
+    "number_5": "௫",
+    "meta:url": "",
+    "meta:type": "",
+    "meta:title": "",
+    "meta:description": "",
+    "meta:site_name": "",
+    "meta:locale": "",
+    "meta:publisher": "",
+    "meta:section": "",
+    "meta:image": "",
+    "meta:twitter:card": "",
+    "meta:twitter:site": "",
+    "meta:twitter:creator": "",
+    "meta:twitter:title": "",
+    "meta:twitter:description": "",
+    "meta:twitter:image": "",
+    "share:short_url": ""
 }

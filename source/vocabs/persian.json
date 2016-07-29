@@ -1,5 +1,5 @@
 {
-    "": "سایر",
+    "": "",
     "hero_title": "آزمون: آیا آمادگی ذهنی المپیکی شدن دارید؟",
     "hero_subtitle": "در این آزمون۶۰ ثانیه‌ای شرکت کنید تا ببینید آنچه برای بردن طلای المپیک لازم است، جدای از قابلیت ورزشی، دارید یا نه.",
     "start_quiz": "شرکت در آزمون",
@@ -258,5 +258,21 @@
     "number_2": "۲",
     "number_3": "۳",
     "number_4": "۴",
-    "number_5": "۵"
+    "number_5": "۵",
+    "meta:url": "",
+    "meta:type": "",
+    "meta:title": "",
+    "meta:description": "",
+    "meta:site_name": "",
+    "meta:locale": "",
+    "meta:publisher": "",
+    "meta:section": "",
+    "meta:image": "",
+    "meta:twitter:card": "",
+    "meta:twitter:site": "",
+    "meta:twitter:creator": "",
+    "meta:twitter:title": "",
+    "meta:twitter:description": "",
+    "meta:twitter:image": "",
+    "share:short_url": ""
 }

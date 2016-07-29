@@ -1,5 +1,5 @@
 {
-    "": "أمور اخرى",
+    "": "",
     "hero_title": "هل تتمتع بذهنية بطل اولمبي ؟",
     "hero_subtitle": "شارك في هذا الاختبار الذي لن يأخذ من وقتك اكثر من 60 ثانية، واكتشف ما اذا كنت تتمتع بالمؤهلات الضرورية للفوز بالأوسمة الذهبية مهما كانت مهاراتك الرياضية.",
     "start_quiz": "شارك في الاختبار",
@@ -258,5 +258,21 @@
     "number_2": "٢",
     "number_3": "٣",
     "number_4": "٤",
-    "number_5": "٥"
+    "number_5": "٥",
+    "meta:url": "",
+    "meta:type": "",
+    "meta:title": "",
+    "meta:description": "",
+    "meta:site_name": "",
+    "meta:locale": "",
+    "meta:publisher": "",
+    "meta:section": "",
+    "meta:image": "",
+    "meta:twitter:card": "",
+    "meta:twitter:site": "",
+    "meta:twitter:creator": "",
+    "meta:twitter:title": "",
+    "meta:twitter:description": "",
+    "meta:twitter:image": "",
+    "share:short_url": ""
 }

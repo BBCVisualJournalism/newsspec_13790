@@ -1,5 +1,5 @@
 {
-    "": "Autres",
+    "": "",
     "hero_title": "Avez-vous la mentalité d'un champion qui va participer aux jeux olympiques ?",
     "hero_subtitle": "Participez à notre quiz de 60 secondes et vérifiez ce qu'il vous manque pour gagner la médaille d'or, en fonction de votre capacité sportive.",
     "start_quiz": "Commençons !",
@@ -258,5 +258,21 @@
     "number_2": "2",
     "number_3": "3",
     "number_4": "4",
-    "number_5": "5"
+    "number_5": "5",
+    "meta:url": "",
+    "meta:type": "",
+    "meta:title": "",
+    "meta:description": "",
+    "meta:site_name": "",
+    "meta:locale": "",
+    "meta:publisher": "",
+    "meta:section": "",
+    "meta:image": "",
+    "meta:twitter:card": "",
+    "meta:twitter:site": "",
+    "meta:twitter:creator": "",
+    "meta:twitter:title": "",
+    "meta:twitter:description": "",
+    "meta:twitter:image": "",
+    "share:short_url": ""
 }

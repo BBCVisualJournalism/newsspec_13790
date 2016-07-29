@@ -1,5 +1,5 @@
 {
-    "": "OUTROS",
+    "": "",
     "hero_title": "Você tem a mentalidade de um atleta olímpico?",
     "hero_subtitle": "Faça o nosso teste e fique sabendo, em 60 segundos, se você reúne as qualidades de um ganhador de uma medalha de ouro, mesmo que não seja um atleta.",
     "start_quiz": "Começar",
@@ -258,5 +258,21 @@
     "number_2": "2",
     "number_3": "3",
     "number_4": "4",
-    "number_5": "5"
+    "number_5": "5",
+    "meta:url": "",
+    "meta:type": "",
+    "meta:title": "",
+    "meta:description": "",
+    "meta:site_name": "",
+    "meta:locale": "",
+    "meta:publisher": "",
+    "meta:section": "",
+    "meta:image": "",
+    "meta:twitter:card": "",
+    "meta:twitter:site": "",
+    "meta:twitter:creator": "",
+    "meta:twitter:title": "",
+    "meta:twitter:description": "",
+    "meta:twitter:image": "",
+    "share:short_url": ""
 }
