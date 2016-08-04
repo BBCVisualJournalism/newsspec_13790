@@ -56,7 +56,7 @@
 
     .result__banner__reaction {
         display: block;
-        font-weight: 800;
+        font-weight: bold;
         margin: 0 0 4px 0;
         @media (min-width: 600px){
             display: inline;
@@ -127,7 +127,7 @@
     .result__banner__categories__icon__text {
         color: #999;
         display:block;
-        font-weight: 800;
+        font-weight: bold;
         margin-top: 4px;
         @media(min-width: 414px){
             display:inline;
@@ -198,7 +198,7 @@
     }
 
     .strength {
-        font-weight: 800;
+        font-weight: bold;
     }
 
     .weaknesses {
@@ -211,7 +211,7 @@
     }
 
     .weakness {
-        font-weight: 800;
+        font-weight: bold;
     }
 
     .result__graph {
