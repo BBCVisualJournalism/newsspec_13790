@@ -1,6 +1,8 @@
 # newsspec-13790: GD_Olympic_mind_match
 
-VJ project
+After compiling the project, visit:
+
+http://www.local.bbc.co.uk:1031/news/special/2016/newsspec_13790/content/full-width/english/test--index.html
 
 ## Getting started
 
